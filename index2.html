@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+html,body{
+	overflow: hidden;
+}
+#wrap {
+	width: 700px;
+	height: 350px;
+	border: #000 1px solid;
+	margin: 50px auto;	
+	position: relative;
+	overflow:hidden;
+}
+
+#wrap ul {
+	height: 350px;
+	position:absolute;
+	left:0;
+	top: 0;
+}
+#wrap ul li{
+	width: 700px;
+	height: 350px;
+	float: left;
+}
+#wrap ul li img {
+	width: 700px;
+	height: 350px;
+}
+#wrap ol {
+	width: 425px;
+	height:30px;
+	position:absolute;
+	left: 50%;
+	bottom: 10px;
+	margin-left: -212px;
+}
+#wrap ol li {
+	width:80px;
+	height: 30px;
+	float:left;
+	margin-right: 5px;
+	background:#000;
+	position: relative;
+}
+
+#wrap ol li span{
+	width: 0;
+	height: 30px;
+	position:absolute;
+	left: 0;
+	top: 0;
+	background: #c00;
+}
+#wrap .next a{
+	width: 60px;
+	height: 40px;
+	border: 1px solid #000;
+	font-size: 30px;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	position: absolute;
+	right:0;
+	top:50%;
+	margin-top:-20px;
+}
+#wrap .prev a{
+	width: 60px;
+	height: 40px;
+	border: 1px solid #000;
+	font-size: 30px;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	position: absolute;
+	left:0;
+	top:50%;
+	margin-top:-20px;
+}
+</style>
+<script src="move.js"></script>
+<script>
+
+window.onload = function(){
+	var oWrap = document.getElementById('wrap');
+	var oUl = oWrap.children[0];
+	var aLi = oUl.children;
+	var oOl = oWrap.children[1];
+	var aSpan = oOl.getElementsByTagName('span');
+	oUl.style.width = aLi.length * aLi[0].offsetWidth + 'px';
+	var iNow = 0;
+	var timer=null;
+	show();
+	function show(){
+		clearInterval(timer);
+			timer=setInterval(function(){
+				iNow++;
+				
+				move(oUl,{
+				    left:-700*(iNow%6)
+			    },
+			    {
+			    	fn:function(){
+				    	if(iNow%6>=5){
+
+							move(oUl,{
+								left:0
+							},{time:30});
+
+				       }
+			
+			    	}
+			    }
+			 );
+			
+		    },1300);
+	   }
+}
+</script>
+</head>
+
+<body>
+<div id="wrap">
+	<ul>
+		<li><img src="0.jpg"></li>
+    	<li><img src="1.jpg"></li>
+    	<li><img src="2.jpg"></li>
+    	<li><img src="3.jpg"></li>
+    	<li><img src="4.jpg"></li>
+    	<li><img src="0.jpg"></li>
+    	<li><img src="1.jpg"></li>
+    	<li><img src="2.jpg"></li>
+    	<li><img src="3.jpg"></li>
+    	<li><img src="4.jpg"></li>
+    </ul>
+    <div class="next" id="next"><a href="javascript:;">next</a></div>
+    <div class="prev" id="prev"><a href="javascript:;">prev</a></div>
+</div>
+</body>
+</html>
