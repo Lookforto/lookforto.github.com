@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Canvas-小猫</title>
+<style>
+*{ margin:0; padding:0; }
+body{text-align:center; background:#000;}
+canvas{ background:#fff; }
+.cat{ height:700px; }
+</style>
+</head>
+
+<body>
+<div class="cat">
+  <canvas width="600" height="554"></canvas>
+</div>
+<script>
+  
+ var c = document.querySelector('canvas');
+ var x =c.offsetLeft;
+ var t =c.offsetTop;
+ c.onmousemove=function(ev){
+	  document.title=(ev.clientX-x)+'$'+(ev.clientY); 
+	}
+ var gd = c.getContext('2d'); //拿起画笔
+    //尾巴
+	  gd.strokeStyle="#33190c";
+	 // gd.fillStyle="#ffffd9";
+	  gd.lineWidth=6;
+	  gd.beginPath();
+	  gd.moveTo(433,458);
+	  gd.lineTo(477,438);
+	  gd.bezierCurveTo(492,433,496,453,484,463);//贝塞尔曲线
+	  gd.lineTo(433,494);	
+     // gd.fill();
+	  gd.stroke();
+	
+	//身体
+	  gd.beginPath();
+	  gd.moveTo(255,392);
+	  gd.lineTo(255,526);
+	  gd.bezierCurveTo(256,555,282,557,293,530);
+	  gd.lineTo(383,530);
+	  gd.bezierCurveTo(392,557,419,558,428,526);
+	  gd.quadraticCurveTo(434,523,430,393);
+	  gd.closePath();
+	  //gd.fill();
+	  gd.stroke();
+	 //肚白
+	 gd.beginPath();
+	  gd.fillStyle="#fff";
+		  gd.moveTo(317,501);
+		  gd.quadraticCurveTo(345,504,363,500);
+		  gd.quadraticCurveTo(386,492,389,480);
+		  gd.quadraticCurveTo(393,469,396,437);
+	  gd.closePath();
+	  gd.fill();
+	  //肚子上的蓝点
+	//   gd.fillStyle="#e5f8ef";
+	    gd.beginPath();
+	      gd.moveTo(428,459);
+	      gd.bezierCurveTo(407,456,405,479,421,482);
+	      gd.bezierCurveTo(393,482,394,507,427,511);
+	      gd.quadraticCurveTo(429,485,428,459);
+	    gd.closePath();
+	    gd.fill();
+	  //左耳
+	  	gd.strokeStyle="#33190c";
+		//gd.fillStyle="#ffffd9";
+		 gd.lineWidth=4;
+		  gd.beginPath();
+		  gd.moveTo(106,79);
+		  gd.quadraticCurveTo(114,4,209,14);
+		//gd.fill();
+		gd.stroke();
+	//右耳
+	  gd.beginPath();
+	  gd.lineWidth=5;
+	  gd.moveTo(376,14);
+	  
+	  gd.quadraticCurveTo(431,13,446,15);
+	  gd.quadraticCurveTo(488,20,498,48);
+	  gd.quadraticCurveTo(508,75,512,110);
+	  gd.stroke();
+	  gd.beginPath();
+	  gd.lineWidth=6;
+	  gd.moveTo(470,65);
+	  gd.lineTo(483,27);
+	  gd.stroke();
+	 
+	 gd.beginPath();
+	 gd.fillStyle='#fecce5';
+	 gd.moveTo(470,65);
+	 gd.lineTo(483,27);
+	 gd.bezierCurveTo(502,46,496,60,512,110);
+	 gd.closePath();
+	 gd.fill();
+	 
+	 //头
+	 gd.beginPath();
+	 gd.strokeStyle="#33190c";
+	 gd.lineWidth=10;
+	 gd.moveTo(280,6);
+	 gd.bezierCurveTo(476,0,535,154,541,166);
+	 //gd.lineTo(546,180);
+	 gd.bezierCurveTo(584,304,530,368,432,392);
+	 gd.quadraticCurveTo(210,460,90,372);
+	 
+	  gd.quadraticCurveTo(38,324,34,314);
+	  gd.quadraticCurveTo(1,268,38,174);
+	  gd.quadraticCurveTo(128,8,280,6);
+	  gd.closePath();
+	 gd.stroke();
+	 //脸白
+	 //眉毛(左)
+	 gd.beginPath();
+	 gd.lineWidth=5;
+	 gd.lineCap="round";
+	 gd.moveTo(175,34);
+	 gd.lineTo(202,37);
+	 gd.stroke();
+	//眉毛(右) 
+	 gd.beginPath();
+	 gd.lineCap="round";
+	 gd.moveTo(350,60);
+	 gd.quadraticCurveTo(386,43,396,57);
+	 gd.stroke();
+	 //胡须-左
+	 gd.lineWidth=7;
+	 gd.beginPath();
+	 gd.lineCap="round";
+	 gd.moveTo(28,200);
+	 gd.lineTo(4,200);
+	 gd.stroke();
+	 gd.beginPath();
+	 gd.lineCap="round";
+	 gd.moveTo(19,226);
+	 gd.lineTo(5,228);
+	 gd.stroke();
+	 gd.beginPath();
+	 gd.moveTo(15,258);
+	 gd.lineTo(2,260);
+	 gd.stroke();
+	 //胡须-右
+	 gd.lineWidth=6;
+	 gd.lineCap="round";
+	 gd.beginPath();
+	 gd.moveTo(520,207);
+	 gd.lineTo(588,214);
+	 gd.stroke();
+	 gd.beginPath();
+	 gd.moveTo(520,233);
+	 gd.lineTo(587,247);
+	 gd.stroke();
+	 gd.beginPath();
+	 gd.moveTo(520,265);
+	 gd.lineTo(590,300);
+	 gd.stroke();
+	//鼻子
+	 gd.fillStyle="#33190c";
+	 gd.beginPath();
+	 gd.arc(220,230,9,2*Math.PI,0,false)
+	 gd.fill();
+	 gd.lineWidth=4;
+	 gd.beginPath();
+	 gd.moveTo(218,234);
+	 gd.quadraticCurveTo(200,260,185,234);
+	 gd.stroke()
+	 gd.beginPath();
+	 gd.moveTo(218,234);
+	 gd.quadraticCurveTo(245,260,266,241);
+	 gd.stroke()
+	 //眼睛-左
+	 gd.fillStyle="#35190d";
+	 gd.beginPath();
+	 gd.moveTo(129,140);
+     gd.bezierCurveTo(200,135,200,190,160,210);
+	 gd.moveTo(160,210);
+	 gd.bezierCurveTo(92,249,85,145,129,140);
+	 gd.closePath();
+	 gd.fill();
+	 //眼睛 -右
+	 gd.fillStyle="#35190d";
+	 gd.beginPath();
+	 gd.moveTo(334,140);
+     gd.bezierCurveTo(400,135,378,230,334,215);
+	 gd.moveTo(334,215);
+	 gd.bezierCurveTo(286,241,282,138,334,140);
+	 gd.closePath();
+	 gd.fill();
+	 //眼白
+	 gd.fillStyle="#fff";
+	 gd.beginPath();
+	 gd.arc(142,156,9,2*Math.PI,0,false);
+	 gd.fill();
+	 gd.beginPath();
+	 gd.arc(335,160,9,2*Math.PI,0,false);
+	 gd.fill();
+	 //红心
+	 gd.beginPath();
+	 gd.lineWidth=20;
+	 gd.fillStyle="#fe0000";
+	 gd.moveTo(222,286);
+	 gd.quadraticCurveTo(275,250,360,276);
+	
+	 gd.quadraticCurveTo(435,300,415,397);
+	 gd.quadraticCurveTo(370,500,240,540);
+	 gd.quadraticCurveTo(85,465,80,400);
+	 gd.quadraticCurveTo(75,360,79,357);
+	 gd.quadraticCurveTo(60,234,222,286);
+	 gd.stroke();
+	 gd.fill();
+	 //手
+	 gd.beginPath();
+	 gd.lineWidth=15;
+	 gd.fillStyle="#fff";
+	 gd.strokeStyle="#35190d";
+	 gd.arc(71,375,15,2*Math.PI,0,false);
+	 gd.stroke();
+	 gd.fill();
+	 gd.beginPath();
+	 gd.moveTo(420,373);
+	 gd.quadraticCurveTo(380,390,410,415);
+	 gd.stroke();
+	 gd.fill();
+	 //睫毛
+	 gd.beginPath();
+	 gd.lineWidth=10;
+	 gd.moveTo(127,141);
+	 gd.lineTo(122,129);
+	 gd.stroke();
+	 gd.beginPath();
+	 gd.moveTo(351,143);
+	 gd.lineTo(358,129);
+	 gd.stroke();
+	
+	 
+</script>
+</body>
+</html>
