@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+	<script>
+		(function() {
+			window.addEventListener('load', function() {
+				function setFont() {
+					document.documentElement.style.fontSize = document.documentElement.clientWidth / 16 + 'px';
+				}
+				window.addEventListener('resize', setFont, false)
+				setFont();
+			}, false)
+		})()
+	</script>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="yes" name="apple-touch-fullscreen" />
+		<title>聚划算</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			html body {
+				font-family: "微软雅黑";
+				height: 100%;
+				width: 100%;
+				margin-bottom: 10px;
+			}
+			
+			body a {
+				font-size: 0.55rem;
+				color: #666;
+				text-align: center;
+				text-decoration: none;
+			}
+			#btn_s span{ margin-left: 0.4rem;}
+			
+.top {
+				width: 100%;
+				height: 2.5rem;
+				background: #f6f6f6 url(img2/logo.png);
+				background-repeat: no-repeat;
+				background-size: 3.7rem 1rem;
+				background-position: center;
+				overflow: hidden;
+			}
+			
+			.top a {
+				width: 3.075rem;
+				height: 1.45rem;
+				background: url(img2/btn-01.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				display: block;
+				margin: 0.5rem;
+			}
+			
+			.hearder {
+				height: 6.4rem;
+				width: 100%;
+				background: red;
+			}
+			
+			.hearder img {
+				width: 100%;
+				height: 6.4rem;
+			}
+			.icons ul{ width: 15.275rem; height: 3.1rem; overflow: hidden; margin-top:2rem; margin-left:0.4rem;}
+             .icons li { width: 2rem; height: 100%; float: left; margin:0 0.9rem; text-align: center;} 
+            .icons li a{ display: block; width: 2rem; height: 2rem; border-radius: 50%; background: aquamarine; }
+            .icons span{ font-size: 0.5rem; color: #666; }
+            .ha{ display:-webkit-box; height: 1.35rem; line-height: 1.35rem; padding: 0.5rem; border-bottom: 5px solid #dcdcdc; width: 90%; margin:0 auto; }
+          
+            .ha span{ display: block; -webkit-box-flex: 1; font-size: 0.7rem; }
+            .ha h3{display: block; -webkit-box-flex: 7;font-size: 0.7rem; border-left: 5px solid red; padding-left: 0.5rem;}
+            .bn{ margin:1rem auto; }
+            .bn li{
+            	width:15rem;
+            	height: 3rem;
+            	
+            	margin: 0.8rem auto;
+                }
+             .bn li img{ width:4.425rem; height:2.975rem ; display: block; float: left;}
+             .bn span{ width: 1.25rem; height: 100%; background: #e00202; text-align: center;line-height: 3rem; color: #fff; display: block; float: left;}
+             .bn p,.bn i{ font-size: 0.5rem; color: #ccc; }
+             .bn .bn_d{ width:8.95rem; float: left; overflow: hidden; background: #f4f4f4;}
+             .bn b{ color: #d51938; line-height:3rem ; background: url(img/icon7.png);
+                background-repeat:no-repeat ; background-size:0.35rem 0.625rem ; background-position:right  center; padding-right: 1rem;
+             }
+             .bn .bn_d div{ width:4.75rem; float: left; margin:0.3rem 0  0 0.5rem;}
+             
+             .gehangg{ width:15rem; margin: 0.7rem auto; background: #f5f5f5; text-align: center; line-height: 1.875rem; height: 1.875rem;  font-size: 0.7rem; }
+             .disc{ width: 15rem; margin: 0 auto; overflow: hidden; height: 8.75rem;}
+             
+             .disc_d{ width: 3.75rem; float: left; height: 100%; background: darkred; }
+             .dis_x a{width: 3.75rem; height:2.1875rem ;float: left; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc; box-sizing: border-box; text-align: center; line-height: 2.1875rem;}
+             .dis_x { border-top:1px solid #ccc; }
+             .eng{ width: 15rem; margin: 0.5rem auto; display: -webkit-box;}
+             .eng li{ -webkit-box-flex: 1;}
+             .eng img { width: 5rem; height: 4rem;}
+             .pmk{ height: 2.25rem; width: 15rem; margin: 0.5rem auto; background: #ccc; }
+             .clop{ overflow: hidden; width: 5rem; height: 100%; float: left;}
+             .clop span{ width: 2rem; height: 100%; line-height: 2.25rem; text-align: center; 
+             float: left; font-size: 0.7rem;} 
+             .top_b{ width: 3rem ; height: 100%; float: right;
+               line-height: 2.25rem;
+               overflow: hidden;
+             }
+             .top_b i{ width:0; height: 0; border:0.25rem solid transparent; border-bottom: 10px solid #666; margin-bottom: 1rem; float: right; margin:0.4rem 0.1rem 0 0.4rem;}
+             .top_b span{ float: left; }
+		</style>
+		<script src="js/swiper-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="css/swiper-3.3.1.min.css" />
+		<script>
+		window.onload=function(){
+			 
+			 (function(){
+			 	 //返回顶部
+				 var oBtn_a = document.getElementById('btn_a');
+				 var timer = null;
+				 oBtn_a.onclick=function(){
+				 		clearInterval(timer);
+						var start = document.documentElement.scrollTop || document.body.scrollTop;
+						var dis = 0 - start;
+						var count = parseInt(1000/30);
+						var n = 0;
+						timer = setInterval(function(){
+							n++;
+							var a = 1-n/count;
+							var cur = start+dis * (1-a*a*a);
+							document.documentElement.scrollTop = document.body.scrollTop = cur;
+							if(n == count){
+								clearInterval(timer);	
+							}
+						},30);
+				 };
+			 })();
+			 
+			 
+			 
+		};
+		</script>
+	</head>
+
+	<body>
+		<div class="top">
+			<a href="javascript:"></a>
+		</div>
+	<div class="hearder">
+		<div class="swiper-container swiper-container-horizontal" id="swiper-container1">
+		   <div class="swiper-wrapper" id="boxmk">
+			    <div class="swiper-slide"> <a href="javascript:"> <img src="img2/intro_03.png"/></a></div>
+			    <div class="swiper-slide"> <a href="javascript:"> <img src="img2/intro_03.png"/></a></div>
+			    <div class="swiper-slide"> <a href="javascript:"> <img src="img2/intro_03.png"/></a></div>
+			    <div class="swiper-slide"> <a href="javascript:"> <img src="img2/intro_03.png"/></a></div>
+			    <div class="swiper-slide"> <a href="javascript:"> <img src="img2/intro_03.png"/></a></div>
+	       </div>
+		</div>
+	</div>
+      <div class="swiper-pagination " id="btn_s" style="margin:0 auto; width:100%;" >
+			<span class="swiper-pagination-bullet"></span>
+			<span class="swiper-pagination-bullet"></span>
+			<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+			<span class="swiper-pagination-bullet"></span>
+			<span class="swiper-pagination-bullet"></span>
+	 </div>
+	 <div class="icons">
+	    <ul>
+	      <li>
+	        <a href="javascript:"></a>
+	        <span>商品</span>
+	      </li>
+	       <li>
+	        <a href="javascript:"></a>
+	        <span>生活</span>
+	      </li>
+	       <li>
+	        <a href="javascript:"></a>
+	        <span>品牌</span>
+	      </li>
+	       <li>
+	        <a href="javascript:"></a>
+	        <span>聚宝盆</span>
+	      </li>
+	    </ul>
+	 </div>
+	 <div class="icons">
+	    <ul>
+	      <li>
+	        <a href="javascript:"></a>
+	        <span>商品</span>
+	      </li>
+	       <li>
+	        <a href="javascript:"></a>
+	        <span>生活</span>
+	      </li>
+	       <li>
+	        <a href="javascript:"></a>
+	        <span>品牌</span>
+	      </li>
+	       <li>
+	        <a href="javascript:"></a>
+	        <span>聚宝盆</span>
+	      </li>
+	    </ul>
+	 </div>
+	 <div class="ha">
+	 
+	   <h3>聚划算热卖排行</h3>
+	   <span>TOP10</span>
+	  
+	 </div>
+	   <ul class="bn">
+	     <li>
+	      <span>1</span>
+	      <img src="img2/1.png" />
+	      <div class="bn_d"> 
+	       <div>
+	          <p>已售3333</p>
+	         <i>2.3折</i>
+	         <i>￥299</i>
+	       </div>
+	        
+	         <b>￥51</b>
+	      </div>
+  	     </li>
+	     <li>
+	      <span>1</span>
+	      <img src="img2/1.png" />
+	      <div class="bn_d"> 
+	       <div>
+	          <p>已售3333</p>
+	         <i>2.3折</i>
+	         <i>￥299</i>
+	       </div>
+	        
+	         <b>￥51</b>
+	      </div>
+  	     </li>
+	     <li>
+	      <span>1</span>
+	      <img src="img2/1.png" />
+	      <div class="bn_d"> 
+	       <div>
+	          <p>已售3333</p>
+	         <i>2.3折</i>
+	         <i>￥299</i>
+	       </div>
+	        
+	         <b>￥51</b>
+	      </div>
+  	     </li>
+	     <li>
+	      <span>1</span>
+	      <img src="img2/1.png" />
+	      <div class="bn_d"> 
+	       <div>
+	          <p>已售3333</p>
+	         <i>2.3折</i>
+	         <i>￥299</i>
+	       </div>
+	        
+	         <b>￥51</b>
+	      </div>
+  	     </li>
+	     <li>
+	      <span>1</span>
+	      <img src="img2/1.png" />
+	      <div class="bn_d"> 
+	       <div>
+	          <p>已售3333</p>
+	         <i>2.3折</i>
+	         <i>￥299</i>
+	       </div>
+	        
+	         <b>￥51</b>
+	      </div>
+  	     </li>
+	     <li>
+	      <span>1</span>
+	      <img src="img2/1.png" />
+	      <div class="bn_d"> 
+	       <div>
+	          <p>已售3333</p>
+	         <i>2.3折</i>
+	         <i>￥299</i>
+	       </div>
+	        
+	         <b>￥51</b>
+	      </div>
+  	     </li>
+	     <li>
+	      <span>1</span>
+	      <img src="img2/1.png" />
+	      <div class="bn_d"> 
+	       <div>
+	          <p>已售3333</p>
+	         <i>2.3折</i>
+	         <i>￥299</i>
+	       </div>
+	        
+	         <b>￥51</b>
+	      </div>
+  	     </li>
+	     <li>
+	      <span>1</span>
+	      <img src="img2/1.png" />
+	      <div class="bn_d"> 
+	       <div>
+	          <p>已售3333</p>
+	         <i>2.3折</i>
+	         <i>￥299</i>
+	       </div>
+	        
+	         <b>￥51</b>
+	      </div>
+  	     </li>
+	      
+	   </ul>
+	<div class="gehangg" style="background: #ff3900;">
+	   <p>更多划算逛起来</p>
+	</div>
+	<div class="disc">
+	  <div class="disc_d">
+	  
+	  </div>
+	  <div class="dis_x">
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:" style="color: red;">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	  </div>
+	  
+	</div>
+	<div class="gehangg" style="background: #8bca11;">
+	   <p >精彩商品逛起来</p>
+	</div>
+	<div class="disc">
+	  <div class="disc_d" style="background: #8bca11;">
+	  
+	  </div>
+	  <div class="dis_x">
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:" style="color: red;">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	      <a href="javascript:">服饰</a>
+	  </div>
+	  
+	</div>
+	<div class="gehangg" style="background: #ccc;">
+	   <p >精彩商品逛起来</p>
+	</div>
+	<ul class="eng">
+		<li>
+			<a href="javascript:"><img src="img2/intro_38.png"/></a>
+		</li>
+		<li>
+			<a href="javascript:"><img src="img2/intro_39.png"/></a>
+		</li>
+		<li>
+		<a href="javascript:"><img src="img2/intro_40.png"/></a>
+		</li>
+	</ul>
+	<div class="pmk">
+	  <div class="clop">
+	  	<span>登录</span>
+	  	<span>注册</span>
+	  </div>
+	  <div class="top_b" id="btn_a">
+	     <span>TOP</span>
+	     <i></i>
+	  </div>
+	</div>
+	</body>
+	<script>
+		var mySwiper = new Swiper('.swiper-container', {
+			autoplay: 5000, //可选选项，自动滑动
+			loop: true,
+			pagination : '.swiper-pagination',
+            paginationClickable :true
+		})
+	</script>
+
+</html>

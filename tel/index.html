@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+<script>
+	(function(){
+			window.addEventListener('load',function(){
+				function setFont(){
+					document.documentElement.style.fontSize=document.documentElement.clientWidth/15+'px';
+				}
+				window.addEventListener('resize',setFont,false)
+				setFont();
+			},false)
+		})()  
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="yes" name="apple-touch-fullscreen"/>
+
+<title>个人中心</title>
+<style>
+	*{ margin: 0; padding:0; list-style: none;}
+	header ul{
+		height: 1.8rem;  display: -webkit-box;background: #fff;
+	}
+	header ul b{font-size: 0.4rem;}
+	html body{width: 100%; height: 100%; background: #ececf4; font-family: "微软雅黑";}
+	
+	header ul li{
+		height: 1.8rem; display:-webkit-box;	
+	}
+	header ul .lkp{ -webkit-box-flex:4;}
+	header ul .lie{ -webkit-box-flex:4; }
+	header ul .lbn{ -webkit-box-flex:2;}
+	header ul .lie i{
+	    margin:0.6rem 0.2rem 0.2rem 0.3rem;
+		width: 1.4rem; height: 0.38rem; 
+		display: block;
+		background: url(img/icon0.png); 
+		background-repeat:  no-repeat;
+		background-size: 1.34rem 0.38rem;
+	}
+	
+	header ul .lie span{
+		background: url(img/icon1.png); width: 0.5rem; height: 0.4rem; display: block;
+		background-repeat:  no-repeat;
+		background-size: 0.5rem  0.4rem;
+	    margin:0.6rem 0.2rem 0.2rem 0.3rem;
+	}
+	header ul .lbn b{
+		   margin-left: 2.5rem;
+	}
+	header ul .lbn i{
+		background: url(img/icon3.png); width: 0.98rem; height: 0.38rem; display: block;
+		background-repeat:  no-repeat;
+		background-size:0.98rem  0.38rem;
+	    margin:0.6rem 0rem 0.2rem 0.5rem;
+	}
+	.heben{
+		height: 1.6rem; display: -webkit-box; width: 100%; line-height: 1.6rem; border-bottom:0.04rem solid #d4d4d8 ; background: #fff;
+	}
+	.heben a{font-size: 0.4rem; color: #000; text-decoration: none; -webkit-box-flex:4; display: block;
+	        background: url(img/icon2.png);
+	        background-repeat: no-repeat;
+	        background-size:0.32rem 0.52rem ;
+	        background-position: 0.3rem 0.55rem;
+	        padding-left: 0.8rem;
+	}
+	.heben h1{font-size: 0.8rem; color: #000; -webkit-box-flex:8; font-weight: normal;}
+	.zeoc{
+		height: 5.5rem; width: 100%; background: #ececf4;
+	} 
+	.zeoc .bk img{
+		width: 100%;
+		height: 4.44rem;
+		margin-top:0.56rem;
+	}
+	.alies{
+		display: -webkit-box;
+		padding:0.25rem 0rem;
+		background: #fff;
+		margin-bottom: 0.6rem;
+	}
+	.alies a{
+		 -webkit-box-flex:1; 
+		 color: #000;
+		 font-size: 0.52rem;
+		 text-decoration: none;
+		 display: block;
+		 border-right: 1px solid #dcdcdc;
+		 padding:0rem 1.2rem;
+		 height: 1.02rem;
+		 line-height: 1.02rem;
+		 text-align: center;
+		
+	}
+	
+	.alies .a_1{
+		background: url(img/icon4.png);
+		background-repeat: no-repeat;
+		background-size:0.77rem 0.76rem;
+		   background-position: 0.8rem 0.15rem;
+	}
+	.alies .a_2{
+		background: url(img/icon5.png);
+		background-repeat: no-repeat;
+		background-size:0.78rem 0.77rem ;
+			   background-position: 0.8rem 0.15rem;
+	}.alies .a_3{
+		background: url(img/icon6.png);
+		background-repeat: no-repeat;
+		background-size:0.77rem ;
+			   background-position: 0.8rem 0.15rem;
+	}
+	.holm li{
+		display: -webkit-box;
+		height: 1.3rem;
+		padding:0 0.6rem;
+		line-height: 1.3rem;
+		background: #fff;
+		
+	}
+	.holm a{
+		width:0.28rem ;
+		height:1.3rem ;
+		text-decoration: none;
+		display: block;
+		background: url(img/icon7.png);
+		background-repeat:no-repeat ;
+		-webkit-box-flex:2; 
+		background-position: right center;
+		background-size: 0.28rem 0.48rem;
+		
+	}
+	.holm span{display: block; font-size: 0.46rem;	color: #585858; -webkit-box-flex:8; }
+	.botm_b{border-bottom: 1px solid #e4e4e4;}
+	.holm .bnm_m{ 
+		margin: 0.6rem 0; 
+
+	}
+	.holm .bnm_m a{
+		background:#fff url(img/btn.png);
+	    background-repeat:no-repeat ;
+	    background-size: 1.6rem 0.88rem;
+	    background-position: right center;
+	    display: block;
+	}
+	footer{
+		height: 1.8rem;
+		box-shadow: 0 0 3px 3px #ccc;
+		margin-top:4.28rem;
+		padding: 0.26rem 0;
+		background: #fff;
+	}
+	footer ul{
+		display: -webkit-box;
+		height: 0.8rem;
+	}
+	footer ul li{
+		-webkit-box-flex:1;
+		font-size: 0.4rem;
+		color:#707070;
+		width:1.4rem;
+		text-align: center;
+		height: 1rem;
+		padding-top: 1rem;
+	}
+	footer a{
+		
+		text-decoration: none; 
+		color: #545454;
+		 width:1.4rem;
+		 text-align: center;
+		 }
+	.fo_1 a{
+		background: url(img/icon8.png);
+		background-repeat:no-repeat ;
+		background-size: 0.82rem 0.82rem;
+		padding-top: 1rem;
+		/*background-position: 0.3rem 0;*/
+	}
+	.fo_2 a{
+		background: url(img/icon9.png);
+		background-repeat:no-repeat ;
+		background-size: 0.82rem 0.82rem;
+		padding-top: 1rem;
+		/*background-position: 0.3rem 0;*/
+	}
+	.fo_3 a{
+		background: url(img/icon10.png);
+		background-repeat:no-repeat ;
+		background-size: 0.82rem 0.82rem;
+		padding-top: 1rem;
+		background-position: 0.15rem 0;
+	}
+	.fo_4 a{
+		background: url(img/icon11.png);
+		background-repeat:no-repeat ;
+		background-size: 0.82rem 0.82rem;
+		padding-top: 1rem;
+		background-position: 0.35rem 0;
+	}
+</style>
+
+</head>
+
+<body>
+	<header>
+		<ul>
+			<li class="lie"><i></i><b>AT&T</b><span></span></li>
+			<li class="lkp"><b>9:12 AM</b></li>
+			<li class="lbn"><b>50%</b><i></i></li>
+		</ul>
+	</header>
+	<div class="heben">
+       <a href="jsvascript:">返回</a>
+       <h1>个人中心</h1>
+	</div>
+	<div class="zeoc">
+	    <div class="bk"><img src="img/bk.png"/></div>
+	</div>
+	<div class="alies">
+	  <a href="javascript:" class="a_1">订单</a>
+	  <a href="javascript:" class="a_2">收藏</a>
+	  <a href="javascript:" class="a_3">推荐</a>
+	</div>
+	<ul class="holm">
+	 <li class="botm_b"><span>修改个人资料</span><a href="javascript:"></a></li>
+	 <li><span>修改密码</span><a href="javascript:"></a></li>
+	 <li class="bnm_m"><span>声音推送通知</span><a href="javascript:"></a></li>
+	 <li class="botm_b"><span>猜你喜欢</span><a href="javascript:"></a></li>
+	 <li class="botm_b"><span>附近热门</span><a href="javascript:"></a></li>
+	 <li class="botm_b"><span>推荐商家</span><a href="javascript:"></a></li>
+	 <li ><span>设置</span><a href="javascript:"></a></li>
+	</ul>
+	
+	<footer>
+		<ul>
+			 <li class="fo_1"><a href="javasctipt:">首页</a></li>
+			 <li class="fo_2"><a href="javasctipt:">商家</a></li>
+			 <li class="fo_3"><a href="javasctipt:">购物车</a></li>
+			 <li class="fo_4"><a href="javasctipt:">个人中心</a></li>
+		</ul>
+	</footer>
+</body>
+</html>

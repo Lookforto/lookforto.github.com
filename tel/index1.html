@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+		(function(){
+				window.addEventListener('load',function(){
+					function setFont(){
+						document.documentElement.style.fontSize=document.documentElement.clientWidth/16+'px';
+					}
+					window.addEventListener('resize',setFont,false)
+					setFont();
+				},false)
+			})()  
+	    </script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta content="yes" name="apple-touch-fullscreen"/>
+		<meta charset="utf-8">
+		<title>Guokr</title>
+		<style>
+		 *{margin: 0;padding: 0;list-style: none;}
+		 body a{text-decoration: none;}
+		 html body{width: 100%; font-family: "微软雅黑"; margin-bottom: 1rem;}
+			.nav{
+				width: 100%;
+				height: 2.2rem;
+				background: #262626;
+				border-bottom: 0.1rem solid #49caac;
+				display: -webkit-box;
+			}
+			.cata{ 
+				-webkit-box-flex: 2; 
+				background: url(img1/icon0.png);
+			    background-repeat:no-repeat ;
+			    width: 1.675rem;
+			    height: 1.225rem;
+			    background-size:1.675rem 1.225rem;
+			    margin: 0.375rem;
+			} 
+			.catatie{ -webkit-box-flex: 2; font-size:1rem ;
+			  text-align: center; line-height: 2.2rem; color:#fff; font-weight: normal;
+			}
+			.cata2{ 
+				-webkit-box-flex: 4; 
+				 background: url(img1/icon1.png);
+			     background-repeat:no-repeat ;
+			     width: 1.6rem;
+			     height: 1.225rem;
+			     background-size:1.6rem 1.225rem;
+			     margin: 0.375rem;
+			     background-position: 2.5rem 0;
+				}
+				.loading{
+					height: 1.625rem;
+					background: #fafafa;
+					width:100%;
+					color:#888;
+					font-size: 0.65rem;
+					display: -webkit-box;
+					padding: 0.25rem 0.375rem ;
+					text-align: center;
+					line-height:1.625rem ;
+				}
+				.load{
+					-webkit-box-flex: 3;
+					border-right: 0.08rem solid #e6e6e6;
+					background: url(img1/icon2.png);
+					background-repeat:no-repeat ;
+					background-size: 1.475rem 1.475rem;
+					background-position: 0.6rem 0.1rem;
+					padding-left: 0.6rem;
+				}
+				.user{
+					-webkit-box-flex: 4;
+					background: url(img1/icon3.png);
+					background-repeat:no-repeat ;
+					background-size: 1.475rem 1.475rem;
+					background-position: 1.3rem 0.1rem;
+					padding-left: 0.6rem;
+					}
+					.reve{
+						width: 100%; height: 7.8rem;
+					}
+					.reve img {
+						width: 16rem; height: 7.8rem;
+					}
+					.ullis{
+						background: #fff;
+						color: #c1c1c1;
+						padding: 0 0.375rem;
+						
+					}
+					.ullis li a{
+						font-size: 0.75rem;
+						color: #343837;
+					}
+					.ullis li{
+						width: 100%;
+						height: 2.025rem;
+						border-bottom: 0.05rem solid #efefef;
+						line-height:2.025rem ;
+					}
+					.answers{
+						width: 100%;
+						height: 1.95rem;
+						background: #fafafa;
+						border-top: 0.1rem solid #57c0af;
+						display: -webkit-box;
+						padding:0 0.75rem;
+						line-height: 1.95rem;
+						border-bottom: 0.05rem solid #e1e1e1;
+					}
+					.answers h3{ -webkit-box-flex: 1; font-size: 0.75rem; font-weight: normal;}
+					.answers span{ 
+							-webkit-box-flex: 1; 
+							width: 1.5rem;
+							height: 1.6rem;
+							background: url(img1/icon4.png);
+							background-repeat:no-repeat ;
+							background-size: 1.5rem 1.5rem;
+							display: block;
+							background-position: 3.7rem 0.2rem;
+						}
+				.tab{
+					height: 16.875ram;
+					width: 100%;
+				}
+				.tab .btn a{ color:#3f3f3f;
+					   -webkit-box-flex: 1;
+					   text-align: center;
+					   font-size: 0.75rem;
+					   display: block;
+					 }
+				.tab .btn{ 
+					height: 2.1rem; 
+					width: 100%; border-bottom: 
+					0.05rem solid #eaeaea;
+				    display: -webkit-box;
+				    line-height: 2.1rem;
+				}
+				.active{ border-bottom: 0.2rem solid #d43553;}		
+				.count1{
+					padding:0 0.6rem;
+					height:14.75rem ;
+				}
+				.count1 li{ padding:0.3rem 0;}
+				.count1 a{
+					font-size: 0.75rem;
+					color:#373737;
+				}
+				.count1 p{
+					font-size: 0.75rem;
+					margin: 0.35rem 0;
+				}
+				.count1 .co_p{
+					 font-size: 0.425rem;
+					 color:#89888d;
+					 width: 8.075rem;
+					 height: 3.15rem;
+					 -webkit-box-flex: 1;
+					 padding: 0 0.6rem;
+					 }
+				 .bvn { display: -webkit-box;}
+				.bvn img{
+					 width:5.2rem ; height:3.725rem ; 
+					  margin-top:0.5rem;
+					 -webkit-box-flex: 1;
+				}
+		   .count>div{ display: none;}	
+		   .foor{
+		   	height: 3rem; width: 100$; background: #fafafa;  
+		   	border-top:0.05rem solid #e4e4e4; text-align: center;
+		   	line-height: 3rem;
+		   	border-top:0.05rem solid #ccc;
+		   }		
+		   .foor a{
+		   	 color: #86858a; font-size:0.75rem;
+		   	 background:url(img1/icon5.png) ;
+		   	 background-repeat:no-repeat ;
+		   	 background-size:1.475rem 1.475rem ;
+		   	 padding-left: 1.5rem;
+		   	 height: 3rem;
+		   	  width:4rem;
+		   	  display: block;
+		   	  background-position: 0 0.7rem;
+		   	  margin:0.1rem 0 0 5rem;
+		   	 }
+		   	 footer{
+		   	 	background: #262626;
+		   	 	height: 3.75rem;
+		   	 	border-top:0.1rem solid #4dcaa8;
+		   	 }
+		   	 
+		   	 	.fors{
+					height: 1.95rem;
+				
+					width:100%;
+					color:#888;
+					font-size: 0.65rem;
+					display: -webkit-box;
+					padding: 0.9rem 0.375rem ;
+					text-align: center;
+					line-height:1.625rem ;
+				}
+				.Pc{
+					-webkit-box-flex: 3;
+					border-right: 0.08rem solid #666;
+					background: url(img1/icon1.png);
+					background-repeat:no-repeat ;
+					background-size: 1.6rem 1.475rem;
+					background-position: 0.6rem 0.1rem;
+					padding-left: 0.6rem;
+				}
+				.tel{
+					-webkit-box-flex: 4;
+					background: url(img1/icon6.png);
+					background-repeat:no-repeat ;
+					background-size: 0.825rem 1.475rem;
+					background-position: 2rem 0.1rem;
+					padding-left: 0.6rem;
+					}
+		   	 
+		</style>
+		<script>
+			window.onload=function(){
+				var oBox = document.getElementById('box');
+				var  aBtn = oBox.children;
+				var oCunt = document.getElementById('div');
+				var aDiv = oCunt.children;
+				var oBox1 = document.getElementById('btn2');
+				var  aBtn1 = oBox1.children;
+				var oCunt1 = document.getElementById('div2');
+				var aDiv1 = oCunt1.children;
+	          function tab(btn,div){
+	          	 for(var i=0; i<btn.length; i++){
+				  (function(index){
+				  	 btn[i].onclick=function(){
+				   	  for(var j=0; j<btn.length; j++){
+				   	  	 div[j].style.display='none';
+				   	  	 btn[j].className='';
+				   	  }
+				   	  this.className="active";
+				   	  div[index].style.display='block';
+				     };
+				  })(i);
+				}
+	          }
+		    tab(aBtn,aDiv);		
+			 tab(aBtn1,aDiv1);	
+			 
+			 //返回顶部
+			 var oBtn_a = document.getElementById('btn_a');
+			 var timer = null;
+				 oBtn_a.onclick=function(){
+				 		clearInterval(timer);
+						var start = document.documentElement.scrollTop || document.body.scrollTop;
+						var dis = 0 - start;
+						var count = parseInt(1000/30);
+						var n = 0;
+						timer = setInterval(function(){
+							n++;
+							var a = 1-n/count;
+							var cur = start+dis * (1-a*a*a);
+							document.documentElement.scrollTop = document.body.scrollTop = cur;
+							if(n == count){
+								clearInterval(timer);	
+							}
+						},30);
+				 };
+			 
+			};
+			
+		</script>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="cata"></div>
+			<div class="catatie">Guokr.com</div>
+			<div class="cata2"></div>
+		</div> 
+		<div class="loading">
+		     <div class="load">
+		            用户登录
+		     </div>
+		     <div class="user">
+		             用户注册
+		     </div>
+		</div>
+		<div class="reve">
+		 <img src="img1/bk.png" />
+		</div>
+		<ul class="ullis">
+		  <li><a href="javascript:">运动出点汗，更好来谈判</a></li>
+		  <li><a href="javascript:">关掉“旧”习惯，本性不在难移</a></li>
+		  <li><a href="javascript:">男女搭配，谈判不累</a></li>
+		  <li><a href="javascript:">运动出点汗，更好来谈判</a></li>
+		  <li><a href="javascript:">有7000多种语言，就有7000多种..</a></li>
+		  <li><a href="javascript:">运动出点汗，更好来谈判</a></li>
+		  <li><a href="javascript:">久坐杀精，今天你坐了多久</a></li>
+		</ul>
+		<div>
+		  <div class="answers">
+		    <h3>热门问答</h3>
+		    <span></span>
+		  </div>
+		  <div class="tab">
+		    <div class="btn" id="box">
+		       <a href="javascript:" class="active">科技</a>
+		       <a href="javascript:">生活</a>
+		       <a href="javascript:">人文</a>
+		       <a href="javascript:">自然</a>
+		    </div>
+		    <div class="count" id="div">
+		       <div class="count1" style="display: block;">
+		          <ul>
+		            <li>
+		              <p>如1果把探测器撞到彗星上会怎样？</p>
+		              <div class="bvn">
+		                <img src="img1/lis1.png" />
+		                <p class="co_p">装上去的事情，人类已经干过了，深度撞击号：（美国国防局于1月15号发布消息）我们的p_12号卫星..</p>
+		              </div>
+		            </li>
+		            <li><a href="javascript:"> 这个肥皂放入牛奶的效果是怎么产生的</a></li>
+		            <li><a href="javascript:"> 制造出全画幅的广告有意义吗</a></li>
+		            <li><a href="javascript:"> 磁场是运动的电厂吗</a></li>
+		            <li><a href="javascript:"> 什么函数能描述你的人生</a></li>
+		          </ul>
+		       </div>
+		       <div class="count1">
+		          <ul>
+		            <li>
+		              <p>这是第二个得到的上会怎样？</p>
+		              <div class="bvn">
+		                <img src="img1/lis1.png" />
+		                <p class="co_p">装上去的事情，人类已经干过了，深度撞击号：（美国国防局于1月15号发布消息）我们的p_12号卫星..</p>
+		              </div>
+		            </li>
+		            <li><a href="javascript:"> 这个肥皂放入牛奶的效果是怎么产生的</a></li>
+		            <li><a href="javascript:"> 制造出全画幅的广告有意义吗</a></li>
+		            <li><a href="javascript:"> 磁场是运动的电厂吗</a></li>
+		            <li><a href="javascript:"> 什么函数能描述你的人生</a></li>
+		          </ul>
+		       </div>
+		       <div class="count1">
+		          <ul>
+		            <li>
+		              <p>这是第三个得到的上会怎样？</p>
+		              <div class="bvn">
+		                <img src="img1/lis1.png" />
+		                <p class="co_p">装上去的事情，人类已经干过了，深度撞击号：（美国国防局于1月15号发布消息）我们的p_12号卫星..</p>
+		              </div>
+		            </li>
+		            <li><a href="javascript:"> 这个肥皂放入牛奶的效果是怎么产生的</a></li>
+		            <li><a href="javascript:"> 制造出全画幅的广告有意义吗</a></li>
+		            <li><a href="javascript:"> 磁场是运动的电厂吗</a></li>
+		            <li><a href="javascript:"> 什么函数能描述你的人生</a></li>
+		          </ul>
+		       </div>
+		       <div class="count1">
+		          <ul>
+		            <li>
+		              <p>这是第四个得到的上会怎样？</p>
+		              <div class="bvn">
+		                <img src="img1/lis1.png" />
+		                <p class="co_p">装上去的事情，人类已经干过了，深度撞击号：（美国国防局于1月15号发布消息）我们的p_12号卫星..</p>
+		              </div>
+		            </li>
+		            <li><a href="javascript:"> 这个肥皂放入牛奶的效果是怎么产生的</a></li>
+		            <li><a href="javascript:"> 制造出全画幅的广告有意义吗</a></li>
+		            <li><a href="javascript:"> 磁场是运动的电厂吗</a></li>
+		            <li><a href="javascript:"> 什么函数能描述你的人生</a></li>
+		          </ul>
+		       </div>
+		    </div>
+		  </div>
+		</div>
+		<div>
+		  <div class="answers">
+		    <h3>小组热帖</h3>
+		    <span></span>
+		  </div>
+		  <div class="tab">
+		    <div class="btn" id="btn2">
+		       <a href="javascript:" class="active">科技</a>
+		       <a href="javascript:">生活</a>
+		       <a href="javascript:">人文</a>
+		       <a href="javascript:">娱乐</a>
+		    </div>
+		    <div class="count" id="div2">
+		       <div class="count1" style="display: block;">
+		          <ul>
+		            <li>
+		              <p>如果把探测器撞到彗星上会怎样？</p>
+		              <div class="bvn">
+		                <img src="img1/lis2.png" />
+		                <p class="co_p">装上去的事情，人类已经干过了，深度撞击号：（美国国防局于1月15号发布消息）我们的p_12号卫星..</p>
+		              </div>
+		            </li>
+		            <li><a href="javascript:"> 这个肥皂放入牛奶的效果是怎么产生的</a></li>
+		            <li><a href="javascript:"> 制造出全画幅的广告有意义吗</a></li>
+		            <li><a href="javascript:"> 磁场是运动的电厂吗</a></li>
+		            <li><a href="javascript:"> 什么函数能描述你的人生</a></li>
+		          </ul>
+		       </div>
+		       <div class="count1">
+		          <ul>
+		            <li>
+		              <p>这是第二个得到的上会怎样？</p>
+		              <div class="bvn">
+		                <img src="img1/lis1.png" />
+		                <p class="co_p">装上去的事情，人类已经干过了，深度撞击号：（美国国防局于1月15号发布消息）我们的p_12号卫星..</p>
+		              </div>
+		            </li>
+		            <li><a href="javascript:"> 这个肥皂放入牛奶的效果是怎么产生的</a></li>
+		            <li><a href="javascript:"> 制造出全画幅的广告有意义吗</a></li>
+		            <li><a href="javascript:"> 磁场是运动的电厂吗</a></li>
+		            <li><a href="javascript:"> 什么函数能描述你的人生</a></li>
+		          </ul>
+		       </div>
+		       <div class="count1">
+		          <ul>
+		            <li>
+		              <p>这是第三个得到的上会怎样？</p>
+		              <div class="bvn">
+		                <img src="img1/lis1.png" />
+		                <p class="co_p">装上去的事情，人类已经干过了，深度撞击号：（美国国防局于1月15号发布消息）我们的p_12号卫星..</p>
+		              </div>
+		            </li>
+		            <li><a href="javascript:"> 这个肥皂放入牛奶的效果是怎么产生的</a></li>
+		            <li><a href="javascript:"> 制造出全画幅的广告有意义吗</a></li>
+		            <li><a href="javascript:"> 磁场是运动的电厂吗</a></li>
+		            <li><a href="javascript:"> 什么函数能描述你的人生</a></li>
+		          </ul>
+		       </div>
+		       <div class="count1">
+		          <ul>
+		            <li>
+		              <p>这是第四个得到的上会怎样？</p>
+		              <div class="bvn">
+		                <img src="img1/lis1.png" />
+		                <p class="co_p">装上去的事情，人类已经干过了，深度撞击号：（美国国防局于1月15号发布消息）我们的p_12号卫星..</p>
+		              </div>
+		            </li>
+		            <li><a href="javascript:"> 这个肥皂放入牛奶的效果是怎么产生的</a></li>
+		            <li><a href="javascript:"> 制造出全画幅的广告有意义吗</a></li>
+		            <li><a href="javascript:"> 磁场是运动的电厂吗</a></li>
+		            <li><a href="javascript:"> 什么函数能描述你的人生</a></li>
+		          </ul>
+		       </div>
+		    </div>
+		  </div>
+		</div>
+	   <div class="foor">
+	     <a href="javascript:" id="btn_a">回到顶部</a>
+	   </div>
+	 <footer>
+	     <div class="fors">
+		     <div class="Pc">
+		         PC版
+		     </div>
+		     <div class="tel">
+		                  移动应用
+		     </div>
+		</div>
+	 </footer>
+	
+	</body>
+</html>
+
+
+
+
+
