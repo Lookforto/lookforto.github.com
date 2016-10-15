@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>弹出层效果</title>
+    <style>
+      *{margin: 0; padding: 0;}
+      body{height: 1000px;}
+      .box{ opacity: .6; filter: alpha(opacity=60) ; background: #000; 
+        position:absolute; left:0; top:0; z-index: 100;}
+      .loading{ width:300px; height: 200px; background: #ccc; position: fixed; left: 50%; 
+        margin-left: -150px; z-index: 101;}
+      span{width:30px; height: 20px; background: #f00; color: #fff; line-height: 20px; text-align: center; }
+    </style>
+    <script type="text/javascript" src="jquery-1.7.2.js"></script>
+    <script>
+         $(function(){
+           $('#load').on('click',function(){
+              var oBox = $('<div>');
+              oBox.addClass('box');
+              var scrW = document.documentElement.scrollWidth;
+              var scrH = document.documentElement.scrollHeight;
+              oBox.css('width',scrW);
+              oBox.css('height',scrH);
+              oBox.appendTo($('body'));
+              var oLoad = $('<div>');
+              oLoad.addClass('loading');
+              oLoad.html('<input type="button" value="关闭" id="close">');
+              oLoad.appendTo($('body'));
+              var oClh = document.documentElement.clientHeight;
+
+              oLoad.css('top',(oClh-oLoad.height())/2);
+              $('#close').on('click',function(){
+                oLoad.remove();
+                oBox.remove();
+              });
+           })
+         })
+    </script>
+  </head>
+  <body>
+    <input type="button" value="登录" id="load">
+    <!-- <div class="box"></div>
+    <div class="loading">
+      <input type="button" value="关闭" id="close">
+    </div> -->
+  </body>
+</html>

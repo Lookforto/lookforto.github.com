@@ -1,0 +1,1920 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>练习本</title>
+<link rel="stylesheet" href="base.css"/>
+<style>
+*{margin:0; padding:0; font-family:"微软雅黑";}
+.box li{
+     float:left;
+	 width:100px;
+	 height:25px;
+	 background:#ccc;
+	 list-style:none;
+	 margin-left:15px;
+	 position:relative;
+	}
+ .box a:hover{background:red; color:#fff; transition:color 1s; transition:background 1s;}
+ .box li a{width:100px; height:25px; display:block; text-align:center;}
+ .box p{
+	width:100px;
+	height:100px;
+	border:1px solid #ccc;
+	border-radius:10px;
+	font-size:14px;
+	overflow:hidden;
+	color:#609;
+	background:rgba(0,0,0,.3);
+	margin-top:10px;
+	position:absolute;
+	top:18px;
+	left:0px;
+	display:none;
+   }
+   /*1*/
+ li { list-style: none; }
+.calendar { width: 210px; float:right; padding: 10px 10px 20px 20px; background: #eae9e9; }
+.calendar ul { width: 210px; overflow: hidden; padding-bottom: 10px; }
+.calendar li { float: left; width: 58px; height: 54px; margin: 10px 10px 0 0; border: 1px solid #fff; background: #424242; color: #fff; text-align: center; cursor: pointer; }
+.calendar li h2 { font-size: 20px; padding-top: 5px; }
+.calendar li p { font-size: 14px; }
+
+.calendar .active { border: 1px solid #424242; background: #fff; color: #e84a7e; }
+.calendar .active h2 { }
+.calendar .active p { font-weight: bold; }
+
+.calendar .text { width: 178px; padding: 0 10px 10px; border: 1px solid #fff; padding-top: 10px; background: #f1f1f1; color: #555; }
+.calendar .text h2 {font-size: 14px; margin-bottom: 10px; }
+.calendar .text p { font-size: 12px; line-height: 18px; }
+ /* 2 日历*/
+ .div{width:300px; padding-top:130px;  }
+ .div input{margin-left:15px;}
+/* 选项卡*/
+#wrap,#wrap1{margin-top:10px; width:210px;}
+#wrap div,#wrap1 div{
+	width: 200px;
+	height: 100px;
+	border: #ccc 1px solid;
+	display: none;
+}
+.active{
+	background: red;
+	color: #fff;
+}
+.on{background:blue;color:#3CF;}
+#wrap .show,#wrap1 .show{display:block;}
+
+.divq{width:100px; height:300px; border:1px solid #ccc; margin:40px;}
+.odd{background:blue;}
+.even{background:#CF6;}
+.divq li{
+	height:20px;
+	}
+.bose{width:200px; height:100px; border: 1px dashed #ccc; margin-bottom:20px; }
+.txt{border:1px solid #00C;}
+#btns1{margin:20px;}
+ #btns1 i{width: 16px; height: 15px; background: url(img/no.gif);float: left;}
+  #btns1 b{float: left;}
+  .evec{margin-top:20px;}
+  .evec a { width:100px; height:30px; border-radius:10px; text-align: center; float:left; background:#606; line-height:30px; color:#fff; }
+  .evec li{ width:50px; height:50px; border-radius:10px; background:blue; line-height:50px; text-align:center; color:#fff; font-weight:bold; float:left; margin-right:15px; font-size:18px;}
+  #see{ margin:20px;}
+  #txt8{ border:1px solid #36C; float:left; width:130px; height:30px; border-radius:10px;}
+  #see a{width:50px; height:30px; border-radius:10px; text-align: center; float:left; background:#606; line-height:30px; color:#fff;}
+  .box4{ width:300px; height:70px; border:1px solid #C30; margin:100px 20px; padding:20px 30px; border-radius:10px;}
+  .box4 p{ background:#66F; font-style:italic; font-size:20px; display:none;}
+/*图片时钟*/
+.imgclock{
+	  width:600px; height:100px; border:2px solid #F00; position: absolute; left:440px;
+	  top:170px; padding:10px 30px;
+	  background:url(images/bg.png);
+   }
+   .imgclock img{ margin-left:10px;}
+   .box9{ width:450px; height:50px; text-align:center; line-height:50px; background:#000;}
+   .box9 p{color:#fff; font-weight:bold; }
+   .qqct{ width:300px; height:308px; overflow:hidden; position:relative; border:1px solid #ccc; margin:30px 0 0 100px;}
+   .qqct img{ position:absolute;top:-100px; left:0; }
+   .s1{position: absolute; top:0; left:0; width:300px; height:100px; z-index:5; }
+   .s2{position: absolute; bottom:0; left:0; width:300px; height:100px; z-index:5;}
+ .star{ width:200px; height:50px; margin:20px 0 0 30px;}
+ #ul1 li{ width:27px; height:27px; background:url(img/star.gif) no-repeat; float:left;}
+ #ul1 li.on{ background:url(img/star.gif) no-repeat 0 -29px;}
+ #ul2 li{ width:100px; height:30px; line-height:30px; text-align:center; float:left; border:1px solid #000; background:#ccc; position:relative; border-radius:10px;}
+#ul2 li:hover{ background:#900; color:#fff; }
+.son{ position:absolute; left:0; top:30px; display:none;}
+.graSon{ display:none;position:absolute; left:100px; top:-1px;}
+.ul2{position: absolute; top:300px; left:500px;}
+  #div10{width: 100px;
+				   height: 100px;
+				   background: red;
+				   position: absolute;
+				   top: 0;
+				   left: 0;
+				   z-index: 2;
+			}
+			#div12{
+				   width: 100px;
+				   height: 100px;
+				   background: greenyellow;
+				   position: absolute;
+				   top: 300px;
+				   left: 300px;
+			}
+	 .qq10{ width:300px; height:300px; margin:20px 0 0 50px; position: relative;}
+	.bos{
+	  width:100px; height:100px; background:#0FC; 	float:left;
+	}
+	.bos1{
+	   width:100px; height:300px; margin-left:52px; background:#C9C; float:left;display:none;
+	 }
+	 #div14 {
+	width: 200px;
+	height: 200px;
+	background: #ccc;
+	position: relative;
+}
+
+#div15 {
+	width:40px;
+	height: 40px;
+	background: red;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+ .dive{
+   width:400px;
+   height:600px;
+   float:left;
+   position:relative;
+  }
+  .boxax{
+   width:450px;
+   height:600px;
+   border:1px solid #30C;
+   position: absolute;
+   top:500px;
+   left:570px;
+   overflow:hidden;
+  }
+  .dive1{
+    width:49px;
+	height:600px;
+	border-left:1px solid #30C;
+	float:left;
+	position: relative;
+  }
+  .bbn{
+	 width:49px;
+	 height:49px;
+	 background:#C93;
+	 display:block;
+	 position:absolute;
+   }
+   .work{ color:#6C6;  position:absolute;}
+  #txt9{ width:200px; height:40px; border:1px solid #F60; border-radius:10px; }
+  #btn21{ padding:10px;}
+  .clae{ background:#09F; color:#000; width:200px;}
+ /* 无缝轮播加按钮加载*/
+ .wu{
+   width:800px;
+   height:400px;
+   border-top:2px solid #000;
+   border-bottom:2px solid #000;
+   position:relative;
+   margin-left:300px;
+   overflow: hidden;
+    margin-top:40px ;
+ }
+ .ul34{ overflow:hidden; position:absolute; top:0; left:0; width:4800px; }
+ .ul34 img{ height:400px; width:800px; }
+ .ul34 li { float:left; }
+ .kl{ width:800px; height:50px;  position:absolute; bottom:-2px; left:0;  }
+ .kl span{ width:70px; height:30px; border-radius:10px; background:rgba(0,0,0,.5); float:left; margin-right:30px;line-height:30px; color:#FF3; text-align:center;  margin-top:10px; overflow:hidden; }
+ .kl i{background:#000; width:0; display:block; text-align:center; }
+ .tup{width:192px;  height:35px; border:1px solid #ccc; margin:30px 0 0 200px; position:relative;}
+ .tup ul {overflow: hidden;}
+ .tup li{ width:24px; height:35px; float:left; font-size:25px; line-height:35px; text-align:center; position:relative; }
+ .tup img{position:absolute; top:0; left:0;}
+ .vbvb{width:202px; height:2px; background:#fff; position: absolute; z-index:5; top:-1px; left:-1px;}
+ .vbvb1{width:202px; height:2px; background:#fff; position: absolute; bottom:-1px; left:-1px;}
+ .hetu{width:50px; height:100px; border:3px solid #ccc; line-height:100px; text-align:center; position:absolute; background:red; right:20px; z-index:10; display:none; }
+ /*分享到*/
+ #div122{width: 0; height: 200px; background: #ccc; position: absolute;top: 0; left: 0;}
+ #ap{width: 30px; height: 70px;position: absolute;top: 50%; right: -30px;color:#fff;
+ padding-top: 20px; background: green;}
+ .fiu{position: relative;}
+ /*多图片展示*/
+ .vmvm{
+	 width: 369px;
+	 height: 430px;
+	 position:absolute;
+	 top:1197px;
+	 left:650px;
+   }
+ #box30 {
+	width: 366px;
+	height: 366px;
+	border: #000 1px solid;
+	padding: 0;
+	margin: 50px auto;
+	position:relative;
+}
+#box30 li{
+	width: 100px;
+	height: 100px;
+	border: #999 1px solid;
+	background:#ccc;
+	float:left;
+	list-style:none;
+	margin:10px;
+}
+#box30 .red{background:red; border-radius:15px; }
+.bbos{
+    width:1000px;
+	height:600px;
+	border:3px solid #000;
+	margin:20px auto;
+  }
+  #ooul{position:relative;}
+  #ooul li{width:50px; height:50px; position:absolute; left:0; top:0;}
+  /*手风琴*/
+  .shou2{
+     width:1000px;
+	 height:500px;
+	 margin:30px auto;
+	 border-top:3px solid #000;
+	 border-bottom:5px solid #000;
+	 position:relative;
+	 overflow:hidden;
+  }
+  .shou2 img{
+	  width:1000px;
+	  height:500px;
+	 }
+  .shou2 li{ position: absolute;top:0;}
+  /*分步运动*/
+  .div90 div{
+      background:red;
+	  height:50px;
+	  width:10px;
+	  margin-top:20px;
+	}
+  #box23{
+	width: 600px;
+	height: 300px;
+	margin: -750px auto;
+	border: #000 1px solid;
+	position:relative;
+
+}
+
+#box23 ol {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	z-index:99;
+}
+
+#box23 ol li{
+	width:30px;
+	height: 30px;
+	border-radius:50%;
+	background:#ccc;
+	float: left;
+	margin-right: 5px;
+}
+
+#box23 .active2{
+	background: red;
+}
+
+#box23 ul{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index:1;
+	height: 300px;
+	width: 600px;
+}
+
+#box23 ul li{
+	width: 600px;
+	height: 300px;
+	float: left;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#box23 ul li img {
+	width: 600px;
+	height: 300px;
+}
+ /*分步运动显示字*/
+ .div36{
+    width:800px;
+	height:200px;
+	border:2px solid #000;
+	margin:20px auto;
+	position:absolute;
+	top:2000px;
+	left:400px;
+  }
+  .div36{background:#000;}
+ .div36 span{ height:30px; width:30px; background:#000; color:#fff; font-weight:bold; line-height:30px; text-align:center; float:left; opacity:0;}
+ /*无缝滚动*/
+ .div_a{
+    height:300px;
+	width:1200px;
+	margin:1000px auto;
+	overflow:hidden;
+  }
+  .div_a img{
+	  width: 200px;
+	  height:200px;
+	}
+	.div_a input {
+      width:50px; height:20px; margin:0 10px;
+	}
+	.div_b{
+      width:1200px;
+	  height:260px;
+	  border-top:10px solid #000;
+	  border-bottom:10px solid #000;
+	  	position: relative;
+	}
+	.div_b ul{ height: 200px; margin-top:30px; position: absolute; left:0; top:0; overflow:hidden;}
+	.div_b li{ float:left;padding:0 20px;width: 200px; height: 200px;}
+  /*图片放大镜*/
+  .fagn{
+      width:650px;
+	  height:400px;
+	  margin:-600px auto;
+	  border:1px solid #000;
+	}
+  .box_n{
+	  width: 200px; height:200px; border:1px solid #000; float:left; margin-top:100px;
+	  position:relative;
+	  }
+   .box_n img{width:200px; height:200px; }
+   .box_m{ width: 400px; height:400px; border:1px solid #000; overflow:hidden; float:right; position:relative;}
+   .box_m img{position:absolute; top:0; left:0;}
+   .kuai{
+     width:50px; height:50px; background:rgba(0,0,0,.3); position:absolute;top:0;left:0;
+	}
+	/*右下角*/
+	.you{
+       width:100px;
+	   height:100px;
+	   background:red;
+	   position:absolute;
+	    bottom:0;
+	    right:0;
+	}
+	.huak{
+    width:1040px;
+	height:50px;
+	border:1px solid #000;
+	margin:0 auto;
+	position:relative;
+	position: absolute;
+	left:0; left:300px;
+
+  }
+  #hua a{padding:0 40px; text-align:center; line-height:50px; float:left; height:50px; z-index:99; position:relative;}
+  #mask{width:100px;background:#900; position:absolute; left:0; top:0; height:50px; opacity:.5;}
+  /*小案例*/
+/*   .box{
+	 width:120px;
+	 height:50px;
+	 border:1px solid #ccc;
+  }
+  .s1p{
+	 width:20px;
+	 height:60px;
+
+	 background:red;
+	 position:absolute;
+	 top:0;
+	 left:0;
+  }
+  .box2{
+	  width:20px;
+	  height:20px;
+	  position:relative;
+	  border:1px solid #ccc;
+	  overflow:hidden;
+	}*/
+	/*拖拽继承*/
+	.queeqw{
+		margin-top:900px;
+		width:1200px;
+		height:600px;
+		border:3px solid #000;
+		position:relative;
+	}
+   .box21{width:100px; height:100px; background:red;position:absolute;left:0;top:0;}
+   .box22{width:100px; height:100px; background:green;position:absolute;left:200px;top:0;}
+   .box23{width:100px; height:100px; background:blue;position:absolute;left:400px;top:0;}
+   .bord{width:100px; height:100px; border:3px solid #0C6; position: absolute; }
+</style>
+<script src="move-end.js"></script>
+<script>
+ window.onload=function(){
+
+	tab('box');
+	tab('box1');//简单重用
+	function tab(id){
+	   var oBox = document.getElementById(id);
+	   var aA = oBox.getElementsByTagName('a');
+	   var aP = oBox.getElementsByTagName('p');
+	   var timer=null;
+	   for(var i=0; i<aA.length; i++){
+		 (function(index){
+			 aP[i].onmouseover=aA[i].onmouseenter=function(){//事件连等
+				  clearTimeout(timer);
+				   for(var j=0;j<aA.length;j++){
+					 aP[j].style.display="none";
+					 }
+			     // this.className='box a:hover'; 用hover之后就不用控制按钮了
+				  aP[index].style.display="block";
+		       };
+			   aP[i].onmouseout=aA[i].onmouseleave=function(){
+				   clearTimeout(timer);
+				      timer=setTimeout(function(){
+					  aP[index].style.display="none";
+				   },300);
+		       };
+		  })(i);
+	    }
+	  }
+	  //1
+	 var oTab = document.getElementById('tab');
+	 var oHk = document.getElementById('hk');
+	 var aLi = oTab.getElementsByTagName('li');
+	 var arr=['春节','国庆节','妇女节','植树节','劳动节','儿童节','建军节','中秋节','教师节','国庆节','腊八节','双十二'];
+	 for(var i=0;i<aLi.length;i++){
+		 aLi[i].index=i;
+		 aLi[i].onmouseover=function(){
+			 for(var j=0; j<aLi.length;j++){
+				 aLi[j].className='';
+			  }
+			  this.className="active";
+			  oHk.innerHTML='<h2>'+(this.index+1)+'月活动</h2><p>'+arr[this.index]+'</p>';
+		 };
+	 }
+	 //2.日历
+	 var oIN = document.getElementById('in');
+	 var aINput = oIN.getElementsByTagName('input');
+	 aINput[0].onclick=function(){
+		if(this.checked==true){
+			  for(var i=1; i<aINput.length; i++){
+				 aINput[i].checked=true;
+			   }
+			   cunt=aINput.length-1;//当点击全选的时候下面的按钮是全选中的 cunt是按钮的个数减一
+		 }else{
+				 for(var i=1; i<aINput.length; i++){
+					 aINput[i].checked=false;
+				   }
+				   cunt=0;
+		 }
+	  };
+	  var cunt = 0;
+	  for(var i=1; i<aINput.length; i++){
+		  aINput[i].onclick=function(){
+			  if(this.checked==true){
+				  cunt++;
+			   }else{
+				   cunt--;
+				}
+				//alert(cunt)
+			  if(cunt==aINput.length-1){
+				  aINput[0].checked=true;
+			   }else{
+				   aINput[0].checked=false;
+			   }
+
+		  }
+	   }
+	 //3变态全选
+	  function tabs(json){
+		  json=json||{};
+		  json.even=json.even||'onclick';
+		  json.classN=json.classN||'active';
+		 var oWrap = document.getElementById(json.id);//父级
+		var aBtn = oWrap.getElementsByTagName(json.btn);//子级
+		var aDiv = oWrap.getElementsByTagName(json.div);//子级
+			for(var i = 0; i < aBtn.length; i++){
+				aBtn[i].index = i;//给所有的按钮加自定义属性index；
+				aBtn[i][json.even] = function(){
+					//alert(this.aaa);0,1,2
+					//1.先清空所有按钮身上的className；
+					for(var i = 0; i < aBtn.length; i++){
+						aBtn[i].className = '';
+						aDiv[i].className = '';
+					}
+					//2.给当前的按钮加选中状态；
+					this.className = json.classN;
+					//希望拿到数字；0,1,2
+					aDiv[this.index].className = 'show';
+				}
+			}
+		}
+
+	    tabs({
+		   id:'wrap',
+		   btn:'input',
+		   div:'div'
+		 });
+	  tabs({
+		   id:'wrap1',
+		   btn:'input',
+		   div:'div',
+		   even:'onmouseover',
+		   classN:'on'
+		 });
+	 //4隔行换色
+	 var oDivq = document.getElementById('divq');
+	 var oLi =  oDivq.getElementsByTagName('li');
+	 for(var i=0; i<oLi.length; i++){
+		 if(i%2){
+			 oLi[i].className = 'even';//偶数
+		 }else{
+			 oLi[i].className = 'odd';
+		 }
+	  }
+	  //5下拉改变样式
+	  var oTxt = document.getElementById('txt');
+	  var oBtnv = document.getElementById('btnv');
+	  var oBoxm = document.getElementById('boxm');
+	  var oS1 = document.getElementById('s1');
+	  //var arr=['blue'];
+	  oBtnv.onclick=function(){
+		 oBoxm.style[oS1.value]= oTxt.value||oTxt.value + 'px';
+		 if(oS1.value=='suiji'){
+			 switch(oTxt.value){
+				 case '蓝色':
+				 oBoxm.style.background='blue';
+				 break;
+				 case '红色':
+				 oBoxm.style.background='red';
+				 break;
+				 case '黑色':
+				 oBoxm.style.background='black';
+			  }
+		  }
+	  };
+	 // 加减框
+	 var oNe = document.getElementById('one');
+	 var oIne = oNe.getElementsByTagName('input');
+	 oIne[0].onclick=function(){
+		 oIne[1].value=parseInt(oIne[1].value)+1;//直接改变输入框的值
+	 };
+	 oIne[2].onclick=function(){
+		  oIne[1].value=parseInt(oIne[1].value)-1;
+	 };
+	 //按钮换图
+	 var oBtns1 = document.getElementById('btns1');
+	 var oDivb = oBtns1.getElementsByTagName('div');
+	 var oII = oBtns1.getElementsByTagName('i');
+	 for(var i=0;i<oDivb.length;i++){
+		 oDivb[i].index=i;
+	  oDivb[i].onclick=function(){
+		  for(var j=0; j<oDivb.length; j++){
+
+			  oII[j].style.background=' url(img/no.gif)';
+			}
+		 oII[this.index].style.background=' url(img/yes.gif)';
+	   };
+	 }
+	 //简易计算器
+	 var oFa = document.getElementById('fa');
+	 var oTxt3 = document.getElementById('txt3');
+	 var oTxt4 = document.getElementById('txt4');
+	 var oTxt5 = document.getElementById('txt5');
+	 var oBtn9 = document.getElementById('btn9');
+	 oBtn9.onclick=function(){
+	   	 //oTxt3.value
+		 switch(oFa.value){
+		    case '+':
+		   oTxt5.value=Number(oTxt3.value)+Number(oTxt4.value);
+			break;
+			 case '-':
+		   oTxt5.value=parseInt(oTxt3.value)-parseInt(oTxt4.value);
+			break;
+			 case '*':
+		   oTxt5.value=parseInt(oTxt3.value)*parseInt(oTxt4.value);
+			break;
+			 case '/':
+		   oTxt5.value=parseInt(oTxt3.value)/parseInt(oTxt4.value);
+		 }
+
+	 };
+	 //双色球
+	 var evec = document.getElementById('evec');
+	 var aLis = evec.getElementsByTagName('li');
+	 var aaA = evec.getElementsByTagName('a');
+	 function rud(n,m){
+		 return parseInt(Math.random()*(m-n)+n);
+	  }
+	  function toDou(n){
+		  return n<10?'0'+n:''+n;
+	 }
+	 function findInarr(a,arr){
+		 for(var i=0; i<arr.length; i++){
+		   if(a==arr[i]){
+			  return true;
+		   }
+		 }
+		 return false;
+	 }
+	 var timer2 = null;
+     function huan(){
+		     	 var arr12=[];
+		 while(arr12.length<6){
+			 var tea = toDou(rud(1,34));
+			 if(findInarr(tea,arr12)==false){
+				 arr12.push(tea);
+			  };
+		 }
+	//document.write(arr12) 会覆盖原有的东西
+	   for(var i=0; i<arr12.length; i++){
+		    aLis[i].innerHTML = arr12[i];
+	    }
+	  }
+	  aaA[0].onclick=function(){
+		  clearInterval(timer2);
+		   timer2 = setInterval(function(){
+			   huan();
+		   },30);
+	  };
+	  aaA[1].onclick=function(){
+		  clearInterval(timer2);
+	  };
+	 // 计时器
+	  var oSee = document.getElementById('see');
+	  var oTxt8 = document.getElementById('txt8');
+	  var oAaa = oSee.getElementsByTagName('a');
+	  var  s = 0;
+	  var timer0 = null;
+	  oAaa[0].onclick=function(){
+		  clearInterval(timer0);
+		 timer0 = setInterval(function(){
+			 s++;
+			 oTxt8.value=toDou(parseInt(s/3600)) +':'+toDou(parseInt((s%3600)/60))+':'+ toDou(parseInt(s%60));
+		  },100);
+	   };
+	  oAaa[1].onclick=function(){
+		  clearInterval(timer0);
+	   };
+	   //获取验证码
+	  huo();
+	  function huo(){
+		 var oBol = document.getElementById('bol');
+		 var oB = oBol.getElementsByTagName('b')[0];
+		 var oInoe = oBol.getElementsByTagName('input')[0];
+		 var oP1 = oBol.getElementsByTagName('p')[0];
+		 var timer8 = null;
+		 oInoe.onclick=function(){
+			 oP1.style.display="none";
+			 oInoe.disabled=true;
+			 oInoe.value='5秒后重新获取';
+		   	clearInterval(timer8);
+			timer8 = setInterval(function(){
+				oB.innerHTML--;
+				if(oB.innerHTML==0){
+				  oP1.style.display="block";
+				  oInoe.disabled=false;
+				  clearInterval(timer8);
+				  oInoe.value='点击获取验证码';
+				  oB.innerHTML=5;
+				}
+			 },1000);
+		 };
+	  }
+	  //图片时钟
+	  clocl();
+	 function clocl(){
+	   var oImgc1 = document.getElementById('imgc1');
+	   var oImgc2 = document.getElementById('imgc2');
+	   var aImg1 = oImgc1.getElementsByTagName('img');
+	   var aImg2 = oImgc2.getElementsByTagName('img');
+	    var timer13=null;
+		clearInterval(timer13);
+		timer13=setInterval(function(){
+		  aa();
+        },1000);
+
+		function aa(){
+			 var oDate = new Date();
+		   var N = oDate.getFullYear();
+		   var M = oDate.getMonth()+1;
+		   var D = oDate.getDate();
+		   var h = oDate.getHours();
+		   var m = oDate.getMinutes();
+		   var s = oDate.getSeconds();
+		   var week = oDate.getDay();
+		   var arr10 = ['seven','one','two','three','four','five','six'];
+
+		   var str1 = toDou(N)+':'+toDou(M)+':'+toDou(D)+':';
+		   var str2 = toDou(h)+':'+toDou(m)+':'+toDou(s)+':'+week;
+		   //把时间取出来拼接成字符串 用循环赋给给一个图片的src charAt 兼容低版本
+		   for(var i=0;i<aImg1.length; i++){
+			   if(str1[i]==':')continue;
+			   aImg1[i].src='images/'+str1.charAt(i)+'.png';
+			 }
+		   for(var i=0;i<aImg2.length; i++){
+			   if(str2[i]==':')continue;
+			   aImg2[i].src='images/'+str2.charAt(i)+'.png';
+			   if( i == aImg2.length-1){
+				  aImg2[i].src='images/'+arr10[str2.charAt(i)]+'.png';
+				}
+			 }
+		}
+
+	 }
+//倒计时
+	 dao();
+	 function dao(){
+		var oBox9 = document.getElementById('box9');
+		var oPP = oBox9.getElementsByTagName('p')[0];
+		var oDate = new Date();
+		oDate.setFullYear(2016,10,1);
+	    oDate.setHours(0,0,0,0);//设置时间
+
+		 var timer14=null;
+		  clearInterval(timer14);
+		   timer14=setInterval(function(){
+		     hh();
+          },1000);
+		function hh(){
+		  var iNow = new Date();
+		  var ms = oDate.getTime() - iNow.getTime();
+		  var s = ms/1000;
+		  var d = parseInt(s/86400);
+		  s=s%86400;
+		  var h = parseInt(s/3600);
+		  s=s%3600;
+		  var m = parseInt(s/60);
+		  s=parseInt(s%60);
+		  oPP.innerHTML='距离2016年9月1号还有'+toDou(d)+'天'+toDou(h)+'时'+toDou(m)+'分'+toDou(s)+'秒';
+		}
+		hh();
+	 }
+     /*qq长图*/
+    wqw();
+     function wqw(){
+	   var oqq = document.getElementById('qqw');
+	   var oSw = oqq.getElementsByTagName('span');
+	   var oqImg = oqq.getElementsByTagName('img')[0];
+	    var not = -100;
+		var timer01=null;
+	    oSw[0].onmouseover=function(){
+			clearInterval(timer01);
+			timer01=setInterval(function(){
+
+				if(not<=-460){clearInterval(timer01);}else{
+				not=not-5;
+				oqImg.style.top = not + 'px';
+				}
+			},30);
+		};
+		oSw[1].onmouseover=function(){
+			clearInterval(timer01);
+			timer01=setInterval(function(){
+				if(not>=0 ){clearInterval(timer01);}else{
+					not=not+5;
+					oqImg.style.top = not + 'px';
+					}
+			},30);
+		};
+		oSw[0].onmouseout=oSw[1].onmouseout=function(){
+		  	clearInterval(timer01);
+		};
+	 }
+	/*星星评分*/
+	star();
+	 function star(){
+	   var oUL1 = document.getElementById('ul1');
+	   var aLisq = oUL1.getElementsByTagName('li');
+	   for(var i=0; i<aLisq.length; i++){
+		   aLisq[i].index=i;
+		  aLisq[i].onmouseover=function(){
+			 for(var i=0;i<aLisq.length; i++){
+				 if(this.index>=i){//如果找不到i 不介意再循环一次
+					aLisq[i].className='on';
+				  } else{
+					  aLisq[i].className='';
+				  }
+			 }
+		  };
+	   }
+	 }
+	/*无限下拉菜单*/
+	xia();
+	function xia(){
+		var oUl2 = document.getElementById('ul2');
+		var aLi2 = oUl2.getElementsByTagName('li');
+		var timer11=null;
+		for(var i=0; i<aLi2.length;i++){
+		  aLi2[i].onmouseover=function(){
+			  clearTimeout(timer11);
+			 if(this.getElementsByTagName('ul')[0]){
+				//1 timer11=setTimeout(function(){alert(1)},2000);   1
+				this.getElementsByTagName('ul')[0].style.display='block'; //2
+				//要执行的的效果必须放到定时器里面 要不然 1和2 会同时进行 不会等1 做完 2 再执行
+			  }
+		  };
+		  aLi2[i].onmouseout=function(){
+			  clearTimeout(timer11);
+			 if(this.getElementsByTagName('ul')[0]){
+				// timer11=setTimeout(function(){},2000);
+				this.getElementsByTagName('ul')[0].style.display='none';
+			  }
+		  };
+	    }
+    }
+	/*碰撞检测*/
+	peng();
+	function collTest(obj1,obj2){//检测碰撞,obj1,obj2分别代表我们要拖拽检测两个物体;
+			var l1 = obj1.offsetLeft;
+			var t1 = obj1.offsetTop;
+			var r1 = obj1.offsetLeft + obj1.offsetWidth;
+			var b1 = obj1.offsetTop + obj1.offsetHeight;
+
+			var l2 = obj2.offsetLeft;
+			var t2 = obj2.offsetTop;
+			var r2 = obj2.offsetLeft + obj2.offsetWidth;
+			var b2 = obj2.offsetTop + obj2.offsetHeight;
+
+			if(r1 < l2 || b1 < t2 || l1 > r2 || t1  > b2){
+				return false;
+			}else{
+				return true;
+			}
+    }
+	function peng(){
+		var oDiv10 = document.getElementById('div10');
+		var oDiv12 = document.getElementById('div12');
+		//collTest(oDiv10,oDiv12);
+		oDiv10.onmousedown=function(ev){
+			var oEvent = ev || event;
+			var disX = oEvent.clientX - oDiv10.offsetLeft;
+			var disY = oEvent.clientY - oDiv10.offsetTop;
+			document.onmousemove=function(ev){
+				 var oEvent = ev || event;
+				 var l = oEvent.clientX - disX;
+				 var t = oEvent.clientY - disY;
+				 	//碰撞检测
+					if(collTest(oDiv10,oDiv12)){
+				         oDiv12.style.background = 'yellow';
+					}else{
+						oDiv12.style.background = 'green';
+					}
+					//
+				  if(l<0){
+					 l=0;
+					}else if(l>document.documentElement.clientWidth - oDiv10.offsetWidth){
+						l=document.documentElement.clientX - oDiv10.offsetWidth;
+				    }
+				  if(t<0){
+					 t=0;
+					}else if(t>document.documentElement.clientHeight-oDiv10.offsetHeight){
+						t=document.documentElement.clientY - oDiv10.offsetHeight;
+				    }
+
+			     oDiv10.style.left = l + 'px';
+				 oDiv10.style.top = t + 'px';
+			};
+			document.onmouseup=function(){
+				document.onmousemove=null;
+				document.onmouseup=null;
+				oDiv10.releaseCapture&&oDiv10.releaseCapture();
+			};
+			oDiv10.setCapture&&oDiv10.setCapture();
+			return false;
+		};
+	}
+	/*qqtoux*/
+	qqNa();
+	function qqNa(){
+	  var oQ = document.getElementById('qq10');
+	  var oQ1 = document.getElementById('qq11');
+	  var timer23 = null;
+	  oQ1.onmouseover=oQ.onmouseover=function(){
+		  clearTimeout(timer23);
+		  timer23 = setTimeout(function(){
+			 oQ1.style.display='block';
+		  },300);
+	   };
+	  oQ1.onmouseout=oQ.onmouseout=function(){
+		  clearTimeout(timer23);
+		  timer23 = setTimeout(function(){
+			 oQ1.style.display='none';
+		  },300);
+	   };
+	}
+	/*拖拽的用途 */
+	toto();
+	function toto(){
+		 var oDiv14 = document.getElementById('div14');
+		 var oDiv15 = document.getElementById('div15');
+
+		oDiv15.onmousedown = function(ev){
+			var oEvent = ev || event;
+			var downX = oEvent.clientX - oDiv15.offsetLeft;
+			var downY = oEvent.clientY - oDiv15.offsetTop;
+			document.onmousemove = function(ev){
+				var oEvent = ev || event;
+				var l = oEvent.clientX - downX;
+				var t = oEvent.clientY - downY ;
+				oDiv15.style.left = l + 'px';
+				oDiv15.style.top = t + 'px';
+				oDiv14.style.width = oDiv15.offsetLeft + oDiv15.offsetWidth + 'px';
+				oDiv14.style.height = oDiv15.offsetTop + oDiv15.offsetHeight + 'px';
+			}
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+				oDiv15.releaseCapture && oDiv15.releaseCapture();
+			}
+			oDiv15.setCapture && oDiv15.setCapture();
+			return false;
+		   }
+
+     }
+	/* 好看的滚动条*/
+	kll();
+	function kll(){
+	  var oBbn = document.getElementById('bbn');
+	  var oWork = document.getElementById('work');
+	  oBbn.onmousedown=function(ev){
+		     var oEvent = ev || event;
+			var disY = oEvent.clientY - oBbn.offsetTop;
+			document.onmousemove=function(ev){
+				 var oEvent = ev || event;
+				 var t = oEvent.clientY - disY;
+				  if(t<0){
+					 t=0;
+					}else if(t>oBbn.parentNode.offsetHeight - oBbn.offsetHeight){
+						t= oBbn.parentNode.offsetHeight - oBbn.offsetHeight;
+				    }
+				 var serch = t/(oBbn.parentNode.offsetHeight - oBbn.offsetHeight);
+				 //定义一个比例
+				 oWork.style.top=-serch*(oWork.offsetHeight - oWork.parentNode.offsetHeight)+ 'px';//
+				 oBbn.style.top = t + 'px';
+			};
+			document.onmouseup=function(){
+				document.onmousemove=null;
+				document.onmouseup=null;
+				oBbn.releaseCapture&&oBbn.releaseCapture();
+			};
+			oBbn.setCapture&&oBbn.setCapture();
+			return false;
+		  };
+	}//
+	/* 简易留言板*/
+	oop();
+	 function oop(){
+		var oId = document.getElementById('txt9');
+		var  obtn = document.getElementById('btn21');
+	    var aOu = document.getElementById('oou');
+		obtn.onclick=function(){
+		  var oLi = document.createElement('li');
+		  oLi.className = 'clae';
+		  if(oId.value!=''){
+		   oLi.innerHTML=oId.value+'<a href="javascript:;">删除</a>';
+		   oId.value='';
+		   }else{return;}
+		   if(aOu.children.length>0){
+			    aOu.inserBefor(oLi,aOu.children[0]);
+			}else{
+				aOu.appendChild(oLi);
+			}
+		    oLi.children[0].onclick=function(){
+			  aOu.removeChild(oLi);
+			};
+		};
+   }
+   /* 无缝轮播加按钮加载*/
+    wuwu();
+    function wuwu(){
+		var oul34 = document.getElementById('ul34');
+		var oKl = document.getElementById('kl');
+		var oEr = oKl.getElementsByTagName('span');
+		var oai = oKl.getElementsByTagName('i');
+		var iNoe=0;
+		function tuntun(){
+			move(oai[iNoe],{width:70},{time:1500,easeing:'linear',fn:function(){
+				  iNoe++;
+				  for(var i=0; i<oEr.length; i++){
+					  oai[i].style.width=0;
+				    }
+				   if(iNoe == oEr.length)iNoe = 0;
+				   move(oul34,{left:-iNoe*800},{time:1500,easeing:'linear',fn:function(){tuntun(); }})
+				}})
+		 }
+		tuntun();
+    }//
+	/*图片时钟*/
+	hhkl();
+	function hhkl(){
+		 var oBne = document.getElementById('bne');
+	     var aLim = oBne.getElementsByTagName('img');
+		 setInterval(ddf,1000);
+		 function ddf(){
+			 var oDate = new Date();
+			 var h = oDate.getHours();
+			 var m = oDate.getMinutes();
+			 var s = oDate.getSeconds();
+			 var str = toDou(h)+toDou(m)+toDou(s);
+			 for(var i=0; i<aLim.length; i++){
+				move(aLim[i],{top:-str.charAt(i)*35},{time:1000,easeing:'linear'})
+			 }
+		  }
+		 ddf();
+	}
+
+	/* 返回顶部*/
+	fanhui();
+	function fanhui(){
+		var ofangui = document.getElementById('fanhui');
+		var timer35 = null;
+		window.onscroll=function(){
+		  var onscr = document.documentElement.scrollTop || document.body.scrollTop;
+		  if(onscr>3000&&onscr<3500){ofangui.style.display='block';}
+		  	ofangui.onclick=function(){
+			 var onscrwe = document.documentElement.scrollTop || document.body.scrollTop;
+			  clearInterval(timer35);
+			       var dis = 0-onscrwe;
+				    var count = parseInt(1000/30);
+				    var n=0;
+				    timer35=setInterval(function(){
+				    	n++;
+				    	var a = 1 - n/count;
+				    	//1-n/count
+				    	var cur = onscrwe+dis*(1-a*a*a);
+				    	document.documentElement.scrollTop=document.body.scrollTop=cur;
+				    	if(n == count ){
+				    		clearInterval(timer35);
+				    	 }
+				    },30);
+			};
+		};
+    }
+	/*分享到*/
+	fenxing();
+	function fenxing(){
+	  var odiv122 = document.getElementById('div122');
+	  var oopa = document.getElementById('ap');
+	   odiv122.onmouseover=function(){
+		   move(odiv122,{width:200},{time:1500,easeing:'linear'})
+	   };
+	   odiv122.onmouseout=function(){
+		   move(odiv122,{width:0},{time:1500,easeing:'linear'})
+	   };
+	}
+	/*<!-- 轮播改透明-->*/
+	wuwu1();
+    function wuwu1(){
+		var oul35 = document.getElementById('ul35');
+		var ddd = oul35.getElementsByTagName('li');
+		var oKl1 = document.getElementById('kl1');
+		var oEr = oKl1.getElementsByTagName('span');
+		var oai = oKl1.getElementsByTagName('i');
+		var iNoe=0;
+        for(var i=0;i<oEr.length;i++){
+		  (function(index){
+			   oEr[i].onmouseover=function(){
+			     move(oul35,{left:-index*800},{time:500,easeing:'linear',fn:function(){
+					  move(ddd[index],{opacity:0.5},{time:500,easeing:'linear',fn:function(){move(ddd[index],{opacity:1},{time:500,easeing:'linear'})}});
+					 }});
+		      };
+		   })(i);
+		}
+    }//
+	/*多图片展示*/
+	;(function(){
+		 var box30 = document.getElementById('box30');
+		 var albo = box30.getElementsByTagName('li');
+		 var arr1 = [];
+		 for(var i=0; i<albo.length; i++){
+			   arr1[i]={
+				   left: albo[i].offsetLeft,
+			        top: albo[i].offsetTop
+				 }
+			 }//先用数组存一下
+
+		 for(var i=0; i<albo.length; i++){
+			 albo[i].style.position = 'absolute';
+			 albo[i].style.left=arr1[i].left + 'px';
+			 albo[i].style.top=arr1[i].top + 'px';
+			 albo[i].style.margin = 0;
+		  }
+		  var i=0;
+		 for(var i=0;i<albo.length;i++){
+		     albo[i].onmouseover=function(){
+				 this.className='red';
+			   	 move(this,{width:200,height:200,marginLeft:-50,marginTop:-50});
+			     this.style.zIndex = i++;
+			 };
+			 albo[i].onmouseout=function(){
+				 this.className='';
+			   	 move(this,{width:100,height:100,margin:0});
+			 };
+		}
+	 })();
+	/*许多div加拖拽*/
+	function rud(n,m){
+	  return parseInt(Math.random()*(m-n)+n);
+	}
+	;(function(){
+		  var oBBs = document.getElementById('ooul');
+		  for(var i=0; i<100; i++){//创建200个
+			 var aLis = document.createElement('li');
+			 aLis.style.background='rgb('+rud(0,256)+','+rud(0,256)+','+rud(0,256)+')';
+			 aLis.style.left=rud(0,950) + 'px';
+			 aLis.style.top=rud(0,550) + 'px';
+			 aLis.setAttribute('index','true');
+			 oBBs.appendChild(aLis);
+		  }
+
+		  //
+
+	oBBs.onmousedown = function(ev){
+		var oEvent = ev || event;
+		var oTarget = oEvent.target || oEvent.srcElement;
+		var disX = oEvent.clientX - oTarget.offsetLeft;
+		var disY = oEvent.clientY - oTarget.offsetTop;
+		document.onmousemove = function(ev){
+			var oEvent = ev || event;
+			var oTarget = oEvent.target || oEvent.srcElement;
+			var l = oEvent.clientX - disX;
+			var t = oEvent.clientY - disY;
+
+			oTarget.style.left = l + 'px';
+			oTarget.style.top = t + 'px';
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+			oTarget.releaseCapture && oTarget.releaseCapture();
+		}
+			oTarget.setCapture && oTarget.setCapture();
+			return false;
+	    }
+		  //
+	})();
+	/*手风琴*/
+	(function shso(){
+		var oshou = document.getElementById('shoud');
+		var ovbvb = document.getElementById('vbvb');
+		var ali = oshou.getElementsByTagName('li');
+		var w = 50;
+
+		for(var i=1; i<ali.length; i++){
+		  ali[i].style.left = ovbvb.offsetWidth-w*(ali.length - i) +'px';
+		}
+
+		for(var i=0; i<ali.length; i++){
+			ali[i].index = i;
+		   ali[i].onmouseover=function(){
+			  for(var i=0;i<ali.length; i++){//
+				   if(this.index>=i){
+					  move(ali[i],{left:i*w},{time:500});
+				    }else{
+					   move(ali[i],{left:ovbvb.offsetWidth-w*(ali.length - i)},{time:500});
+					}
+			   }
+		   };
+		}
+     })();
+	/*运动多个div*/
+	(function(){
+	   var oDiv90 = document.getElementById('div90');
+	   var oDiv9s = oDiv90.getElementsByTagName('div');
+
+		for(var i=0;i<oDiv9s.length; i++){
+		    oDiv9s[i].onmouseenter =function(){
+			    move(this,{width:100},{time:1000});
+		    };
+			oDiv9s[i].onmouseleave =function(){
+			    move(this,{width:10},{time:1000});
+		    };
+		 }
+     })();
+	/*透明切换*/
+	(function(){
+	   var 	obtnx23 = document.getElementById('btn23');
+	   var olks = obtnx23.getElementsByTagName('li');
+	   var 	obtnx24 = document.getElementById('div24');
+	   var olks1 = obtnx24.getElementsByTagName('li');
+	    for(var i=0; i<olks.length;i++){
+			olks[i].index = i;
+			olks[i].onmouseover=function(){
+			   for(var j=0;j<olks.length;j++){//每个li必须定位在一起
+				   olks[j].className='';//把div隐藏和显示改成透明度
+				    move(olks1[j],{opacity:0},{time:500});
+				}
+				this.className='active2';
+				move(olks1[this.index],{opacity:1},{time:500});
+			};
+		}
+
+	})();
+	/*分步运动显示字*/
+	;(function(){
+		var oDiv26=document.getElementById('div26');
+		var oBnbnm=document.getElementById('bnbnm');
+		var ian=0;
+		var str33='描述一个你遇到过的技术问题，你是如何解决的？这个问题很常见很不常见的问题？比如在网上根本搜不到解决方法的？是否有设计过通用的组最近在学什么？接下来半年你打算学习什么？2.做什么方面的事情最让你有成就感？需求设计？规划？具体开发？3.后续想做什么？3 年后你希望自己是什么水平？4.在之前做过的项目中';
+
+          function ddl(){
+			   		 for(var i=0; i<str33.length; i++){
+					var alise = document.createElement('span');
+					 alise.innerHTML = str33.charAt(i);
+					 oDiv26.appendChild(alise);
+					}
+					var timer334=null;
+					var offd = oDiv26.getElementsByTagName('span');
+					clearInterval(timer334)
+					var timer334=setInterval(function(){
+					  move(offd[ian],{opacity:1},{time:500})
+					  ian++;
+					  if(ian==offd.length){clearInterval(timer334)}
+					},30);
+			}
+			oBnbnm.onclick=function(){ddl(); oBnbnm.onclick=null};
+     })();
+	/*无缝轮播*/
+	;(function(){
+	  var oDiv_a = document.getElementById("div_a");
+	  var oDiv_b = document.getElementById("div_b");
+	  var oBtn_1 = oDiv_a.getElementsByTagName('input');
+	  var oUi_1 = oDiv_b.getElementsByTagName('ul')[0];
+	  var lio = oDiv_b.getElementsByTagName('li');
+	  oUi_1.innerHTML+=oUi_1.innerHTML;//设置ul的宽
+	   oUi_1.style.width=lio[0].offsetWidth*lio.length + 'px';
+	   var timer_a = null;
+	   var timer_b = null;
+	   var n=0;
+	  oBtn_1[0].onclick=function(){//
+	     clearInterval(timer_a);
+		  clearInterval(timer_b);
+		 var w =oUi_1.offsetWidth/2;
+		  timer_a = setInterval(function(){
+			   n-=10;
+			  oUi_1.style.left=(n%w-w)%w + 'px';
+		   },30);
+		// move(oUi_1,{left:-2380},{time:3300})
+	  };
+	    oBtn_1[1].onclick=function(){//
+		 clearInterval(timer_a);
+		  clearInterval(timer_b);
+		 var w =oUi_1.offsetWidth/2;
+		   timer_b = setInterval(function(){
+			   n+=10;
+			  oUi_1.style.left=(n%w-w)%w + 'px';
+		   },30);
+		// move(oUi_1,{left:-2380},{time:3300})
+	  };
+
+		 oBtn_1[2].onclick=function(){//
+		  clearInterval(timer_a);
+		   clearInterval(timer_b);
+		// move(oUi_1,{left:-2380},{time:3300})
+	  };
+	})();
+	/*图片放大镜*/
+	;(function(){
+	   var oKuai = document.getElementById('kuai');
+	    var oBox_n = document.getElementById('box_n');
+		var oBox_w = document.getElementById('box_w');
+         var oBig = document.getElementById('big');
+		  var oSamle = document.getElementById('big');
+		  oBox_w.onmouseover=function(){
+			  oKuai.style.display='block';
+			 };
+		  oBox_w.onmouseout=function(){
+			  oKuai.style.display='none';
+			 };
+		  oBox_w.onmousemove=function(ev){
+			  var oEvent = ev ||event ;
+			  oEvent.cancelBubble=true;
+			  var l1 = oEvent.clientX  -350 - oKuai.offsetWidth/2;
+			  var t2 = oEvent.clientY  -65 - oKuai.offsetHeight/2;
+			  document.title=l1
+			  oKuai.style.left = l1 + 'px';
+			  oKuai.style.top = t2 + 'px';
+
+		  oBig.style.top = -t2 * (oBig.offsetHeight-oBox_n.offsetHeight)/(oSamle.offsetHeight-oKuai.offsetHeight) + 'px';
+                oBig.style.left = -l1 * (oBig.offsetWidth-oBox_n.offsetWidth)/(oSamle.offsetWidth-oKuai.offsetWidth) + 'px';
+		   };
+	})();
+
+	/*滑块*/
+	      var speed=0;
+		  var timer=null;
+   function move2(obj,iTarget){
+		 timer= setInterval(function(){
+			  if(obj.offsetLeft>iTarget){
+				speed-=(obj.offsetLeft-iTarget)/5;
+				speed*=0.7;
+			   }else{
+			    speed +=(iTarget-obj.offsetLeft)/5;
+				speed*=0.7;
+			  }
+			  if(obj.offsetLeft>iTarget&&Math.abs(speed)<1){
+				  speed=0;
+				  clearInterval(timer);
+				  }
+			   obj.style.left=obj.offsetLeft+speed+'px';
+			},30);
+		};
+	;(function(){
+	  var oHua = document.getElementById('hua');
+	  var oMask = document.getElementById('mask');
+	  var oHaaa = oHua.getElementsByTagName('a');
+	  //alert(oHaaa.length)
+	  var bok = true;
+	  var ew = 0;
+	  for(var i=0; i<oHaaa.length; i++){
+		  oHaaa[i].index=i;
+		   oHaaa[i].onmouseenter=function(){
+			   clearInterval(timer);
+			   bok=false;
+
+			   move2(oMask,(this.index)*oHaaa[0].offsetWidth)
+		   };
+
+		    oHua.onmouseleave=function(){
+				 clearInterval(timer);
+				if(bok){
+				 }else{
+				    move(oMask,{left:0},{time:500});
+				 }
+		   };
+		    oHaaa[i].onclick=function(){
+			    ew=this.index;
+			    bok=true;
+			};
+		 }
+	})();
+	/*小案例*/
+	/*function wd(){
+	  	 var oBox11 = document.getElementById('box11');
+	 var oSp = document.getElementById('sop');
+	 var timer = null;
+	  var n = 0;
+	 oBox11.onmouseover=function(){
+		 clearInterval(timer);
+
+		 var timer=setInterval(function(){
+			 n--;
+			 if(n<-20){ clearInterval(timer);}
+			 oSp.style.top=n+'px';
+		  },10);
+	 };
+ oBox11.onmouseout = function(){
+		 clearInterval(timer);
+		 var timer=setInterval(function(){
+			 n++;
+			 if(n>0){ clearInterval(timer);}
+			 oSp.style.top=n+'px';
+		  },10);
+	 };
+	}
+	wd();*/
+	/*面向对象拖拽*/
+	;(function(){
+
+		function Drag(obj){
+			 if(!arguments.length)return;
+	       this.obj = obj;
+
+		   this.disX=0;
+		   this.disY=0;
+		   this.init();
+		}
+		Drag.prototype.init=function(){
+			 var self = this;
+	       this.obj.onmousedown=function(ev){
+			    self.down(ev);
+			document.onmousemove=function(ev){
+			    var oEvent = ev || event;
+				self.style.left = oEvent.clientX - self.disX + 'px';
+				self.style.top =oEvent.clientY - self.disY + 'px';
+			};
+			document.onmouseup=function(){
+				   self.up();
+			};
+			return false;
+		   };
+		};
+		Drag.prototype.down=function(ev){
+			   var self = this;
+			   var oEvent = ev || event;
+				self.disX = oEvent.clientX - self.offsetLeft;
+				self.disY = oEvent.clientY - self.offsetTop;
+		};
+		Drag.prototype.move=function(ev){
+
+		};
+		Drag.prototype.up=function(){
+		       document.onmousemove=null;
+				document.onmouseup=null;
+		};
+
+	 //继承 加范围
+	   function limitDrag(obj){
+		    Drag.call(this,obj);
+		  }
+	limitDrag.prototype = new Drag();
+  	limitDrag.prototype.constructor = limitDrag;
+	limitDrag.prototype.move=function(ev){
+		Drag.prototype.move.call(this,ev);
+		if(this.obj.offsetLeft < 0)this.obj.style.left = 0 ;
+		if(this.obj.offsetTop < 0)this.obj.style.top = 0 ;
+	}
+	 //
+	 var oDiv21 = document.getElementById('div21');
+	   new Drag(oDiv21)
+	   var oDiv22 = document.getElementById('div22');
+	   new Drag(oDiv22)
+	})();
+};
+</script>
+</head>
+
+<body style="height:8000px;">
+<div class="box" id="box" >
+  <ul>
+    <li>
+        <a herf="javascript:;">1</a>
+        <p>时光是琥珀 泪一滴滴 被反锁情书再不朽 也磨成沙青春的上游 白云飞走 苍狗与海鸥</p>
+    </li>
+    <li>
+        <a herf="javascript:;">2</a>
+        <p>时光是琥珀 泪一滴滴 被反锁情书再不朽 也磨成沙青春的上游 白云飞走 苍狗与海鸥</p>
+    </li>
+    <li>
+        <a herf="javascript:;">3</a>
+        <p>时光是琥珀 泪一滴滴 被反锁情书再不朽 也磨成沙青春的上游 白云飞走 苍狗与海鸥</p>
+    </li>
+  </ul>
+</div>
+<div class="box" id="box1" >
+  <ul>
+    <li>
+        <a herf="javascript:;">4</a>
+        <p>时光是琥珀 泪一滴滴 被反锁情书再不朽 也磨成沙青春的上游 白云飞走 苍狗与海鸥</p>
+    </li>
+    <li>
+        <a herf="javascript:;">5</a>
+        <p>时光是琥珀 泪一滴滴 被反锁情书再不朽 也磨成沙青春的上游 白云飞走 苍狗与海鸥</p>
+    </li>
+    <li>
+        <a herf="javascript:;">6</a>
+        <p>时光是琥珀 泪一滴滴 被反锁情书再不朽 也磨成沙青春的上游 白云飞走 苍狗与海鸥</p>
+    </li>
+  </ul>
+</div>
+<!--1-->
+<div id="tab" class="calendar">
+    <ul>
+        <li class="active"><h2>1</h2><p>JAN</p></li>
+        <li><h2>2</h2><p>FER</p></li>
+        <li><h2>3</h2><p>MAR</p></li>
+        <li><h2>4</h2><p>APR</p></li>
+        <li><h2>5</h2><p>MAY</p></li>
+        <li><h2>6</h2><p>JUN</p></li>
+        <li><h2>7</h2><p>JUL</p></li>
+        <li><h2>8</h2><p>AUG</p></li>
+        <li><h2>9</h2><p>SEP</p></li>
+        <li><h2>10</h2><p>OCT</p></li>
+        <li><h2>11</h2><p>NOV</p></li>
+        <li><h2>12</h2><p>DEC</p></li>
+    </ul>
+    <div class="text" id='hk'>
+        <h2>1月活动</h2>
+        <p>快过年了，大家可以商量着去哪玩吧～</p>
+    </div>
+</div>
+<!--/*2*/-->
+<div class="div" id="in">
+ 		<input type="checkbox" />
+		<hr />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+		<input type="checkbox" />
+</div>
+<!--选项卡合集-->
+<div id="wrap">
+	<input type="button" value="体育"  class="active"/>
+	<input type="button"  value="图片"/>
+	<input type="button"  value="专栏"/>
+    <div class="show">体育</div>
+    <div>图片</div>
+    <div>专栏</div>
+</div>
+<div id="wrap1">
+	<input type="button" value="体育"  class="on"/>
+	<input type="button"  value="图片"/>
+	<input type="button"  value="专栏"/>
+    <div class="show">体育</div>
+    <div>图片</div>
+    <div>专栏</div>
+</div>
+<!--隔行换色-->
+<div class="divq" id="divq">
+ <ul>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+ </ul>
+</div>
+<!--下拉改变样式-->
+<div class="bbb">
+ <select id="s1">
+   <option value="width">宽度</option>
+   <option value="height">高度</option>
+   <option value="background">背景</option>
+   <option value="display">display</option>
+   <option value="suiji">随机颜色</option>
+
+ </select>
+ <input type="text" class="txt" id="txt"/>
+ <input type="button" value="click" id="btnv"/>
+ <div class="bose" id="boxm"></div>
+</div>
+<!--加减匡-->
+<div id="one">
+     <input type="button" id="btn1" value="+" style="padding:0 10px;"/>
+     <input type="text" id="txt" style="border:1px solid #06F;" value="0"/>
+     <input type="button" id="btn2" value="-" style="padding:0 10px;"/>
+</div>
+<!--按钮换图-->
+<div id="btns1">
+ <div class="div1"><i></i><b>体育</b></div>
+ <div class="div1"><i></i><b>汉语</b></div>
+ <div class="div1"><i></i><b>前端</b></div>
+</div><br/><br/><br/>
+<!--简易计算器-->
+<div>
+ <input type="text" id="txt3" style="border:1px solid #06F;"/>
+ <select id="fa">
+      <option>+</option>
+      <option>-</option>
+      <option>*</option>
+      <option>/</option>
+ </select>
+ <input type="text" id="txt4"  style="border:1px solid #06F;"/>
+ <input type="button" value="=" id="btn9" style="padding:0 10px;" />
+ <input type="text" id="txt5" style="border:1px solid #06F;"/>
+</div>
+<!--双色球-->
+<div class="evec" id="evec">
+ <ul style="overflow:hidden;">
+      <li>￥</li>
+      <li>￥</li>
+      <li>￥</li>
+      <li>￥</li>
+      <li>￥</li>
+      <li>￥</li>
+ </ul>
+ <a href="javascript:;">开始</a>
+ <a href="javascript:;">停止</a>
+</div>
+<!--记时器-->
+<div id="see">
+  <input type="text" id="txt8"/>
+  <a href="javasctipt:;">开始</a>
+  <a href="javasctipt:;">暂停</a>
+</div>
+
+<!--获取验证码-->
+<div class="box4" id="bol" >
+   <b id="bb">5</b>
+   <input type="button" value="点击获取验证码" />
+  <p>我是验证码</p>
+ </div>
+ <!--图片时钟-->
+ <div class="imgclock" id="imgcl">
+     <div class="imgc" id="imgc1">
+        <img src='images/0.png'/>
+        <img src='images/0.png'/>
+        <img src='images/0.png'/>
+        <img src='images/0.png'/>
+         <img src="images/year.png" alt="year" />
+         <img src='images/0.png'/>
+        <img src='images/0.png'/>
+        <img src="images/month.png" alt="month" />
+        <img src='images/0.png'/>
+        <img src='images/0.png'/>
+        <img src="images/seven.png" alt="seven" />
+     </div><br />
+     <div id="imgc2">
+       <img src='images/0.png'/>
+        <img src='images/0.png'/>
+        <img src="images/sign.png" alt="sign" />
+        <img src='images/0.png'/>
+        <img src='images/0.png'/>
+        <img src="images/sign.png" alt="sign" />
+        <img src='images/0.png'/>
+        <img src='images/0.png'/>
+        <img class="pos2" src="images/week.png" alt="week" />
+        <img class="num2" src="images/one.png" alt="one" />
+     </div>
+ </div>
+ <!--倒计时-->
+ <div class="box9" id="box9">
+   <p></p>
+ </div>
+ <!--qq长图-->
+ <div class="qqct" id="qqw">
+    <img src="img/tu.jpg"/>
+   <span class="s1"></span>
+   <span class="s2"></span>
+ </div>
+ <!--星星评分-->
+ <div class="star">
+   <ul id="ul1">
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+   </ul>
+ </div>
+ <!--无限下拉菜单-->
+ <div class="ul2">
+ <ul id="ul2">
+	<li>首页</li>
+    <li>
+    	<span>公司简介</span>
+        <ul class="son">
+        	<li>大事记</li>
+            <li>
+            	<span>领导致辞</span>
+                <ul class="graSon">
+                	<li>
+                    	<span>2013年</span>
+                        <ul class="graSon">
+                        	<li>10月份</li>
+                            <li>9月份</li>
+                            <li>8月份</li>
+                        </ul>
+                    </li>
+                    <li>2012年</li>
+                </ul>
+            </li>
+            <li>企业文化</li>
+        </ul>
+    </li>
+    <li>联系我们</li>
+    <li>
+    	<span>产品展示</span>
+        <ul class="son">
+        	<li>康师傅</li>
+            <li>老谭</li>
+            <li>今麦郎</li>
+        </ul>
+    </li>
+</ul>
+ </div>
+ <!-- 拖拽更新文字 -->
+ <div class="boxax">
+   <div class="dive" id="dive">
+      <div class="work" id="work">
+         【环球时报综合报道 记者 邬宁宁】7月11日凌晨，留荷国际法学生学者联署南海仲裁案公开信的签名已达1000多人，各种媒体新闻报道的关注总量超过百万。彭芩萱和她的数十名伙伴是这封公开信的起草者和签名活动的发起者，她们还给这个活动确定了一个铿锵有力的口号：“全球联动，呼唤正义”。虽然12日才正式对外发布，这封由英文写就的公开信已经被全球各地的志愿者们陆续翻译成中文、荷文、阿拉伯文、俄文、法文、德文、西班牙文，对于公开信的签名征集也在如火如荼地进行。“(我们)甚至以邮件形式发给世界主要法学院的专家学者以及海牙国际组织的相关工作人员”，彭芩萱说。【环球时报综合报道 记者 邬宁宁        	【环球时报综合报道 记者 邬宁宁】7月11日凌晨，留荷国际法学生学者联署南海仲裁案公开信的签名已达1000多人，各种媒体新闻报道的关注总量超过百万。彭芩萱和她的数十名伙伴是这封公开信的起草者和签名活动的发起者，她们还给这个活动确定了一个铿锵有力的口号：“全球联动，呼唤正义”。虽然12日才正式对外发布，这封由英文写就的公开信已经被全球各地的志愿者们陆续翻译成中文、荷文、阿拉伯文、俄文、法文、德文、西班牙文，对于公开信的签名征集也在如火如荼地进行。“(我们)甚至以邮件形式发给世界主要法学院的专家学者以及海牙国际组织的相关工作人员”，彭芩萱说。【环球时报综合报道 记者 邬宁宁        	【环球时报综合报道 记者 邬宁宁】7月11日凌晨，留荷国际法学生学者联署南海仲裁案公开信的签名已达1000多人，各种媒体新闻报道的关注总量超过百万。彭芩萱和她的数十名伙伴是这封公开信的起草者和签名活动的发起者，她们还给这个活动确定了一个铿锵有力的口号：“全球联动，呼唤正义”。虽然12日才正式对外发布，这封由英文写就的公开信已经被全球各地的志愿者们陆续翻译成中文、荷文、阿拉伯文、俄文、法文、德文、西班牙文，对于公开信的签名征集也在如火如荼地进行。“(我们)甚至以邮件形式发给世界主要法学院的专家学者以及海牙国际组织的相关工作人员”，彭芩萱说。【环球时报综合报道 记者 邬宁宁        	【环球时报综合报道 记者 邬宁宁】7月11日凌晨，留荷国际法学生学者联署南海仲裁案公开信的签名已达1000多人，各种媒体新闻报道的关注总量超过百万。彭芩萱和她的数十名伙伴是这封公开信的起草者和签名活动的发起者，她们还给这个活动确定了一个铿锵有力的口号：“全球联动，呼唤正义”。虽然12日才正式对外发布，这封由英文写就的公开信已经被全球各地的志愿者们陆续翻译成中文、荷文、阿拉伯文、俄文、法文、德文、西班牙文，对于公开信的签名征集也在如火如荼地进行。“(我们)甚至以邮件形式发给世界主要法学院的专家学者以及海牙国际组织的相关工作人员”，彭芩萱说。【环球时报综合报道 记者 邬宁宁        	【环球时报综合报道 记者 邬宁宁】7月11日凌晨，留荷国际法学生学者联署南海仲裁案公开信的签名已达1000多人，各种媒体新闻报道的关注总量超过百万。彭芩萱和她的数十名伙伴是这封公开信的起草者和签名活动的发起者，她们还给这个活动确定了一个铿锵有力的口号：“全球联动，呼唤正义”。虽然12日才正式对外发布，这封由英文写就的公开信已经被全球各地的志愿者们陆续翻译成中文、荷文、阿拉伯文、俄文、法文、德文、西班牙文，对于公开信的签名征集也在如火如荼地进行。“(我们)甚至以邮件形式发给世界主要法学院的专家学者以及海牙国际组织的相关工作人员”，彭芩萱说。【环球时报综合报道 记者 邬宁宁        	【环球时报综合报道 记者 邬宁宁】7月11日凌晨，留荷国际法学生学者联署南海仲裁案公开信的签名已达1000多人，各种媒体新闻报道的关注总量超过百万。彭芩萱和她的数十名伙伴是这封公开信的起草者和签名活动的发起者，她们还给这个活动确定了一个铿锵有力的口号：“全球联动，呼唤正义”。虽然12日才正式对外发布，这封由英文写就的公开信已经被全球各地的志愿者们陆续翻译成中文、荷文、阿拉伯文、俄文、法文、德文、西班牙文，对于公开信的签名征集也在如火如荼地进行。“(我们)甚至以邮件形式发给世界主要法学院的专家学者以及海牙国际组织的相关工作人员”，彭芩萱说。【环球时报综合报道 记者 邬宁宁        	【环球时报综合报道 记者 邬宁宁】7月11日凌晨，留荷国际法学生学者联署南海仲裁案公开信的签名已达1000多人，各种媒体新闻报道的关注总量超过百万。彭芩萱和她的数十名伙伴是这封公开信的起草者和签名活动的发起者，她们还给这个活动确定了一个铿锵有力的口号：“全球联动，呼唤正义”。虽然12日才正式对外发布，这封由英文写就的公开信已经被全球各地的志愿者们陆续翻译成中文、荷文、阿拉伯文、俄文、法文、德文、西班牙文，对于公开信的签名征集也在如火如荼地进行。“(我们)甚至以邮件形式发给世界主要法学院的专家学者以及海牙国际组织的相关工作人员”，彭芩萱说。【环球时报综合报道 记者 邬宁宁        	【环球时报综合报道 记者 邬宁宁】7月11日凌晨，留荷国际法学生学者联署南海仲裁案公开信的签名已达1000多人，各种媒体新闻报道的关注总量超过百万。彭芩萱和她的数十名伙伴是这封公开信的起草者和签名活动的发起者，她们还给这个活动确定了一个铿锵有力的口号：“全球联动，呼唤正义”。虽然12日才正式对外发布，这封由英文写就的公开信已经被全球各地的志愿者们陆续翻译成中文、荷文、阿拉伯文、俄文、法文、德文、西班牙文，对于公开信的签名征集也在如火如荼地进行。“(我们)甚至以邮件形式发给世界主要法学院的专家学者以及海牙国际组织的相关工作人员”，彭芩萱说。【环球时报综合报道 记者 邬宁宁        	【环球时报综合报道 记者 邬宁宁】7月11日凌晨，留荷国际法学生学者联署南海仲裁案公开信的签名已达1000多人，各种媒体新闻报道的关注总量超过百万。彭芩萱和她的数十名伙伴是这封公开信的起草者和签名活动的发起者，她们还给这个活动确定了一个铿锵有力的口号：“全球联动，呼唤正义”。虽然12日才正式对外发布，这封由英文写就的公开信已经被全球各地的志愿者们陆续翻译成中文、荷文、阿拉伯文、俄文、法文、德文、西班牙文，对于公开信的签名征集也在如火如荼地进行。“(我们)甚至以邮件形式发给世界主要法学院的专家学者以及海牙国际组织的相关工作人员”，彭芩萱说。【环球时报综合报道 记者 邬宁宁        	【环球时报综合报道 记者 邬宁宁】7月11日凌晨，留荷国际法学生学者联署南海仲裁案公开信的签名已达1000多人，各种媒体新闻报道的关注总量超过百万。彭芩萱和她的数十名伙伴是这封公开信的起草者和签名活动的发起者，她们还给这个活动确定了一个铿锵有力的口号：“全球联动，呼唤正义”。虽然12日才正式对外发布，这封由英文写就的公开信已经被全球各地的志愿者们陆续翻译成中文、荷文、阿拉伯文、俄文、法文、德文、西班牙文，对于公开信的签名征集也在如火如荼地进行。“(我们)甚至以邮件形式发给世界主要法学院的专家学者以及海牙国际组织的相关工作人员”，彭芩萱说。【环球时报综合报道 记者 邬宁宁】
+      </div>
+   </div>
+   <div class="dive1" id="dive1">
+      <span class="bbn" id="bbn"></span>
+   </div>
+ </div>
+ <!--碰撞检测-->
+ <div id="div10"></div>
+ <div id="div12"></div>
+ <!--qq头像-->
+ <div class="qq10" >
+   <div class="bos" id="qq10">qq头像</div>
+   <div class="bos1" id="qq11">好友列表</div>
+ </div>
+ <!-- 拖拽的用途-->
+ <div >
+   <div id="div14">
+	<div id="div15"></div>
+   </div>
+ </div>
+ <!-- 简易留言板 -->
+ <div class="liu">
+   <input type="text" id="txt9" />
+   <input type="button" value="留言" id="btn21"/>
+   <ul id="oou">
+
+   </ul>
+ </div>
+ <!--无缝轮播加按钮加载-->
+ <div class="wu">
+     <ul class="ul34" id="ul34">
+       <li><a href="jsvascript:;"><img src="img/15.jpg"/></a></li>
+       <li><a href="jsvascript:;"><img src="img/16.jpg"/></a></li>
+       <li><a href="jsvascript:;"><img src="img/17.jpg"/></a></li>
+       <li><a href="jsvascript:;"><img src="img/22.jpg"/></a></li>
+       <li><a href="jsvascript:;"><img src="img/23.jpg"/></a></li>
+       <li><a href="jsvascript:;"><img src="img/24.jpg"/></a></li>
+     </ul>
+    <div class="kl" id="kl">
+       <span><i>1</i></span>
+       <span><i>2</i></span>
+       <span><i>3</i></span>
+       <span><i>4</i></span>
+       <span><i>5</i></span>
+       <span><i>6</i></span>
+    </div>
+ </div>
+ <!-- 图片时钟 -->
+ <div class="tup" >
+ <span class="vbvb"></span>
+   <ul id="bne">
+     <li><img src="img/num.png" /></li>
+     <li><img src="img/num.png" /></li>
+     <li>:</li>
+     <li><img src="img/num.png" /></li>
+     <li><img src="img/num.png" /></li>
+     <li>:</li>
+     <li><img src="img/num.png" /></li>
+     <li><img src="img/num.png" /></li>
+   </ul>
+   <span class="vbvb1"></span>
+ </div>
+ <!-- 返回顶部-->
+ <div class="hetu" id="fanhui">
+  返回顶部
+ </div>
+ <!--分享到-->
+ <div class="fiu">
+    <div id="div122">
+	  <span id="ap">分享到</span>
+    </div>
+ </div>
+ <!-- 轮播改透明-->
+ <div class="wu">
+     <ul class="ul34" id="ul35">
+       <li><a href="jsvascript:;"><img src="img/15.jpg"/></a></li>
+       <li><a href="jsvascript:;"><img src="img/16.jpg"/></a></li>
+       <li><a href="jsvascript:;"><img src="img/17.jpg"/></a></li>
+       <li><a href="jsvascript:;"><img src="img/22.jpg"/></a></li>
+       <li><a href="jsvascript:;"><img src="img/23.jpg"/></a></li>
+       <li><a href="jsvascript:;"><img src="img/24.jpg"/></a></li>
+     </ul>
+    <div class="kl" id="kl1">
+       <span><i>1</i></span>
+       <span><i>2</i></span>
+       <span><i>3</i></span>
+       <span><i>4</i></span>
+       <span><i>5</i></span>
+       <span><i>6</i></span>
+    </div>
+ </div>
+ <!--/*多图片展示*/-->
+ <div class="vmvm">
+   <ul id="box30">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+   </ul>
+ </div>
+ <!-- 许多div加拖拽-->
+ <div class="bbos" id="bbos">
+   <ul id="ooul"></ul>
+ </div>
+ <!--/*手风琴*/-->
+ <div class="shou2" id="shoud">
+    <ul id="vbvb">
+      <li><img src="img/15.jpg"/></li>
+      <li><img src="img/16.jpg"/></li>
+      <li><img src="img/17.jpg"/></li>
+      <li><img src="img/22.jpg"/></li>
+      <li><img src="img/23.jpg"/></li>
+      <li><img src="img/24.jpg"/></li>
+    </ul>
+ </div>
+ <!--/*运动多个div*/-->
+ <div class="div90" id="div90">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+ </div>
+ <!-- 透明切换-->
+ <div id="box23">
+	<ol id="btn23">
+    	<li class="active2"></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    </ol>
+    <ul id="div24">
+    	<li><img src="img/16.jpg"></li>
+    	<li><img src="img/15.jpg"></li>
+    	<li><img src="img/17.jpg"></li>
+    	<li><img src="img/23.jpg"></li>
+    </ul>
+</div>
+<!--/*分步运动显示字*/-->
+<div class="div36" id="div26">
+  <input type="button" value="点一下" id="bnbnm"/>
+</div>
+<!--无缝轮播-->
+<div class="div_a" >
+    <div id="div_a">
+      <input type="button" id="btn_a" value="向左走"/>
+      <input type="button" id="btn_b" value="向右走"/>
+      <input type="button" id="btn_c" value="暂停"/>
+    </div>
+    <div class="div_b" id="div_b">
+       <ul>
+          <li><img src="img/15.jpg"/></li>
+          <li><img src="img/16.jpg"/></li>
+          <li><img src="img/17.jpg"/></li>
+          <li><img src="img/22.jpg"/></li>
+          <li><img src="img/23.jpg"/></li>
+       </ul>
+    </div>
+</div>
+<!--图片放大镜-->
+<div class="fagn" id="box_n">
+    <div class="box_n" id="box_w">
+      <div class="kuai" id="kuai"></div>
+      <img src="img/877.jpg" id="samle"/>
+    </div>
+    <div class="box_m" >
+       <img src="img/877.jpg" id="big"/>
+    </div>
+</div>
+<div class="you">
+ 我是广告
+</div>
+<!--滑块导航-->
+<div class="huak" id="hua">
+  <a href="javascript:">首页</a>
+   <a href="javascript:">分页</a>
+   <a href="javascript:">分页</a>
+   <a href="javascript:">分页</a>
+   <a href="javascript:">分页</a>
+   <a href="javascript:">分也</a>
+    <a href="javascript:">夜夜</a>
+   <a href="javascript:">分页</a>
+   <a href="javascript:"></a>
+   <span id="mask"></span>
+</div>
+<!--小案例-->
+<!--/*/*<div class="box" id="box11">
+   <div class="box2">
+     <span class="sp1" id="sop">1<br/>2</span>
+
+   </div>
+</div>*/*/-->
+<!--拖拽继承-->
+<div class="queeqw" id="pare">
+ <div class="box21" id="div21">1</div>
+ <div class="box22" id="div22">2</div>
+ <div class="box23" id="div23">3</div>
+</div>
+</body>
+</html>

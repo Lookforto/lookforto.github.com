@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		padding:0;
+		margin:0;
+		list-style: none;
+	}
+	html,body{
+		height:100%;
+	}
+	body{
+		overflow: hidden;
+		background: #000;
+	}
+	ul{
+		position: absolute;
+		top:50%;
+		left:50%;
+		width:133px;
+		height:200px;
+		margin:-200px 0 0 -67px;
+		transform:perspective(1500px) rotateX(-15deg);
+		transform-style: preserve-3d;
+	}
+	ul li{
+		position: absolute;
+		top:0;
+		left:0;
+		width:133px;
+		height:200px;
+		border-radius: 10px;
+		box-shadow: 0px 0px 8px 4px #fff;
+		-webkit-box-reflect:below 20px linear-gradient(rgba(0,0,0,0) 40%,rgba(0,0,0,0.4));		
+	}
+	/* ul:hover li{
+		transform:perspective(1500px) rotateY(360deg) translateZ(300px);
+	} */
+	</style>
+	<script>
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var N=11;
+		//创建li
+		for(var i=0; i<N; i++){
+			var oLi=document.createElement('li');
+
+			oLi.style.transition='0.4s all linear '+(N-i)*200+'ms';
+
+			oLi.style.backgroundImage='url(img2/'+(i+1)+'.jpg)';
+			oBox.appendChild(oLi);
+
+			(function(obj,index){
+				setTimeout(function(){
+					obj.style.transform='perspective(1200px) rotateY('+360*index/N+'deg) translateZ(350px)';
+				},0)
+			})(oLi,i);
+		}
+		//键盘控制
+		var aLi=oBox.children;
+		var y=0;
+		var x=-15;
+		/*document.onkeydown=function(ev){
+			switch(ev.keyCode){
+				case 37:
+					y--;
+					break;
+				case 38:
+					x++;
+					break;
+				case 39:
+					y++;
+					break;
+				case 40:
+					x--;
+					break;
+			}
+			for (var i = 0; i < aLi.length; i++) {
+				aLi[i].style.transition='none';
+				aLi[i].style.transform='perspective(1200px) rotateY('+(360*i/N+y)+'deg) translateZ(350px)';
+			}
+			oBox.style.transform='perspective(1500px) rotateX('+x+'deg)';
+		};*/
+		//鼠标控制
+		var lastX=0;
+		var lastY=0;
+		var speedX=0;
+		var speedY=0;
+		var timer=null;
+		document.onmousedown=function(ev){
+			clearInterval(timer);
+			var disX=ev.clientX-y;
+			var disY=ev.clientY-x;
+			document.onmousemove=function(ev){
+				speedY=ev.clientX-lastX;
+				speedX=ev.clientY-lastY;
+
+				lastX=ev.clientX;
+				lastY=ev.clientY;
+				x=ev.clientY-disY;
+				y=ev.clientX-disX;
+				for (var i = 0; i < aLi.length; i++) {
+					aLi[i].style.transition='none';
+					aLi[i].style.transform='perspective(1200px) rotateY('+(360*i/N+y/4)+'deg) translateZ(350px)';
+				}
+				oBox.style.transform='perspective(1500px) rotateX('+(-x/4-15)+'deg)';
+			};
+			document.onmouseup=function(){
+				timer=setInterval(function(){
+					speedX*=0.95;
+					speedY*=0.95;
+					for (var i = 0; i < aLi.length; i++) {
+						aLi[i].style.transition='none';
+						aLi[i].style.transform='perspective(1200px) rotateY('+(360*i/N+y/4-speedY)+'deg) translateZ(350px)';
+					}
+					oBox.style.transform='perspective(1500px) rotateX('+(-(x+speedX)/4-15)+'deg)';
+					console.log(speedX)
+					if(Math.abs(speedX)<1 && Math.abs(speedY)<1){
+						clearInterval(timer)
+					}
+				},30)
+				document.onmouseup=null;
+				document.onmousemove=null;
+			};
+			return false;
+		}
+	};
+	</script>
+</head>
+<body>
+	<ul id="box">
+		<!-- <li></li> -->
+	</ul>
+</body>
+</html>

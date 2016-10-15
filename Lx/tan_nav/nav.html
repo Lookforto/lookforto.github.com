@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0px;
+				padding:0px;
+			}
+			ul{
+				width:574px;
+				background: #ccc;
+				margin:100px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			ul li{
+				list-style:none;
+				width:80px;
+				height:40px;
+				line-height: 40px;
+				text-align: center;
+				border:1px solid #000;
+				float:left;
+				position: relative;
+				z-index:2;
+			}
+			#mask{
+				position: absolute;
+				top:0px;
+				left:0px;
+				background: #399;
+				z-index:1;
+			}
+		</style>
+		<script>
+			var left=0;
+			var speed=0;
+			function move(obj,target){
+				clearInterval(obj.timer);
+				obj.timer=setInterval(function(){
+					speed+=(target-left)/5;
+					speed*=0.75;
+					left+=speed;
+					obj.style.left=left+'px';
+					if(Math.round(speed)==0&&Math.round(left)==target){
+						clearInterval(obj.timer);
+					}
+				},30);
+			}
+			
+			window.onload=function(){
+				var aLi=document.getElementsByTagName('li');
+				var oMask=document.getElementById("mask");
+				var iNow=0;
+				for(var i=0;i<aLi.length;i++){
+					(function(index){
+						aLi[i].onmouseover=function(){
+							move(oMask,index*aLi[0].offsetWidth);
+						};
+						aLi[i].onmouseout=function(){
+							move(oMask,iNow*aLi[0].offsetWidth);
+						};
+						aLi[i].onclick=function(){
+							iNow=index;
+						};
+					})(i)
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>首页</li>
+			<li>CSS课程</li>
+			<li>JS课程</li>
+			<li>HTML5课程</li>
+			<li>视频教程</li>
+			<li>课程案例</li>
+			<li>联系方式</li>
+			<li id="mask"></li>
+		</ul>
+	</body>
+</html>

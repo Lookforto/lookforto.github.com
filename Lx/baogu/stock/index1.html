@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进货单价格有变</title>
+    <link rel="stylesheet" href="css/demo.css" />
+    <link rel="stylesheet" href="css/fay.css" />
+</head>
+<script>
+//    $scope.br = false;
+//        $scope.br_1 = false;
+//        $scope.togo = function(){
+
+</script>
+<body>
+    <!--head-->
+    <div class="head">
+        <div class="w clearfix ">
+            <div class="fl hd-l">
+                <span>您好“贾云飞”</span>
+                <i></i>
+                <a href="javascript:;">退出</a>
+            </div>
+            <ul class="fr clearfix hd-r">
+                <li><a href="javascript:;">包谷首页</a></li>
+                <li class="center">
+                    <a href="javascript:;">会员中心</a>
+                    <b></b>
+                </li>
+                <li class="center">
+                    <span></span>
+                    <a href="javascript:;">进货单</a>
+                    <b></b>
+                </li>
+                <li class="center">
+                    <span class="bg1"></span>
+                    <a href="javascript:;">客服中心</a>
+                    <b></b>
+                </li>
+                <li>客服热线:<strong>400-106-8585</strong></li>
+            </ul>
+        </div>
+    </div>
+    <!--nav-->
+    <div class="nav">
+        <div class="w clearfix">
+            <div class="nav_in clearfix">
+                <div class="fl clearfix">
+                    <h1 class="fl">包谷</h1>
+                    <p class="fl">我的包谷</p>
+                </div>
+                <div class="nav_il fr">
+                    <a href="javascript:" class="active">下单</a>
+                    <a href="javascript:" >支付</a>
+                    <a href="javascript:">收货</a>
+                </div>
+            </div>
+            <a href="javascript:;" class="sy fl">首页&nbsp&nbsp&gt&gt;</a>
+            <a href="javascript:;" class="fl sy2">我的进货单</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="w">
+            <div class="buy">
+                <div class="starch">
+                    <div class="option clearfix">
+                        <span class="cur"></span>
+                        <a href="javascript:;">广东肇庆海星生物科技</a>
+                    </div>
+                    <div class="product">
+                        <div class="product_t clearfix">
+                            <div class="pro clearfix fl">
+                                <div class="pro_l clearfix fl">
+                                    <span class="cur fl {{class}}" ng-click="togo()"></span>
+                                    <a href="javascript:;" class="fl"><img src="img/pic.jpg" alt=""></a>
+                                    <i class="tuan"></i>
+                                </div>
+                                <div class="pro_r fl">
+                                    <a href="javascript:;">各种牛奶各种牛奶各种牛奶各种牛奶各种牛奶各种牛奶各种牛奶各种</a>
+                                    <p>品类 : 食品添加剂</p>
+                                    <div class="del clearfix">
+                                        <i></i>
+                                        <span>删除</span>
+                                        <i></i>
+                                        <span>移入收藏夹</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pro_num clearfix fl">
+                                <li class="num_one">
+                                    <p class="mon">原价 : <span>￥1,200.99</span></p>
+                                    <p class="mon1">团购价 : ￥<span>1,100.99</span></p>
+                                </li>
+                                <li>
+                                    <div class="numb_">
+                                        <input type="button" class="fl"/>
+                                        <span class="fl">1</span>
+                                        <input type="button" class="fr"/>
+                                    </div>
+                                    <p>订数不能小于起批量50</p>
+                                </li>
+                                <li class="num_two">
+                                    <p class="min">￥<span>7,666,200.99</span></p>
+                                    <p class="min1">已节省￥<span>306.89</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product_t clearfix product_t_one">
+                            <div class="pro clearfix fl">
+                                <div class="pro_l clearfix fl">
+                                    <span class="cur fl"></span>
+                                    <a href="javascript:;" class="fl"><img src="img/pic.jpg" alt=""></a>
+                                </div>
+                                <div class="pro_r fl">
+                                    <a href="javascript:;">各种牛奶各种牛奶各种牛奶各种牛</a>
+                                    <p>品类 : 食品添加剂</p>
+                                    <div class="del clearfix del_one">
+                                        <i></i>
+                                        <span>删除</span>
+                                        <i></i>
+                                        <span>移入收藏夹</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pro_num pro_num_one clearfix fl">
+                                <li class="num_one">
+                                    <p>1~24公斤 : ￥<span>1,100.99</span></p>
+                                </li>
+                                <li>
+                                    <div class="numb_">
+                                        <input type="button" class="fl"/>
+                                        <span class="fl">20</span>
+                                        <input type="button" class="fr"/>
+                                    </div>
+                                    <!--<p>订数不能小于起批量50</p>-->
+                                </li>
+                                <li class="num_two">
+                                    <p>￥200.99</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="starch">
+                    <div class="option clearfix">
+                        <span class="cur"></span>
+                        <a href="javascript:;">广东肇庆海星生物科技</a>
+                    </div>
+                    <div class="product">
+                        <div class="product_t clearfix">
+                            <div class="pro clearfix fl">
+                                <div class="pro_l clearfix fl">
+                                    <span class="cur fl"></span>
+                                    <a href="javascript:;" class="fl"><img src="img/pic.jpg" alt=""></a>
+                                    <i class="tuan"></i>
+                                </div>
+                                <div class="pro_r fl">
+                                    <a href="javascript:;">各种牛奶各种牛奶各种牛奶各种牛奶各种牛奶</a>
+                                    <p>品类 : 食品添加剂</p>
+                                    <div class="del clearfix">
+                                        <i></i>
+                                        <span>删除</span>
+                                        <i></i>
+                                        <span>移入收藏夹</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pro_num clearfix fl">
+                                <li class="num_one">
+                                    <p class="mon">原价 : ￥<span>1,200.99</span></p>
+                                    <p class="mon1">团购价 : ￥<span>1,100.99</span></p>
+                                </li>
+                                <li>
+                                    <div class="numb_">
+                                        <input type="button" class="fl"/>
+                                        <span class="fl">1</span>
+                                        <input type="button" class="fr"/>
+                                    </div>
+                                    <!--<p>订数不能小于起批量50</p>-->
+                                </li>
+                                <li class="num_two">
+                                    <p class="min">￥<span>7,666,200.99</span></p>
+                                    <p class="min1">已节省￥<span>306.89</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product_t clearfix product_t_one">
+                            <div class="pro clearfix fl">
+                                <div class="pro_l clearfix fl">
+                                    <span class="cur fl"></span>
+                                    <a href="javascript:;" class="fl"><img src="img/pic.jpg" alt=""></a>
+                                </div>
+                                <div class="pro_r fl">
+                                    <a href="javascript:;">各种牛奶各种牛奶各种牛奶各种牛</a>
+                                    <p>品类 : 食品添加剂</p>
+                                    <div class="del clearfix del_one">
+                                        <i></i>
+                                        <span>删除</span>
+                                        <i></i>
+                                        <span>移入收藏夹</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pro_num pro_num_two clearfix fl">
+                                <li class="num_one">
+                                    <p class="cur">1~24公斤 : ￥<span>1,200.99</span></p>
+                                    <p class="cur1">25~80公斤 : ￥<span>1,100.99</span></p>
+                                    <p class="cur1">80~12公斤 : ￥<span>1,050.99</span></p>
+                                    <p class="cur1">120~140公斤 : &nbsp;&nbsp;&nbsp;￥<span>990.99</span></p>
+                                    <p class="cur1">&ge;140公斤 : &nbsp;&nbsp;&nbsp;￥<span>980.99</span></p>
+                                    <div id="change">
+                                        <span>价格有变 !</span>
+                                        <span>点击查看</span>
+                                    </div>
+                                    <!--<div id="his_pri" ng-show="br">-->
+                                        <!--<div class="his_t">-->
+                                            <!--<p>历史价格</p>-->
+                                            <!--<span class="shut" ng-click="br=true"></span>-->
+                                        <!--</div>-->
+                                        <!--<div class="his_b">-->
+                                            <!--<p class="pri">1~24公斤 : ￥<span>1,200.99</span></p>-->
+                                            <!--<p class="pri1">25~80公斤 : ￥<span>1,100.99</span></p>-->
+                                            <!--<p class="pri1">80~12公斤 : ￥<span>1,050.99</span></p>-->
+                                            <!--<p class="pri1">120~140公斤 : &nbsp;&nbsp;&nbsp;￥<span>990.99</span></p>-->
+                                            <!--<p class="pri1">&ge;140公斤 : &nbsp;&nbsp;&nbsp;￥<span>980.99</span></p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                </li>
+                                <li>
+                                    <div class="numb_">
+                                        <input type="button" class="fl"/>
+                                        <span class="fl">20</span>
+                                        <input type="button" class="fr"/>
+                                    </div>
+                                    <!--<p>订数不能小于起批量50</p>-->
+                                </li>
+                                <li class="num_two">
+                                    <p>￥200.99</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="starch">
+                    <div class="option clearfix">
+                        <span class="cur"></span>
+                        <a href="javascript:;">广东肇庆海星生物科技</a>
+                    </div>
+                    <div class="product">
+                        <div class="product_t clearfix">
+                            <div class="pro clearfix fl">
+                                <div class="pro_l clearfix fl">
+                                    <span class="cur fl"></span>
+                                    <a href="javascript:;" class="fl"><img src="img/pic.jpg" alt=""></a>
+                                    <i class="tuan"></i>
+                                </div>
+                                <div class="pro_r fl">
+                                    <a href="javascript:;">各种牛奶各种牛奶各种牛奶各种牛奶各种牛奶各种牛奶各种牛奶各种</a>
+                                    <p>品类 : 食品添加剂</p>
+                                    <div class="del clearfix">
+                                        <i></i>
+                                        <span>删除</span>
+                                        <i></i>
+                                        <span>移入收藏夹</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pro_num pro_one clearfix fl">
+                                <li class="num_one">
+                                    <p class="mon">原价 : ￥<span>1,200.99</span></p>
+                                    <p class="mon1">团购价 : ￥<span>1,100.99</span></p>
+                                </li>
+                                <li>
+                                    <div class="numb_">
+                                        <input type="button" class="fl"/>
+                                        <span class="fl">1</span>
+                                        <input type="button" class="fr"/>
+                                    </div>
+                                    <p>请输入正整数</p>
+                                </li>
+                                <li class="num_two">
+                                    <p class="min">￥<span>7,666,200.99</span></p>
+                                    <p class="min1">已节省￥<span>306.89</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product_t clearfix product_t_one">
+                            <div class="pro clearfix fl">
+                                <div class="pro_l clearfix fl">
+                                    <span class="cur fl"></span>
+                                    <a href="javascript:;" class="fl"><img src="img/pic.jpg" alt=""></a>
+                                </div>
+                                <div class="pro_r fl">
+                                    <a href="javascript:;">各种牛奶各种牛奶各种牛奶各种牛</a>
+                                    <p>品类 : 食品添加剂</p>
+                                    <div class="del clearfix del_one">
+                                        <i></i>
+                                        <span>删除</span>
+                                        <i></i>
+                                        <span>移入收藏夹</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pro_num pro_num_one clearfix fl">
+                                <li class="num_one">
+                                    <p>1~24公斤 : ￥<span>1,100.99</span></p>
+                                </li>
+                                <li>
+                                    <div class="numb_">
+                                        <input type="button" class="fl"/>
+                                        <span class="fl">20</span>
+                                        <input type="button" class="fr"/>
+                                    </div>
+                                    <!--<p>订数不能小于起批量50</p>-->
+                                </li>
+                                <li class="num_two">
+                                    <p>￥200.99</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="starch">
+                    <div class="option clearfix">
+                        <span class="cur"></span>
+                        <a href="javascript:;">广东肇庆海星生物科技</a>
+                    </div>
+                    <div class="product product_one">
+                        <div class="product_t clearfix product_b">
+                            <div class="pro clearfix fl">
+                                <div class="pro_l clearfix fl">
+                                    <span class="cur fl"></span>
+                                    <a href="javascript:;" class="fl"><img src="img/pic.jpg" alt=""></a>
+                                </div>
+                                <div class="pro_r fl">
+                                    <a href="javascript:;">各种牛奶各种牛奶各种牛奶各种牛</a>
+                                    <p>品类 : 食品添加剂</p>
+                                    <div class="del clearfix del_one">
+                                        <i></i>
+                                        <span>删除</span>
+                                        <i></i>
+                                        <span>移入收藏夹</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pro_num pro_num_one clearfix fl">
+                                <li class="num_one">
+                                    <p>1~24公斤 : ￥<span>1,100.99</span></p>
+                                </li>
+                                <li>
+                                    <div class="numb_">
+                                        <input type="button" class="fl"/>
+                                        <span class="fl">20</span>
+                                        <input type="button" class="fr"/>
+                                    </div>
+                                    <!--<p>订数不能小于起批量50</p>-->
+                                </li>
+                                <li class="num_two">
+                                    <p>￥200.99</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul class="clear clearfix">
+                    <li class="clearfix">
+                        <div class="chose  fl clearfix">
+                            <span class="cur"></span>
+                            <a href="javascript:;">全选</a>
+                            <span class="shu"></span>
+                            <a href="javascript:;">删除</a>
+                            <span class="shu"></span>
+                        </div>
+                        <p class="fl">已选择<span>1</span>个供应商的<span>2</span>种商品</p>
+                    </li>
+                    <li class="freight clearfix">
+                        <p class="clearfix fre">
+                            <span class="fr">1,299,221.00</span>
+                            <span class="fr">总价 ( 不含运费 ) &nbsp;:  ￥</span>
+                        </p>
+                        <p>节省 : ￥<span>306.89</span></p>
+                    </li>
+                    <li>
+                        <div class="tobuy">
+                            <a href="javascript:;">去结算</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="fail">
+                <div class="fail_tit clearfix">
+                    <div class="fail_pro fl">
+                        <a href="javascript:;">失效商品</a>
+                        <span></span>
+                    </div>
+                    <a href="javascript:;" id="del">删除全部失效商品</a>
+                </div>
+                <div class="starch">
+                    <div class="option clearfix option_del">
+                        <a href="javascript:;">广东肇庆海星生物科技</a>
+                    </div>
+                    <div class="product fail_con">
+                        <div class="product_t clearfix">
+                            <div class="pro clearfix fl">
+                                <div class="pro_l clearfix fl">
+
+                                    <a href="javascript:;" class="fl"><img src="img/pic1.jpg" alt=""></a>
+                                    <i class="tuan"></i>
+                                </div>
+                                <div class="pro_r fl">
+                                    <a href="javascript:;">各种牛奶各种牛奶各种牛奶各</a>
+                                    <p>品类 : 食品添加剂</p>
+                                    <div class="del clearfix">
+                                        <i></i>
+                                        <span>删除</span>
+                                        <i></i>
+                                        <span>移入收藏夹</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pro_num pro_one clearfix fl">
+                                <li class="num_one">
+                                    <p class="mon">原价 : ￥<span>1,200.99</span></p>
+                                    <p class="mon1">团购价 : ￥<span>1,100.99</span></p>
+                                </li>
+                                <li>
+                                    <div class="numb_">
+                                        <input type="button" class="fl"/>
+                                        <span class="fl">1</span>
+                                        <input type="button" class="fr"/>
+                                    </div>
+                                </li>
+                                <li class="num_two">
+                                    <p class="min">￥<span>7,666,200.99</span></p>
+                                    <p class="min1">已节省￥<span>306.89</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product_t clearfix product_t_one">
+                            <div class="pro clearfix fl">
+                                <div class="pro_l clearfix fl">
+
+                                    <a href="javascript:;" class="fl"><img src="img/pic1.jpg" alt=""></a>
+                                </div>
+                                <div class="pro_r fl">
+                                    <a href="javascript:;">各种牛奶各种牛奶各种牛奶各种牛</a>
+                                    <p>品类 : 食品添加剂</p>
+                                    <div class="del clearfix del_one">
+                                        <i></i>
+                                        <span>删除</span>
+                                        <i></i>
+                                        <span>移入收藏夹</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pro_num pro_num_one clearfix fl">
+                                <li class="num_one">
+                                    <p>1~24公斤 : ￥<span>1,100.99</span></p>
+                                </li>
+                                <li>
+                                    <div class="numb_">
+                                        <input type="button" class="fl"/>
+                                        <span class="fl">20</span>
+                                        <input type="button" class="fr"/>
+                                    </div>
+                                    <!--<p>订数不能小于起批量50</p>-->
+                                </li>
+                                <li class="num_two">
+                                    <p>￥200.99</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="starch">
+                    <div class="option clearfix option_l">
+                        <a href="javascript:;">广东肇庆海星生物科技</a>
+                    </div>
+                    <div class="product product_one fail_con">
+                        <div class="product_t clearfix product_b">
+                            <div class="pro clearfix fl">
+                                <div class="pro_l clearfix fl">
+
+                                    <a href="javascript:;" class="fl"><img src="img/pic1.jpg" alt=""></a>
+                                </div>
+                                <div class="pro_r fl">
+                                    <a href="javascript:;">各种牛奶各种牛奶各种牛奶各种牛</a>
+                                    <p>品类 : 食品添加剂</p>
+                                    <div class="del clearfix del_one">
+                                        <i></i>
+                                        <span>删除</span>
+                                        <i></i>
+                                        <span>移入收藏夹</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="pro_num pro_num_one clearfix fl">
+                                <li class="num_one">
+                                    <p>1~24公斤 : ￥<span>1,100.99</span></p>
+                                </li>
+                                <li>
+                                    <div class="numb_">
+                                        <input type="button" class="fl"/>
+                                        <span class="fl">20</span>
+                                        <input type="button" class="fr"/>
+                                    </div>
+                                    <!--<p>订数不能小于起批量50</p>-->
+                                </li>
+                                <li class="num_two">
+                                    <p>￥200.99</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="foot clearfix">
+        <p>
+            <a href="javascript:;" tatget="_self" >关于包谷</a>|
+            <a href="javascript:;" tatget="_self" >包谷大事</a>|
+            <a href="javascript:;" tatget="_self" >诚聘英才</a>|
+            <a href="javascript:;" tatget="_self" >联系我们</a>|
+            <a href="javascript:;" tatget="_self" >服务条款</a>|
+            <a href="javascript:;" tatget="_self" >法律声明</a>|
+            <a href="javascript:;" tatget="_self" >合作伙伴</a>|
+            <a href="javascript:;" tatget="_self" >友情链接</a>
+        </p>
+        <p>Copyright ©2013-2014 baoogu.com All Rights Reserved. 客服热线：400-106-8585</p>
+        <div class="bop clearfix"><p class="fl">京公网安备11010602100108号 京ICP证 130477号 京ICP备08009311号-3</p><a href="javascript:" class="as fl "></a></div>
+    </footer>
+</body>
+</html>

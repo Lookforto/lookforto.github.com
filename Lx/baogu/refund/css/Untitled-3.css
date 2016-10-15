@@ -1,0 +1,163 @@
+@charset "utf-8";
+/* CSS Document */
+body{ background:#f7f7f7; }
+
+/*head*/
+.head{
+    background: #fff;
+    height:37px;
+	border-bottom:2px dotted #f3f3f3;
+}
+.hd-in{width:1000px;  margin:0 auto; }
+.hd-l{
+    line-height: 37px;
+}
+.hd-l i{
+    border-left:1px solid #ccc;
+    height:17px;
+    margin:0 15px;
+}
+.hd-l a{
+    color:#006697;
+}
+.hd-r li{
+    float:left;
+    margin-left:40px;
+    line-height:37px;
+}
+.hd-r li a{
+    float:left;
+}
+.hd-r li b{
+    width:11px;
+    height:6px;
+    background: url("../img/bg2.png");
+    float:left;
+    margin-top: 17px;
+    margin-left: 4px;
+}
+.hd-r li span{
+    float: left;
+    background: url("../img/bg1.png");
+    width:16px;
+    height:16px;
+    margin-top: 11px;
+    margin-right: 4px;
+}
+.hd-r .bg1{
+    background: url("../img/bg3.png") no-repeat;
+}
+.hd-r strong{
+    color:#cc0000;
+    margin-left:5px;
+}
+/*nav*/
+.nav{
+	width:100%;
+	 background:#fff;
+	 min-width:1000px;
+    border-bottom:2px solid #2082b3;	
+}
+.nav_in{
+  height:56px; 
+  width:1000px; 
+  margin:0 auto;
+  padding-top:24px;
+}
+.nav_in h1{
+	 background:url(../img/logo.png) no-repeat;
+	 width:94px;
+	 height:38px;
+	 text-indent:-10000px;
+}
+.nav_in p{
+	 font-size:24px;
+	 margin-left:10px; 
+}
+.nav_il{
+	width:505px;
+	height:29px;
+	background:#f0efef;
+	border-radius:17px;
+	padding:3px 10px;
+}
+.nav_il a{
+	float:left;
+	text-align:center;
+	line-height:29px;
+	font-size:12px;
+	width:163px; 
+	height:29px; 
+	border-radius:14px;
+	margin-right:5px;
+}
+.nav .active{
+	background:#2c8dbd;
+	color:#fff;
+}
+.min{
+	width:1000px;
+	height:340px;
+	margin:60px auto;
+	background:#fff;
+	margin-bottom:60px;
+	padding-top:70px;
+}
+.foot{
+	border-top:1px solid #dddbdb;
+	width:100%;
+	height:150px; 
+	background:#fff;
+}
+.min span{
+	width:69px; height:69px;
+	background: url(../img/CV.png) no-repeat;
+	margin-left:227px;
+	margin-top:30px;
+}
+.min .xc{
+	padding:30px; 
+	width:530px;
+	height:280px;
+}
+.xc div{
+	font-size:16px;
+	color:#666;
+	line-height:37px;
+}
+.xc .he{margin-top:43px; }
+.xc b{color:#c00; margin-left:15px; }
+.xc h3{
+	font-size:20px;
+	line-height:68px;
+}
+.xc p{
+	font-size:12px;
+	line-height:30px;
+	color:#999;
+
+}
+.foot{ padding-top:20px; }
+.foot p{
+		text-align:center;
+	    margin:0 auto;
+		line-height:38px;
+		color:#666;
+}
+.foot p a{ 
+    padding-right:5px; 
+}
+
+.foot .as{
+	 background:url(../img/hui.png) no-repeat;
+	 width:33px; 
+	 height:39px; 
+	 display:inline-block;
+	 margin-left:15px;
+}
+.bop{
+	 width:450px;
+	    margin:0 auto;
+		line-height:38px;
+		color:#666;
+}

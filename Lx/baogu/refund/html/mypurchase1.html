@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>包谷网</title>
+    <link rel="stylesheet" href="../css/base1.css">
+    <link rel="stylesheet" href="../css/mypurchase.min.css">
+    <script src="../js/angular.js"></script>
+    <script>
+		     var app1=angular.module('app',[]);
+			   app1.controller('add_msg',function($scope,$http){
+				     $scope.bok = false;
+				  
+				     $scope.hop=true;
+				     $scope.arr1 = [];
+					 
+					$scope.bok_1 = function(){
+						if($scope.ioc=="icon_x"){
+							  $scope.ioc="icon_z";
+							}else{
+							  $scope.ioc="icon_x";
+							}
+						  $scope.bok = !$scope.bok;
+					}
+					
+					//控制ul的高度
+					 var oB = document.getElementById('bmbm');
+					 var ok = document.getElementById("htm");
+					function yy($scope){
+						setTimeout(function(){
+					    oB.style.height=ok.offsetHeight-70+'px'
+							},0)
+					    }
+					//控制页面数据长度
+					
+						
+               $scope.ref_a=function(){
+				   $scope.vr1 = 'var';
+				   $scope.hop=false;
+				   $scope.vr3 = $scope.vr2 = $scope.vr4 = '';
+					  $http.get('../txt/res.txt').success(function(json){
+						        $scope.kla=json.res_a;
+						        $scope.data_1 = json.res_a;
+								yy($scope);
+						 });
+				     }
+			   $scope.ref_b=function(){
+				   $scope.vr2 = 'var'; 
+				    $scope.hop=false;
+				   $scope.vr3 = $scope.vr4 = $scope.vr1 = '';
+					  $http.get('../txt/res.txt').success(function(json){
+						        $scope.klb=json.res_b;
+						      $scope.data_1 = json.res_b;
+							  yy($scope);
+						 });
+				     }
+			   $scope.ref_c=function(){
+				   $scope.vr3 = 'var'; 
+				    $scope.hop=false;
+				   $scope.vr4 = $scope.vr2 = $scope.vr1 = '';
+					  $http.get('../txt/res.txt').success(function(json){
+						       $scope.klc=json.res_c;
+						       $scope.data_1 = json.res_c;
+							    yy($scope);
+						 });
+				     }
+			     $scope.ref_d=function(){
+				    $scope.vr4 = 'var';
+				    $scope.hop=false;
+				    $scope.vr3 = $scope.vr2 = $scope.vr1 = '';
+					  $http.get('../txt/res.txt').success(function(json){
+						      $scope.kld=json.res_d;
+						      $scope.data_1 = json.res_d;
+							   yy($scope);
+						 });
+				     }
+           	      $scope.show_az=function(){
+					  $http.get('../txt/res1.txt').success(function(json){
+						      $scope.kld=json.res_d;
+						      $scope.data_1 = json.res_a_1;
+							   yy($scope);
+						 });
+				   }
+           	      
+           	       $scope.show_ax=function(){
+					  $http.get('../txt/res1.txt').success(function(json){
+						      $scope.kld=json.res_d;
+						      $scope.data_1 = json.res_a_2;
+							   yy($scope);
+						 });
+				   }
+           	        $scope.show_ac=function(){
+					  $http.get('../txt/res1.txt').success(function(json){
+						      $scope.kld=json.res_d;
+						      $scope.data_1 = json.res_a_3;
+							   yy($scope);
+						 });
+				   }
+           	         $scope.show_av=function(){
+					  $http.get('../txt/res1.txt').success(function(json){
+						      $scope.kld=json.res_d;
+						      $scope.data_1 = json.res_a_4;
+							   yy($scope);
+						 });
+				   }
+           	        
+				     
+				   $scope.jkm=function(){
+				    $scope.vr4 = 'var';
+				    $scope.hop=false;
+				    $scope.vr3 = $scope.vr2 = $scope.vr1 = '';
+					  $http.get('../txt/res.txt').success(function(json){
+						      $scope.kld=json.res_d;
+						      $scope.data_1 = json.res_d;
+							   yy($scope);
+						 });
+				     }
+				    $scope.sur=function(){
+				    $scope.vr4 = 'var';
+				    $scope.hop=false;
+				    $scope.vr3 = $scope.vr2 = $scope.vr1 = '';
+					  $http.get('../txt/res.txt').success(function(json){
+						      $scope.kld=json.res_d;
+						      $scope.data_1 = json.res_d;
+							   yy($scope);
+						 });
+				     }
+			  })
+		
+     
+    </script>
+</head>
+<body ng-controller="add_msg">
+    <!--head-->
+    <div class="head">
+        <div class="hd_in clearfix w">
+           <div class="fl hd_l">
+               <span>您好“贾云飞”</span>
+               <i></i>
+               <a href="javascript:;">退出</a>
+           </div>
+            <ul class="fr clearfix hd_r">
+                <li><a href="javascript:;">包谷首页</a></li>
+               
+                <li class="center" ng-init="n1=false" ng-mouseenter="n1=true" ng-mouseleave="n1=false">
+                    <a href="javascript:;">会员中心</a>
+                    <b></b>
+                    <ul class="vipal1" ng-show="n1">
+	                	<li>会员卡</li>
+	                	<li>积分办理</li>
+	                	<li>咨询服务</li>
+	                	<li>人工服务</li>
+                   </ul>
+                </li>
+                 
+                <li class="center" ng-init="n2=false" ng-mouseenter="n2=true" ng-mouseleave="n2=false">
+                    <span></span>
+                    <a href="javascript:;">进货单(0)</a>
+                    <b></b>
+                    <ul class="vipal2" ng-show="n2">
+	                	<li>会员卡</li>
+	                	<li>积分办理</li>
+	                	<li>咨询服务</li>
+	                	<li>人工服务</li>
+                   </ul>
+                </li>
+                <li class="center" ng-init="n3=false" ng-mouseenter="n3=true" ng-mouseleave="n3=false">
+                    <span class="bg1"></span>
+                    <a href="javascript:;">客服中心</a>
+                    <b></b>
+                    <ul class="vipal3" ng-show="n3">
+                	    <li>会员卡</li>
+	                	<li>积分办理</li>
+	                	<li>咨询服务</li>
+	                	<li>人工服务</li>
+                    </ul>
+                </li>
+                <li>客服热线:<strong>400-106-8585</strong></li>
+            </ul>
+               
+        </div>
+    </div>
+   <!--nav-->
+   <div class="nav">
+        <div class="nav_in w clearfix">
+            <div class="fl nav_l">
+                <h3 class="fl logo">
+                    <a href="javascript:;">包谷网</a>
+                </h3>
+                <span class="fr">我的包谷</span>
+            </div>
+            <div class="fl list clearfix">
+                <a href="javascript:;">首页</a>
+                <a href="javascript:;">我的销售</a>
+                <a href="javascript:;">我的采购</a>
+                <a href="javascript:;">物流服务</a>
+                <a href="javascript:;">账户设置</a>
+                <a href="javascript:;">消息+</a>
+            </div>
+            <div class="fr sear">
+                <input type="text" placeholder="山梨酸钾">
+                <span class="search"></span>
+            </div>
+            
+        </div>
+   </div>
+   <!--content-->
+   <div class="con">
+        <div class="con_in w clearfix">
+            <div class="con_l fl">
+                <div class="up clearfix">
+                    <span class="fl vip"></span>
+                    <h3 class="fl">会员中心</h3>
+                </div>
+                <div class="down">
+                    <ul class="vip_center" id="bmbm" >
+                        <li class="first">
+                            <span></span>
+                            <a href="javascript:;">供应产品</a>
+                        </li>
+                        <li>
+                            <span></span>
+                            <a href="javascript:;">商铺管理</a>
+                        </li>
+                        <li>
+                            <span></span>
+                            <a href="javascript:;">卖家交易管理</a>
+                        </li>
+                          
+                        <li ng-click="bok_1()">
+                            <span  class="{{ioc}}"></span>
+                            <a href="javascript:;">买家交易管理</a>
+                        </li>
+                           
+                            <ul class="uku" ng-show="bok">
+                                <li>已买到商品</li>
+                                <li><a href="../../stock/index zhe.html" style="margin-left:16px;">进货单</a></li>
+                                <li>交易评价管理</li>
+                                <li>地址管理</li>
+                                <li class="red_r">退款管理</li>  
+                            </ul>
+                            
+                        <li>
+                            <span class="pinpai"></span>
+                            <a href="javascript:;">关注的品牌</a>
+                        </li>
+                        <li>
+                            <span class="msg_cen"></span>
+                            <a href="javascript:;">消息中心</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="con_r fr" id="htm">
+                <div class="chaxun clearfix">
+                    <input type="text" placeholder="按商品名称/采购单号/供应商名称查询" class="fl" >
+                    <div class="fl dianji" ng-click="jkm()">搜索</div>
+                    <div class="fl tijiao">
+                        提交时间 <input type="text" value="">
+                        <i></i>
+                    </div>
+                </div>
+                <div class="artical">
+                    <ul class="jiaoyi clearfix">
+                        <li ng-click="ref_a()" ng-click="zz()" class="{{vr1}}" >
+                            <span>退款待确认</span>
+                            <span >{{0+kla.length}}</span>
+                        </li >
+                        <li ng-click="ref_b()"  class="{{vr2}}">
+                            <span>退款成功</span>
+                            <span>{{0+klb.length}}</span>
+                        </li>
+                        <li ng-click="ref_c()"  class="{{vr3}}">
+                            <span>退款关闭</span>
+                            <span>{{0+klc.length}}</span>
+                        </li>
+                        <li class="{{vr4}}" style="border-right:none;" ng-click="ref_d()" >
+                            <span>全部</span>
+                            <span >{{0+kld.length}}</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--copy-->
+                <div class="big_shangpin" ng-repeat="item in data_1">
+                    <div class="shangpin">
+                        <div class="clearfix caigou">
+                            <div>
+                                <p class="xiadan">申请退款时间:{{item.msg.date}} 09:50:59</p>
+                                <p>采购单号:{{item.msg.code}}</p>
+                            </div>
+                            <div>
+                                <span class="shop"></span>
+                                <span>{{item.msg.com}}</span>
+                            </div>
+                            <div class="refund">
+                              交易金额：<span style="color:#666">￥{{item.msg.mon}}</span>
+                              申请退款：<span>￥{{item.msg.mon}}</span>
+                            </div>
+                            <div>{{item.msg.tatusText}}</div>
+                        </div>
+                        <div class="xiangqing clearfix" ng-repeat = "item2 in item.produts">
+                            <div class="left">
+                                <div class="pic">
+                                    <img src="{{item2.img}}"/>
+                                    <i></i>
+                                </div>
+                                <div class="sale">{{item2.mii}}</div>
+                                <div class="kg">{{item2.heft}}</div>
+                                <div class="price">￥{{item2.tar}}</div>
+                            </div>
+                            <div class="right">
+                                <p class="time">{{item2.cut}}</p>
+                                <p class="put"><a href="status1.html">{{item2.che}}</a></p>
+                                <p class="trade">{{item2.cha}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--2-->
+                
+                <div class="door clearfix" ng-show="hop" >
+                  <div>
+                      <span class="fl"></span>
+                      <p class="fl">您没有退款采购单</p>
+                  </div>
+                </div>
+               
+                <!--page-->
+                <div class="clearfix page" ng-show="!hop">
+                    <div class="fl show">退款单共200个,本页显示5个</div>
+                    <ul class="fl list1 clearfix">
+                        <li class="prev"></li>
+                        <div  class="bnlk fl" >
+                          <a  href="javascript:" ng-click="show_az()">1</a>
+                          <a href="javascript:" ng-click="show_ax()">2</a>
+                          <a href="javascript:" ng-click="show_ac()">3</a>
+                          <a href="javascript:" ng-click="show_av()">4</a>
+                        </div>
+                        <li class="next"></li>
+                        <li class="last1">共4页</li>
+                    </ul>
+                    <div  class="fr skip">
+                        <span>转到</span>
+                        <input type="text">
+                        <span class="sure" ng-click="sur()">确定</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+   <!--footer-->
+   <footer class="foot clearfix">
+ <p>
+    <a href="jsvascript:" tatget="_self" >关于包谷</a>|
+    <a href="jsvascript:" tatget="_self" >包谷大事</a>|
+    <a href="jsvascript:" tatget="_self" >诚聘英才</a>|
+     <a href="jsvascript:" tatget="_self" >联系我们</a>|
+    <a href="jsvascript:" tatget="_self" >服务条款</a>|
+    <a href="jsvascript:" tatget="_self" >法律声明</a>|
+     <a href="jsvascript:" tatget="_self" >合作伙伴</a>|
+     <a href="jsvascript:" tatget="_self" >友情链接</a>
+ </p>
+ <p>Copyright ©2013-2014 baoogu.com All Rights Reserved. 客服热线：400-106-8585</p>
+ <div class="bop clearfix"><p class="fl">京公网安备11010602100108号 京ICP证 130477号 京ICP备08009311号-3</p><a href="javascript:" class="as fl "></a></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      (function(){
+          window.addEventListener('load',function(){
+            function setFont(){
+              document.documentElement.style.fontSize = document.documentElement.clientWidth/16+'px';
+            }
+            window.addEventListener('resize',setFont,false)
+            setFont();
+          },false)
+      })()
+    </script>
+    <meta charset="utf-8">
+    <title>瀑布流固定列</title>
+    <script src="ajaxzj.js"></script>
+    <style>
+      *{margin:0; padding:0; }
+      html body{ background: #000; }
+      .box{ width:14rem; margin:.25rem auto; box-shadow: 0px 0px 10px #fff; overflow: hidden; }
+      .box ul{ width:3.75rem; float: left; margin-left:0.68rem; }
+      .box ul li{ width: 3.7rem; border:2px solid #000; border-radius: 5px;
+         height: 3rem;margin-top:0.5rem; list-style: none; box-shadow: 0 0 5px #fff; }
+      .mask{position: absolute; left:0; top: 0; z-index: 100;
+            background:rgba(0,0,0,.7); display: none; margin:0 auto; }
+      .load{ z-index: 101; display: none; text-align: center; }
+      .box img{ width: 100%; display: block; }
+    </style>
+    <script>
+       window.onload = function(){
+           var oBox = document.getElementById('box');
+           var aUl = oBox.children;
+           var oMask = document.getElementById('mask');
+           var oLoad = document.getElementById('load');
+
+           //制作一页
+           var pager = 1;
+           //获取数据
+          function getData(){
+            ajax({
+              url:'flow.php',
+              type:'post',
+              data:{page:pager},
+              loading:function(){
+                document.body.style.background="#FFF";
+                oMask.style.width = (document.documentElement.clientWidth/80) + 'rem';
+                oMask.style.height = (document.documentElement.scrollHeight/80) + 'rem';
+                oMask.style.display = 'block';
+                oLoad.style.width = (document.documentElement.clientWidth/80) + 'rem';
+                oLoad.style.height = (document.documentElement.clientHeight/80) + 'rem';
+                oLoad.style.display = 'block';
+              },
+              complete:function(){
+                document.body.style.background="#000";
+                 oMask.style.display = 'none';
+                 oLoad.style.display = 'none';
+              },
+              succ:function(str){
+                var json = eval('('+str+')');
+                  if(json.error){
+                    alert('获取图片失败了');
+                  }else{
+                    var arr=json.msg;
+                   // console.log(arr)
+                   //dom操作
+                    for(var i=0; i<arr.length; i++){
+                      var oLi = document.createElement('li');
+                      oLi.innerHTML='<a href="'+arr[i].href+'"><img src="'+arr[i].image+'"/></a>';
+                      oLi.style.height = 3.75*arr[i].height/arr[i].width+'rem';
+                     //把li放到最低ul的里面
+                     var arr1 = [];
+                     for(var j = 0; j < aUl.length; j++){
+                        arr1[j] = aUl[j];
+                     }
+                     //返回最低的ul
+                     arr1.sort(function(ul1,ul2){
+         							 return ul1.offsetHeight-ul2.offsetHeight;
+                      });
+                      arr1[0].appendChild(oLi);
+                    }
+                   }
+              },
+              error:function(){
+                alert('网络错误，请重新..')
+              }
+            });
+          }
+        getData();
+
+        //监听滚动高度，当内容高度小于可视区加滚动高度时，重新加载下一页数据在页面展示
+          window.onscroll = function(){
+              var scrolH = document.documentElement.scrollTop || document.body.scrollTop;
+              var cliH = document.documentElement.clientHeight + scrolH;
+              var scrolHe = document.body.scrollHeight;
+
+              if( scrolHe  <= cliH ){
+                pager++;
+                getData();
+              }
+
+          };
+       };
+
+    </script>
+  </head>
+  <body>
+     <div class="box" id="box">
+         <ul></ul>
+         <ul></ul>
+         <ul></ul>
+     </div>
+     <div class="mask" id="mask"></div>
+     <div class="load" id="load">Loading...</div>
+  </body>
+</html>

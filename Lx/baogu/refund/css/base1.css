@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration:none;
+    color:#666;
+}
+img{
+    vertical-align:top;
+    border:none;
+}
+input,textarea{
+    background: none;
+    outline:none;
+    border:none;
+}
+textarea{
+    resize:none;
+}
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+.clearfix:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.w{
+    width:1200px;
+    margin:0 auto;
+}
+.w1{
+    width:1000px;
+    margin:0 auto;
+}
+body{
+    background: #f7f7f7;
+    font-size:12px;
+    font-family:'Microsoft Yahei';
+}

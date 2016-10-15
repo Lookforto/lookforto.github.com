@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      (function(){
+  			window.addEventListener('load',function(){
+  				function setFont(){
+  					document.documentElement.style.fontSize=document.documentElement.clientWidth/15+'px';
+  				}
+  				window.addEventListener('resize',setFont,false)
+  				setFont();
+  			},false)
+  		})()
+    </script>
+    <meta charset="utf-8">
+    <title>微博留言板</title>
+    <link rel="stylesheet" href="animate.css" />
+    <script src="jquery-1.7.2.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+
+    <!-- <script src="bootstrap.min.js"></script> -->
+    <style>
+        *{margin:0; padding:0;  font-family: "微软雅黑";}
+        html body{width:100%; height: 100%; background: #000; color:#fff; }
+        .ml input,.ml button{ float: left; }
+        .ml{ margin:0.5rem auto; width:65%; border: 1px solid #000; }
+        .bt{margin-left: 0.2rem;}
+        .box{width:10rem; margin:1rem auto; border:3px solid #fff; position:relative; padding-bottom: 0.5rem;
+           border-radius: 3px; overflow: hidden; }
+        .page{width: 280%; height: 0.5rem;  position: absolute; bottom:0; left:0.2rem;}
+        .page a{ width:0.4rem; height: 0.4rem; float: left; background: #fff; border-radius: 3px;
+          text-align: center; line-height: 0.4rem; font-size: 0.2rem;  margin-left: 0.2rem; color: #000; }
+        .page a:hover{ text-decoration:none; }
+        .cont{padding:0.2rem 0.3rem; }
+        .vnd{padding: 0.1rem;}
+        .btn-s{border-radius: 3px; color:#f00; background: #000; font-size: 0.1rem; padding:0 5px;}
+        .cont_d{overflow: hidden; width: 100%; height: 0.4rem; line-height: 0.4rem; padding-left: 0.1rem; }
+        .cont_d span{float: left; color:#fff; font-size: 0.15rem; }
+        .cont_d a,.cont_d p{float: right; color:#fff; font-size: 0.15rem; }
+        .cont_d span{ font-size: 0.15rem; }
+        .cl{margin:0 0.2rem; }
+        .cont_d b{margin:0 7px; display:inline-block; }
+        .cont_d a:hover{text-decoration: none; background-color:#FFF;color:#000; }
+        .page .active{background: #ccc;}
+    </style>
+    <script>
+        $.fn.extend({
+          add:function(){
+
+          }
+        })
+    </script>
+    <script>
+    function toDou(n){
+			return n<10?'0'+n:''+n;
+		}
+		function getCnTime(s){
+			var oDate = new Date(s*1000);
+			return oDate.getFullYear()+'-'+toDou(oDate.getMonth()+1)+'-'+toDou(oDate.getDate())+' '+toDou(oDate.getHours())+':'+toDou(oDate.getMinutes())+':'+toDou(oDate.getSeconds());
+		}
+    $(function(){
+
+        var url='weibo.php';
+         //页面初始化
+         if($('#box_in')[0].children.length <1){
+              $('.page')[0].style.display='none';
+         }
+         var iNow = 1;
+        //添加留言
+        var kcao =$('#box_in');
+         $('#reply').on('click',function(){
+
+            //  addPic();
+            $.ajax({
+              url:'weibo.php',
+              data:{
+                act:'add',
+                content:$('#text').val()
+              },
+              success:function(str){
+                var json = eval('('+str+')');
+
+                if(!json.error){
+                    var oDiv= addPic(json.id,$('#text').val(),json.time,0,0);
+
+                    if(kcao.children()){
+                       kcao.prepend( $('oDiv'));
+                    }else{
+                       $('oDiv').appendTo(kcao);
+                    }
+
+                     if(kcao.children().length>6){
+                        kcao.children().eq(kcao.children().length-1).remove();
+                     }
+                    //  $('#text').html()='';
+                      get_page_count();
+                    
+                   }
+
+                 }
+
+            })
+         })
+          //添加一条内容
+    function addPic(id,content,time,acc,ref){
+      //  [{id: ID, content: "内容", time: 时间戳, acc: 顶次数, ref: 踩次数}, {...}, ...]
+               var oDiv = $('<div>');
+               oDiv.addClass('cont');
+     var str ='<div class="vnd">'+content+'</div>'+
+               '<div class="cont_d">'+
+                 '<span>'+getCnTime(time)+'</span>'+
+                 '<p id="dre">顶<b id="dd">'+acc+'</b></p>'+
+                 '<p class="cl">踩<b id="cc">'+ref+'</b></p>'+
+                 '<a href="javascript:" class="btn-s">删除</a>'+
+               '</div>'
+                oDiv.html(str)
+                if($('#box_in')[0].children.length >1 ){
+                     $('.page')[0].style.display='block';
+                }
+           //删除
+                var oDel=$(oDiv).children().eq(1).children().eq(3);
+            		oDel.on('click',function(){
+
+            			$.ajax({
+            				url:'weibo.php',
+            				data:{
+            					act:'del',
+            					id:id
+            				},
+            				cache:false,
+            				success:function(str){
+            					var json = eval('('+str+')');
+            					if(!json.error){
+            						var boo=window.confirm('确定删除吗？');
+            						if(boo){
+            							oDiv.remove();
+            							get_page_count();
+            							getpage(iNow);
+            						}
+            					}
+            				}
+            			});
+            		});
+
+                //顶
+            		var oAcc=$(oDiv).children().eq(1).children().eq(1);
+                var oAcc1=$(oDiv).children().eq(1).children().eq(1).children().eq(0);
+            		oAcc.on('click',function(){
+            			if(!localStorage['acc'+id]){
+            				$.ajax({
+            					url:'weibo.php',
+            					data:{
+            						act:'acc',
+            						id:id
+            					},
+            					cache:false,
+            					success:function(str){
+            						var json = eval('('+str+')');
+            						if(!json.error){
+            							alert('顶成功');
+            							oAcc1.html(parseInt(oAcc1.html())+1);
+            							localStorage['acc'+id]=1;
+            							// setCookie('acc'+id,1,1);可用cookie做
+            						}
+            					}
+            				});
+            			}else{
+            				alert('一天只能一次');
+            			}
+
+            		});
+            		//踩
+            		var oRef=$(oDiv).children().eq(1).children().eq(2);
+              	var oRef1=$(oDiv).children().eq(1).children().eq(2).children().eq(0);
+            		oRef.on('click',function(){
+            			if(!localStorage['ref'+id]){
+            				$.ajax({
+            					url:'weibo.php',
+            					data:{
+            						act:'ref',
+            						id:id
+            					},
+            					cache:false,
+            					success:function(str){
+            						var json = eval('('+str+')');
+            						if(!json.error){
+            							alert('踩成功');
+            							oRef1.html(parseInt(parseInt(oRef1.html())+1));
+            							localStorage['ref'+id]=1;
+            						}
+            					}
+            				});
+            			}else{
+            				alert('您来过了');
+            			}
+            		});
+                return oDiv;
+      }
+        //获取一页留言
+        function getpage(n){
+           $.ajax({
+             url:'weibo.php',
+             data:{
+               act:'get',
+               page:n
+             },
+             success:function(str){
+               var arr = eval('('+str+')');
+               	$('#box_in').html('');
+               //返回：[{id: ID, content: "内容", time: 时间戳, acc: 顶次数, ref: 踩次数}, {...}, ...]
+               for(var i=0; i<arr.length; i++){
+                 var oDiv1 = addPic(arr[i].id,arr[i].content,arr[i].time,arr[i].acc,arr[i].ref)
+                    $(oDiv1).appendTo( $('#box_in'))
+               }
+             }
+           })
+        }
+      getpage(iNow)
+
+       //获取页数
+       	var oPage=$('.page');
+       function get_page_count(){
+         $.ajax({
+           url:'weibo.php',
+           data:{
+             act:'get_page_count'
+           },
+           	cache:false,
+           success:function(str){
+              var json = eval('('+str+')');
+              for(var i=0; i<json.count; i++){
+                  var oA = document.createElement('a');
+                  oA.innerHTML=i+1;
+                  oA.href="javascript:";
+                  oPage[0].appendChild(oA);
+                    if(i == iNow-1){
+                      oA.className = 'active';
+                    }
+                   oA.onclick=function(){
+                     $.each(oPage.children(),function(index){
+                         oPage.children().eq(index).removeClass('active');
+                      });
+                     $(this).addClass('active');
+                       iNow=$(this).html();
+                       getpage(iNow);
+                   };
+                   getpage(iNow);
+
+              }
+           }
+         })
+       }
+      //ding
+     get_page_count();
+    //  var disX=0;
+    //  var oPag = $('.page');
+    //    oPag.on('touchstart',function(ev){
+    //     disX = ev.targetTouches[0].pageX - oPag.offset().left;
+    //     $(document).on('touchmove',function(ev){
+    //         oPag.css('left',ev.targetTouches[0].pageX - disX)
+    //     })
+    //     $(document).on('touchend',function(ev){
+    //       $(document).off();
+    //     })
+    //  })
+     var oPag = $('.page');
+     var oDiv1 = oPag[0];
+     oDiv1.addEventListener('touchstart',function(ev){
+       var disX=ev.targetTouches[0].pageX-oDiv1.offsetLeft;
+       function move(ev){//事件绑定 定义函数名 单独封装起来 方便解绑  和jquery写法相似
+            var l = ev.targetTouches[0].pageX-disX;
+            // 获取坐标用ev.targetTouches[0].pageX  不算滚动轴的距离 只是到可视去的
+
+          if(l<= -oDiv1.offsetWidth-$('.box')[0].offsetWidth){
+            l=-oDiv1.offsetWidth-$('.box')[0].offsetWidth +'px';
+          }
+         oDiv1.style.left= l +'px';
+
+       }
+       function end(){ //解除绑定函数
+         document.removeEventListener('touchmove',move,false);
+         document.removeEventListener('touchend',end,false);
+       }
+       document.addEventListener('touchmove',move,false);
+       document.addEventListener('touchend',end,false)
+       ev.preventDefault();//阻止默认事件
+     },false);
+   })
+    </script>
+  </head>
+  <body >
+     <div class="ml">
+       <input type="text" class="form-control" style="width:60%;" placeholder="Enter " id="text" />
+       <button type="button" class="btn btn-primary bt" id="reply">回复</button>
+     </div>
+     <div class="box" >
+       <div id="box_in">
+           <!-- //内容 -->
+          <!-- <div class="cont">
+             <div class="vnd">回复内容</div>
+             <div class="cont_d">
+                <span>时间</span>
+                <p>顶<b>0</b></p>
+                <p class="cl">踩<b>0</b></p>
+                <a href="javascript:" class="btn-s">删除</a>
+             </div>
+           </div> -->
+       </div>
+
+       <div class="page">
+           <!-- <a href="">1</a>
+           <a href="">2</a>
+           <a href="">3</a> -->
+       </div>
+     </div>
+
+  </body>
+</html>

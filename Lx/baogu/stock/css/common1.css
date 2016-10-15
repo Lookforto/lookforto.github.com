@@ -1,0 +1,157 @@
+@charset "utf-8";
+/* CSS Document */
+body{ background:#f7f7f7; }
+
+/*head*/
+.head{
+    background: #fff;
+    height:37px;
+	border-bottom:2px dotted #f3f3f3;
+}
+.hd-in{width:1000px;  margin:0 auto; }
+.hd-l{
+    line-height: 37px;
+}
+.hd-l a:nth-child(2){
+	color: #00517a;margin-left: 23px;margin-right: 22px;
+}
+
+.hd-r li{
+    float:left;
+    margin-left:40px;
+    line-height:37px;
+}
+.hd-r li a{
+    float:left;
+}
+.hd-r li b{
+    width:11px;
+    height:6px;
+    background: url("../img/bg2.png");
+    float:left;
+    margin-top: 17px;
+    margin-left: 4px;
+}
+.hd-r li span{
+    float: left;
+    background: url("../img/bg1.png");
+    width:16px;
+    height:16px;
+    margin-top: 11px;
+    margin-right: 4px;
+}
+.hd-r .bg1{
+    background: url("../img/bg3.png") no-repeat;
+}
+.hd-r strong{
+    color:#cc0000;
+    margin-left:5px;
+}
+/*nav*/
+.nav{
+	width:100%;
+	 background:#fff;
+	 min-width:1000px;
+    border-bottom:2px solid #2082b3;	
+}
+.nav_in{
+  height:56px; 
+  width:1000px; 
+  margin:0 auto;
+  padding-top:24px;
+}
+.nav_in h1{
+	 background:url(../img/logo.png) no-repeat;
+	 width:94px;
+	 height:38px;
+	 text-indent:-10000px;
+}
+.nav_in p{
+	 font-size:24px;
+	 margin-left:10px; 
+}
+.nav_il{
+	width:505px;
+	height:29px;
+	background:#f0efef;
+	border-radius:17px;
+	padding:3px 10px;
+}
+.nav_il a{
+	float:left;
+	text-align:center;
+	line-height:29px;
+	font-size:12px;
+	width:163px; 
+	height:29px; 
+	border-radius:14px;
+	margin-right:5px;
+}
+.nav .active{
+	background:#2c8dbd;
+	color:#fff;
+}
+.min{
+	height:320px;
+	background:#fff;
+	margin-top: 60px;margin-bottom: 60px;
+}
+.shopcar{
+	width: 113px; height: 94px; background: url(../img/car.jpg) no-repeat;margin-left: 300px;margin-top: 114px;
+	float: left;
+}
+.shop{
+	margin-left: 50px;float: left;margin-top: 104px;
+}
+.shop p{
+	font-size: 18px;line-height: 18px;color: #666;
+}
+.shop p:nth-child(2){
+	margin-top: 14px;
+}
+.shop p:nth-child(2)>span{
+	color: #006699;margin-right: 4px;
+}
+.shop>div{
+	margin-top: 30px;
+}
+.shop_show{
+	width: 102px;height: 32px;background: #006699;text-align: center;line-height: 32px;border-radius: 2px;cursor: pointer;
+}
+.shop_show a{
+	color: #fff;font-size: 16px;
+}
+.shop_show+ span{
+	font-size: 12px;color: #006699;margin-top: 8px;margin-left: 37px;cursor: pointer;
+}
+.foot{
+	border-top:1px solid #dddbdb;
+	width:100%;
+	height:150px;
+	background:#fff;
+	padding-top:20px;
+}
+
+.foot p{
+		text-align:center;
+	    margin:0 auto;
+		line-height:38px;
+		color:#666;
+}
+.foot p a{ 
+    padding-right:5px; 
+}
+
+.foot .as{
+	 background:url(../img/hui.png) no-repeat;
+	 width:33px; 
+	 height:39px; 
+	 display:inline-block;
+	 margin-left:15px;
+}
+.bop{
+	 width:453px;
+	    margin:0 auto;
+		line-height:38px;
+		color:#666;
+}

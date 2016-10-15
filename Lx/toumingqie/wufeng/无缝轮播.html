@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>无缝轮播</title>
+    <style>
+       *{ margin:0; padding:0; list-style: none; }
+       a{ text-decoration: none; color: #ccc; }
+       .box{ width: 800px; height: 150px; border-top: 5px solid #000;
+         box-shadow: 2px 2px 3px #000; border-bottom: 5px solid #000;  position: relative;
+         padding: 10px 0; margin:20px auto; overflow:hidden; }
+       .box li{ float: left; height: 150px; width: 200px;}
+       .box ul{ overflow: hidden; width:1200px; height: 150px; position: absolute; }
+       .box li img{ width:200px; height: 150px; }
+       .btns{ width: 200px; height: 30px; margin:20px auto; }
+    </style>
+    <script>
+      window.onload = function(){
+          var oBox = document.getElementById('box');
+          var oUl = oBox.getElementsByTagName('ul')[0];
+          var aLi = oUl.children;
+          var oLeft = document.getElementById('left');
+          var oRight = document.getElementById('right');
+          oUl.innerHTML+=oUl.innerHTML;
+  				oUl.style.width=aLi[0].offsetWidth*aLi.length + 'px';
+          var timer = null;
+          var w =oUl.offsetWidth/2;
+          var n = 0;
+          clearInterval(timer);
+          timer = setInterval(function(){
+            n-=3;
+            oUl.style.left = (n%w-w)%w +'px';
+          },30);
+
+
+      };
+    </script>
+  </head>
+  <body>
+     <div class="btns">
+        <input type="button" id="left" value="向左走" />
+        <input type="button" id="right" value="向右走" />
+        <input type="button"  id= "stop" value="stop"/>
+      </div>
+     <div class="box" id="box">
+       <ul>
+         <li><a href="JavaScript:;"><img src="../img1/0.jpg"/></a></li>
+         <li><a href="JavaScript:;"><img src="../img1/1.jpg"/></a></li>
+         <li><a href="JavaScript:;"><img src="../img1/2.jpg"/></a></li>
+         <li><a href="JavaScript:;"><img src="../img1/3.jpg"/></a></li>
+         <li><a href="JavaScript:;"><img src="../img1/4.jpg"/></a></li>
+         <li><a href="JavaScript:;"><img src="../img1/5.jpg"/></a></li>
+       </ul>
+     </div>
+  </body>
+</html>

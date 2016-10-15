@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+h1,h2,h3,h4,h5,h6,p,ul,ol,body,dl,dd,input,textarea,td,th{ margin:0; padding:0;}
+li{ list-style:none}
+a{ color:#666; text-decoration:none;}
+img{ vertical-align:top; border:none}
+input,textarea{ border:none; background:none; outline:none;}
+textarea{ resize:none;}
+/*重要样式*/
+.fl{ float:left}
+.fr{ float:right;}
+body{ color:#666;  font-size:12px; }
+.ov{ overflow:hidden}
+.clearfix:after{content:'';display:block;clear:both}
+.w{ width:1200px; margin:0 auto;}
+.marr-20{ margin-right:20px;}
+.dis{ display:block;}
+.bor_b{ border-bottom:1px solid #e6e6e6;}
+.bor_r{border-right:1px solid #e6e6e6;}
+.hot{ color:#f69;}
+.nobor_b{ border-bottom:none !important;}
+.nobor_r{border-right:none !important;}
