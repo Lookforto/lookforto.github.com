@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0px;
+				padding:0px;
+			}
+			body,html{
+				background: #000;
+			}
+			#wrap{
+				width:300px;
+				height:300px;
+				border:2px solid #fff;
+				border-radius:50%;
+				transform-style:preserve-3d ;
+				box-shadow: 0 0 5px 10px #fff;
+				position: absolute;
+				left: 50%; top:50%; margin-left: -150px; margin-top:-150px;
+			}
+			#wrap div{
+				height: 300px ; width: 300px; position: absolute;
+				left: 50%; top:50%; margin-left: -150px; margin-top:-150px;
+				box-shadow: 0 0 5px 10px #fff;
+				border-radius: 50%;
+			}
+		</style>
+		<script src="jquery-1.7.2.js"></script>
+		<script>
+			$(function(){
+				$('#wrap div:even').each(function(index,ele){
+					$(ele).css({
+						'transform':'rotateX('+($(this).index()/2+1)*45+'deg)'
+					})
+				})
+				$('#wrap div:odd').each(function(index,ele){
+					$(ele).css({
+					    'transform':'rotateY('+($(this).index()+1)/2*45+'deg)'
+					})
+				})
+				
+				move($('#wrap'));
+				function move(obj){
+					var x=0;
+					var y=0;
+					obj.on('mousedown',function(ev){
+						var disX=ev.pageX-x;
+						var disY=ev.pageY-y;
+						$(document).on({
+							'mousemove':function(ev){
+								x=ev.pageY-disX;
+								y=ev.pageX-disY;
+								obj.get(0).style.transform='perspective(800px) rotateX('+(-x)+'deg) rotateY('+y+'deg)';
+							},
+							'mouseup':function(){
+								$(document).off('mousemove');
+								$(document).off('mouseup');
+							}
+						})
+						return false;
+					})
+				}
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="box3"></div>
+			<div class="box4"></div>
+			<div class="box5"></div>
+			<div class="box6"></div>
+			<div class="box7"></div>
+			<div class="box8"></div>
+			<div class="box9"></div>
+			<div class="box10"></div>
+			<div class="box11"></div>
+			<div class="box12"></div>
+			<div class="box13"></div>
+			<div class="box14"></div>
+			<div class="box15"></div>
+			<div class="box16"></div>
+		</div>
+	</body>
+</html>

@@ -77,42 +77,21 @@ DOMReady(function(){
 	
 	//jiaju-5f
      ;(function(){
-		 var box30 = document.getElementById('sid_1');
-		 var albo = box30.children[0].children;
-		 var aA = box30.children[0].getElementsByTagName('a');
-		 var arr1 = [];
-		
-		 for(var i=0; i<albo.length; i++){
-			   arr1[i]={
-				   left: albo[i].offsetLeft,
-			        top: albo[i].offsetTop
-				 }
-			 }//先用数组存一下
-         //把浮动布局改成定位布局 
-		 for(var i=0; i<albo.length; i++){
-			 albo[i].style.position = 'absolute';
-			 albo[i].style.left=arr1[i].left + 'px';
-			 albo[i].style.top=arr1[i].top + 'px';
-			 albo[i].style.margin = 0;
-		  }
-		  var i=0;
-		 for(var i=0;i<albo.length;i++){
+		 var box30 = document.getElementById('box');
+		 var albo = box30.getElementsByTagName('li');
+		 var aA = box30.getElementsByTagName('a');
+		 for(var i=0; i<aA.length;i++){
 		 	(function(index){
-		 		 albo[i].onmouseover=function(){
-		     	aA[index].style.display = 'block';
-				 this.className='red';
-			   	 move(this,{width:300,height:300,marginLeft:-50,marginTop:-50});
-			     this.style.zIndex = i++;
-			 };
-			 albo[i].onmouseout=function(){
-			 	aA[index].style.display = 'none';
-              //移出的时候把定位布局改成浮动布局
-				 this.className='';
-			   	 move(this,{width:200,height:196,margin:0});
-			 };
-		 	})(i);		    
-		}
-	  })();
+		 	   albo[i].onmouseenter=function(){
+		 	   	aA[index].style.display='block';
+		 	   };
+		 	   albo[i].onmouseleave=function(){
+		 	   	aA[index].style.display='none';
+		 	   };
+		     })(i);
+		 }
+		 
+	  })()
 	  //判断页码
 	  function pageif(){
 	  	    if(n==0){

@@ -266,10 +266,6 @@ nav h1{
 	height: 100%;
 }
 
-.side1 ul li:nth-child(5){ display: block;}
-.side1 ul li:nth-child(6){ display: block;}
-.side1 ul li:nth-child(7){ display: block;}
-.side1 ul li:nth-child(8){ display: block;}
 .side1 ul{
 	width: 80%;
 	margin: 100px auto;
@@ -294,10 +290,14 @@ nav h1{
 	text-align: center;
 	color: #FFF;
 	display: none;
+	transition: 0.5s all ease;
 }
 .paren .side2{
 	background: #660000;
 	opacity: 0.5;
+}
+.side2 ul{
+	display: none;
 }
 .paren .side3{
 	background: #0078FF;

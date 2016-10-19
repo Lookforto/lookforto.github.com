@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		#box{width: 200px; height: 300px; border: 1px solid plum; position: relative; float: left; margin-right: 30px;}
+		#box img {width: 200px; height: 300px;  }
+		#mak{width: 100px; height: 100px; background: rgba(0,0,0,.5) ; position: absolute; top:0; left: 0;}
+		#box1{width: 200px; height: 300px; overflow: hidden; position: relative; float: left;}
+		#big{position: absolute;top: 0;left: 0;}
+	</style>
+	<script>
+		window.onload=function(){
+			var oBox = document.getElementById('box');
+			var oMak = document.getElementById('mak');
+			var oBig = document.getElementById('big');
+			var oBox1 = document.getElementById('box1');
+			
+			oBox.onmousemove=function(ev){
+				var oEvent = ev || event;
+				
+				var t =oEvent.clientY-oMak.offsetHeight/2;
+				var l = oEvent.clientX-oMak.offsetWidth/2;
+				if( l <= 0 ){
+					l = 0;
+				}else if( l >= oBox.offsetWidth-oMak.offsetWidth ){
+					 l = oBox.offsetWidth-oMak.offsetWidth;
+				}
+				if( t <= 0 ){
+					t = 0;
+				}else if( t >= oBox.offsetHeight-oMak.offsetHeight ){
+					 t = oBox.offsetHeight-oMak.offsetHeight;
+				}
+				oMak.style.top= t +'px';
+				oMak.style.left= l +'px';
+				//难点 移动比例  计算出大图可移动的距离/mask可移动的距离
+				oBig.style.top=-t*(oBig.offsetHeight-oBox1.offsetHeight)/(oBox.offsetHeight-oMak.offsetHeight) + 'px';
+				oBig.style.left=-l*(oBig.offsetWidth-oBox1.offsetWidth)/(oBox.offsetWidth-oMak.offsetWidth) + 'px';
+				
+			}
+		}
+	</script>
+	<body style="background: #000;">
+		<div id="box">
+			<img src="luffy.jpg">
+			<span id="mak"></span>
+		</div>
+		<div id="box1">
+			<img src="luffy.jpg"  id="big"/>
+		</div>
+	</body>
+</html>

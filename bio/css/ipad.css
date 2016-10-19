@@ -261,25 +261,25 @@ nav h1{
 	height: 641px;
 	float: left;
 }
-.paren img{
+.side2 img,.paren img{
 	width: 100%;
 	height: 100%;
 }
 
-.side1 ul{
+.side2 ul,.side1 ul{
 	width: 80%;
 	margin: 100px auto;
 	overflow: hidden;
 	position: relative;
 }
-.side1 ul li{
+.side2 ul li,.side1 ul li{
 	width: 200px;
 	float: left;
 	height: 196px;
 	margin: 20px;
 	position: relative;
 }
-.side1 ul li a{
+.side2 ul li a,.side1 ul li a{
 	width: 100%;
 	height: 100%;
 	background: rgba(0,0,0,.5);
@@ -291,7 +291,10 @@ nav h1{
 	text-align: center;
 	color: #FFF;
 	display: none;
+	transition: 0.5s all ease;
+	font-size: 20px;
 }
+
 .side1 ul li:nth-child(5){ display: none;}
 .side1 ul li:nth-child(6){ display: none;}
 .side1 ul li:nth-child(7){ display: none;}
