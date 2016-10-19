@@ -1,0 +1,458 @@
+/*pc端*/
+html body{
+	width: 100%;
+	 font-family: "微软雅黑";
+	overflow: hidden;
+	
+}
+.her{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+nav{
+	width: 100%;
+    height: 50px;
+    background: rgba(0,0,0,.5); 
+    line-height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 199;
+}
+nav h1{
+	color:#66CC99;
+	margin-left: 10px;
+}
+.nav_in{
+	height: 100%;
+	margin:0 auto; 
+	overflow: hidden;
+}
+.nav_in a{
+	display: block;
+	width: 100%;
+	color: #FFCC00;
+	-webkit-transition: 0.6s all ease;
+	font-weight: bold;
+	text-align: center;
+}
+.nav_in .nav_in_le{
+	width: 100%;
+	background:rgba(0,0,0,.5);
+	position: absolute;
+	left: 0;
+	top: 50px;
+	display: none;
+}
+/*移动下拉home*/
+.than{
+	width: 50px;
+	height: 48px;
+	border:1px solid #fff;
+	border-radius: 5px;
+	background: #000;
+	margin-right: 10px;
+	display: block;
+}
+.than span{
+	height: 3px;
+	width: 40px;
+	display: block;
+	background: #FFF;
+	margin: 10px auto;
+}
+.nav_in .active{ background: #366;}
+.nav_in a:hover{
+	color: #CCFFCC;
+}
+.page1{
+	
+	background: url(../img/bg7.jpg) no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 641px;
+	overflow: hidden;
+	position: relative;
+}
+/*页码*/
+.pages{
+	width: 30px;
+	height: 270px;
+	background: #000;
+	position: fixed;
+	bottom: 50px;
+	right: 20px;
+	border-radius: 5px;
+	z-index: 100;
+}
+.pages a{
+	display: block;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	background: #fff;
+	margin: 30px auto;
+}
+/*==*/
+
+.tiet{
+	width: 300px;
+	height: 100px;
+	margin: 300px auto;	
+	text-align: center;
+}
+.ti_b{
+	font-size: 20px;
+	color: #fff;
+	margin-top: 10px;
+	text-shadow:2px 2px 10px #000;
+}
+.ti_t{
+	font-size: 36px;
+	box-shadow: 3px 3px 3px #000;
+	padding-bottom: 5px;
+	text-shadow:2px 2px 2px #000;
+}
+.angle1,.angle2,.angle3,.angle4{
+	position: absolute;
+	transition: 0.6s all ease;
+}
+.angle1{
+	left: 150px;
+	top: 150px;
+	transform: rotate(-90deg);
+}
+.angle4:hover{
+	transform: rotate(0deg);
+}
+.angle2{
+	left: 150px;
+	bottom: 150px;
+	transform: rotate(90deg);	
+}
+.angle3{
+	right:150px;
+	top: 150px;
+	transform: rotate(90deg);
+}
+.angle4{
+	right: 150px;
+	bottom: 150px;
+	transform: rotate(-90deg);
+}
+/*下键提示*/
+.arrow{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background: rgba(0,0,0,.5);
+	border: 2px solid #666;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+.arrow ul{
+	width: 50px;
+	height: 160px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	
+}
+.arrow ul li{
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-top: 10px solid #66CC99;
+	margin-top: 20px ;
+	margin-left: 15px;
+}
+/*page2*/
+.page2{
+	background: url(../img/2222.jpg) no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 641px;
+}
+.page2 img{
+	width: 60px;
+	height: 60px;
+}
+.page2 p{
+	font-size: 50px;
+	padding-top:100px;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+}
+.page2 ul li{ 
+	float: left;
+	width: 50%;
+	height:200px;
+	text-align: center;
+	color: #FFF;
+	
+}
+.page2 ul{ 
+	width: 100%;
+	overflow: hidden;	
+	margin-top: 50px;
+}
+/*.page3*/
+.page3{
+	width: 100%;
+	height: 641px;
+	background: #CCCCFF;
+	position: relative;
+	overflow: hidden;
+}
+/*page4*/
+.page4{
+	background: url(../img/834.jpg) no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 641px;
+}
+.page4 ul{
+	margin-top:150px;
+	overflow: hidden;	
+}
+.page4 ul li{ 
+	float: left;
+	width: 25%;
+	text-align: center;
+	color: #fff;
+}
+.page4 p{
+	font-size: 50px;
+	padding: 20px 0;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+}
+.page4 li img{
+	width: 100px;
+	height: 100px;
+}
+.page4 li div{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin:0 auto;
+	margin-bottom: 20px;
+}
+.page4 .salm{
+	font-size: 20px;
+	color:#FFFF99;
+}
+/*page5*/
+.page5{
+	background: url(../img/bg1.jpg) no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 641px;
+	position: relative;
+	overflow: hidden;
+}
+.page5 .paren{
+	width: 300%;
+	height: 641px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+/*按钮*/
+.l_sp{
+	width: 0;
+	height: 0;
+	border: 30px solid transparent;
+	border-right: 30px solid #66CCFF;
+	position: absolute;
+	left: 0;
+	top: calc(50% - 15px);
+	z-index: 99;
+	display: none;
+}
+.r_sp{
+	width: 0;
+	height: 0;
+	border: 30px solid transparent;
+	border-left: 30px solid #66CCFF;
+	position: absolute;
+	right: 30px;
+	top: calc(50% - 15px);	
+	z-index: 99;
+}
+
+.paren div{
+	width: calc(100% / 3);
+	height: 641px;
+	float: left;
+}
+.paren img{
+	width: 100%;
+	height: 100%;
+}
+.paren .side1{
+
+	
+}
+.side1 ul{
+	width: 80%;
+	margin: 100px auto;
+	overflow: hidden;
+}
+.side1 ul li{
+	width: 200px;
+	float: left;
+	height: 196px;
+	margin: 20px;
+	position: relative;
+}
+.side1 ul li a{
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);
+	z-index: 2;
+	position: absolute;
+	left: 0;
+	top: 0;
+	line-height: 196px;
+	text-align: center;
+	color: #FFF;
+	display: none;
+}
+.side1 ul li:nth-child(5){ display: none;}
+.side1 ul li:nth-child(6){ display: none;}
+.side1 ul li:nth-child(7){ display: none;}
+.side1 ul li:nth-child(8){ display: none;}
+.paren .side2{
+	background: #660000;
+	opacity: 0.5;
+}
+.paren .side3{
+	background: #0078FF;
+	opacity: 0.5;
+}
+/*page6*/
+.page6{
+	background: url(../img/pure.jpg) no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 641px;
+	display:-webkit-box;
+	-webkit-box-orient:vertical;
+}
+
+.page6 .bak{
+	width: 100%;
+	background: #66CC99;
+	-webkit-box-flex:1;
+}
+.page6 .self{
+	width: 100%;
+	display: none;
+	text-align: center;
+	color: #FFF;
+	background: transparent;
+	
+	height: 0;
+}
+.self dt{
+	padding: 30px;
+	font-size: 30px;
+	margin-top: 30px;
+}
+.self dd{
+	font-size: 20px;
+	padding-top:15px ;
+}
+.self dd:hover{
+	color: #00FF00;
+}
+/*page3*/
+.treed{
+	margin:80px 0 0 20px; 
+	padding: 0 20px;
+}
+.treed span{margin: 10px; }
+.treed dt{ font-size: 20px; font-weight: bold;}
+.treed dd{ line-height: 20px;}
+.page3 .treed .treed_1 span{
+	background: url(../img/page-3/tv8.png) no-repeat;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	float: left;
+	background-size: 30px 30px;
+}
+.page3 .treed .treed_2 span{
+	background: url(../img/page-2/tel.png) no-repeat;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	float: left;
+	background-size: 30px 30px;	
+}
+.page3 .treed .treed_2{margin: 30px 0;}
+.page3 .treed .treed_3 span{
+	background: url(../img/page-3/baterry10.png) no-repeat;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	float: left;
+	background-size: 30px 30px;
+}
+.page3 .rock{
+	width:100px;
+	height: 150px;
+	animation: 1s move linear infinite;
+	display: none;
+}
+	@keyframes move{
+		from{transform: rotate(45deg);}
+		to{transform: rotate(0deg);}
+	}
+.page3 .rock img{ width:100px; height: 150px;}
+.topop{
+	width:200px;
+	height: 200px;
+    position: absolute;
+    right: 315px;
+    top: 180px;
+    display: none;
+}
+.topop img{
+	width: 400px;
+	height: 400px;
+}
+.list{
+	width: 200px;
+	height: 100px;
+	margin:50px 0 0 200px;
+	position: absolute;
+	left: 50px;
+	bottom: 80px;
+	z-index: 2;
+   display: none;
+}
+.list span{ margin-left: 30px;}
+.list span:hover{
+	color: #f00;
+}
+
+.rock{
+	position: absolute;
+	top: 400px;
+	left: 100px;
+	transform-origin: left top;
+}
+.pages .active_1{
+	background: #000;
+	border: 2px solid #FFF;
+}
+

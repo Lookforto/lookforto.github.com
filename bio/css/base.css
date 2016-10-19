@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,input,textarea{ margin:0; padding:0;}
+li{ list-style:none;}
+a{ text-decoration:none; color:#555;}
+img{ vertical-align:top; border:none;}
+input,textarea{ outline:none; border:none; }
+textarea{ resize:none;}
+body{ font-size:12px; color:#222; font-family: "微软雅黑";}
+.fl{ float:left;}
+.fr{ float:right;}
+.clearfix:after{ content:''; display:block; clear:both;}
+.w{ width:1180px; margin:0 auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

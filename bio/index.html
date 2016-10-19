@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>个人站</title>
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		      <!-- device-width：设备宽度
+		      initial-scale=1.0  初始渲染比例
+		      maximum-scale=1.0 最大缩放比
+		      minimum-scale=1.0 最小缩放比
+		      user-scalable=0/no 禁止用户放大缩小网页 -->
+	   <meta name="format-detection" content="telephone=no,email=no">
+		    <!-- 禁止浏览器识别电话-禁止浏览器识别邮箱 -->
+		    <!-- 苹果专用： -->
+	   <meta name="apple-mobile-web-app-capable" content="yes">
+	    	 <!-- 允许页面保存到 桌面 -->
+	   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	     	<!-- 设置苹果状态栏颜色 -->
+	   <meta content="yes" name="apple-touch-fullscreen"/>
+     		<!-- 点击空白区域，全屏 -->
+       <link rel="stylesheet" href="css/base.css" />
+       <link rel="stylesheet" href="css/animate.css" />
+       <link rel="stylesheet" href="css/pc.css" media="(min-width:1024px)" />
+	   <link rel="stylesheet" href="css/ipad.css" media="(max-width:1023px) and (min-width:641px)" />
+	   <link rel="stylesheet" href="css/iphone.css" media="(max-width:640px)"/>
+	</head>
+	<body>	
+		<!--导航栏-->
+		<nav>
+			<div class="nav_in">
+				<div class="fl"><h1>Tom</h1></div>
+				<div class="fr nav_in_le" id="navlis">
+					<a href = "javascript:;" class="active">Home</a>
+					<a href = "javascript:;">个人资料</a>
+					<a href = "javascript:;">专业技能</a>
+					<a href = "javascript:;">工作经历</a>
+					<a href = "javascript:;">项目经验</a>
+					<a href = "javascript:;">自我评价</a>
+				</div>
+				<!--移动端下拉框-->
+		<div class="than fr" id="than">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+			</div>
+		</nav>
+		
+		<div class="her" id="header">
+		<div class="page1" id="page1">
+			<!--四个角-->
+			<div class="angle1"><img src="img/page_home/1.png" /></div>
+			<div class="angle2"><img src="img/page_home/2.png" /></div>
+			<div class="angle3"><img src="img/page_home/3.png" /></div>
+			<div class="angle4"><img src="img/page_home/4.png" /></div>
+			<!--简历提示-->
+			<div class="tiet">
+				<p class="ti_t animated"><b>前端工程师</b>&nbsp;简历</p>
+				<p class="ti_b">爱生活，爱技术</p>
+			</div>
+			<!--下键提示-->
+			<div class="arrow" id="arrow">
+				<ul>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>	
+		</div>
+		<!--page2-->
+		<div class="page2" id="page2">
+			<p class=" shake ">基本资料</p>
+			<ul>
+				<li class="animated rubberBand ">
+					<div><img src="img/page-2/glass.png"/></div>
+					<dl>
+						<dt>基本信息</dt>
+						<dd>姓名:Tom</dd>
+						<dd>年龄:23</dd>
+						<dd>籍贯:河北</dd>
+					</dl>										
+				</li>
+				<li class="animated">
+					<div><img src="img/page-2/book.png"/></div>
+					<dl>
+						<dt>毕业院校</dt>
+						<dd>邯郸大学</dd>
+						<dd>大专</dd>
+					</dl>										
+				</li>
+				<li class="animated ">
+					<div><img src="img/page-2/hat.png"/></div>
+					<dl>
+						<dt>兴趣爱好</dt>
+						<dd>研究各种特效</dd>
+						<dd>学习新的技术</dd>
+						<dd>使用新的框架</dd>
+					</dl>										
+				</li>
+				<li class="animated ">
+					<div><img src="img/page-2/tel.png"/></div>
+					<dl>
+						<dt>联系方式</dt>
+						<dd>tel:13269420996</dd>
+						<dd>emile:13293027658@163.com</dd>
+						<dd>github :lookforto.github.io</dd>
+					</dl>										
+				</li>
+			</ul>
+		</div>
+		<!--page3-->
+		<div class="page3">
+			<div class="treed" id="blpm">
+				<div class="treed_1 clearfix animated ">
+					<span></span>
+					<dl>
+						<dt>PC端</dt>
+						<dd>会使用 Html5 Css3 JavaScript，完成web端或者移动端页面的编写和维护，思路清晰，结构完整，易于维护和持久化开发，能处理主流浏览器兼容问题。</dd>
+						<dd>熟练使用原生js, 了解js面向对象原理，闭包以及原型结构，能够合理利用面向对象以及模块化开发,并且能适当完成框架封装。熟练使用 jQuery，并能完成相关项目。</dd>
+						<dd>熟悉animate fullpage template lazyload jQeasing masonry等实用插件的应用,轮播图，tab栏，瀑布流，延迟加载，全屏滚动等等常用功能的实现,也可用原生js实现以上插件的效果。</dd>
+						<dd>掌握 Ajax交互原理，根据后台接口能够合理完成前后台交互，数据的增删改查-->dom操作或anjular操作进行数据展示</dd>
+					</dl>
+				</div>
+				<div class="treed_2 clearfix animated ">
+					<span></span>
+					<dl>
+						<dt>移动端</dt>
+						<dd>熟练使用zepto.js，Frozen ui，Amaze ui等移动框架进行移动页面的开发</dd>
+						<dd>掌握 移动端编程，会基于流式布局以及 响应式布局 开发基于移动端的页面。</dd>
+						<dd>熟练使用Bootstrap 框架以及轻量级框架 zepto,swiper的使用</dd>
+					</dl>
+				</div>
+				<div class="treed_3 clearfix animated ">
+					<span></span>
+					<dl>
+						<dt>其他</dt>
+						<dd>掌握 angularJS 框架原理，可以完成无需刷新的单页面应用</dd>
+					    <dd>了解git,使用github存放代码</dd>
+                        <dd>canvas绘图</dd>
+					</dl>
+					
+				</div>
+			</div>
+			<div class="rock"><img src="img/page-3/5(2).png" /></div>
+			<div class="list">
+				<span>HTML5</span>
+				<span>Css3</span>
+				<span>jQuery</span>
+				<span>响应式</span>
+				<span>Canvas</span>
+				<span>移动端</span>
+				<span>angular</span>
+				<span>Zepto</span>
+			</div>
+			
+			<!--toushe-->
+			<div class="topop">
+			   <img src="img/page-3/12.png" />
+			</div>
+		</div>
+		<!--page4-->
+		<div class="page4">
+			<p class="animated swing">个人经历</p>
+			<p class="salm">热爱技术，专注用户体验</p>
+			<ul>
+				<li>
+					<div><img src="img/gtra.jpg"/></div>
+					<dl>
+						<dt>工作经历</dt>
+						<dd>北京国泰瑞安消防工程有限公司</dd>
+						<dd>职位前端开发工程师</dd>
+					</dl>										
+				</li>
+				<li>
+					<div><img src="img/lkp.jpg"/></div>
+					<dl>
+						<dt>毕业院校</dt>
+						<dd>邯郸大学</dd>
+						<dd>好青年一枚</dd>						
+					</dl>										
+				</li>
+				<li>
+					<div><img src="img/nmnm.jpg"/></div>
+					<dl>
+						<dt>......</dt>
+						<dd>......</dd>
+						<dd>.....</dd>
+						<dd>...</dd>
+					</dl>										
+				</li>
+				<li>
+					<div><img src="img/vvv、.jpg"/></div>
+					<dl>
+						<dt>......</dt>
+						<dd>......</dd>
+						<dd>......</dd>
+						<dd>......</dd>
+					</dl>										
+				</li>
+			</ul>
+			
+		</div>
+		<!--page5-->
+		<div class="page5">
+			<!--按钮-->
+			<span class="l_sp" id="left"></span>
+			<span class="r_sp" id="right"></span>
+			<div class="paren" id="box">
+				<div class="side1" id="sid_1">
+					<ul>
+						<li>
+							<img src="img/ml0.png" />
+							<a href="http://www.baoogu.com/">项目一</a>
+						</li>
+						<li>
+							<img src="img/gti.png" />
+							<a href="http://www.bjgtraxf.com/">项目二</a>
+						</li>
+						<li>
+							<img src="img/githu.png" />
+							<a href="https://lookforto.github.io/">github--练习</a>
+						</li>
+						<li>
+							<img src="img/zhixiang.png" />
+							<a href="https://lookforto.github.io/zxxy/html/index_c.html">智享学院</a>
+						</li>
+						<li>
+							<img src="img/05.jpg" />
+							<a href="javascript:;">暂无</a>
+						</li>
+						<li>
+							<img src="img/06.jpg" />
+							<a href="javascript:;">暂无</a>
+						</li>
+						<li>
+							<img src="img/07.jpg" />
+							<a href="javascript:;">暂无</a>
+						</li>
+						<li>
+							<img src="img/08.jpg" />
+							<a href="javascript:;">暂无</a>
+						</li>
+					</ul>
+				</div>
+				<div class="side2">
+				</div>
+				<div class="side3">3</div>
+			</div>
+		</div>
+		<!--page6-->
+		<div class="page6">
+			<div class="bak"></div>
+			<div class="self" id="self">
+				<dl>
+					<dt> My self</dt>
+					<dd>有责任，工作踏实，性格开朗乐观，积极上进。</dd>
+					<dd>易和人相处，拥有良好的亲和力。</dd>
+					<dd> 喜欢js，非常热爱编程，喜欢钻研新的技术。</dd>
+					<dd>具有很强的自学能力和良好的学习方法，喜欢研究各种新的框架。</dd>
+				</dl>
+			</div>
+			<div class="bak"></div>
+		</div>
+
+		</div>
+
+		<!--页码-->
+		<div class="pages" id="pages">
+			<a href="#" title="1F" class="active_1"></a>
+			<a href="#" title="2F"></a>
+			<a href="#" title="3F"></a>
+			<a href="#" title="4F"></a>
+			<a href="#" title="5F"></a>
+			<a href="#" title="6F"></a>
+		</div>
+		
+	</body>
+	<script src="js/myTom.js"></script>
+	<script src="js/index.js"></script>
+</html>
