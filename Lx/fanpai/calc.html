@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>calc的使用</title>
+    <style>
+      *{ margin:0; padding:0; list-style: none; }
+      ul{ width: 900px; height: 200px; border: 5px solid #000; overflow: hidden;
+         border-radius: 5px; box-shadow: 0 0 5px #000; margin:20px auto; }
+      ul li{ width:160px; height: 200px; background: #ccc; margin:0 10px;
+        float: left; position: relative; transition: 1s all ease;
+         transform-style:preserve-3d; transform:  perspective(0px) rotateY(0deg); }
+        ul li span{position: absolute; left:0; right:0; width: 100%;
+          height: 100%; line-height: 200px; text-align: center; font-size: 30px; color: #000; }
+        .dnp{background: red; transform:  z-index: 1;}
+        .dnh{background: blue; transform: translateZ(-1px)  scale(-1,1); z-index: -1; }
+
+    </style>
+    <script>
+       window.onload=function(){
+         var aDnh = document.getElementsByClassName('dnh');
+         var aLi = document.getElementsByTagName('li');
+         var arr = ['1毛','1块','1百','1千','一万'];
+         var  n =0 ;
+         var timer = null;
+          for(var i = 0; i<arr.length; i++){
+            aLi[i].onclick = function(){
+              var _this = this;
+              for(var j=0; j<arr.length; j++){
+                arr.sort(function(){
+                  return Math.random() - 0.5 ;
+                 })
+                aDnh[j].innerHTML = arr[j];
+                aLi[j].style.transform = 'perspective(0px) rotateY(0deg)';
+               }
+               clearInterval(timer);
+               timer = setInterval(function(){
+                 n++;
+                 if(n>=5){
+                       clearInterval(timer)
+                      _this.style.transform = 'perspective(800px) rotateY(180deg)';
+
+                 }
+                     _this.style.transform = 'perspective(800px) rotateY('+n*180+'deg)';
+               },30)
+
+            };
+
+          }
+       };
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li><span class="dnp">1</span><span class="dnh">false</span></li>
+      <li><span class="dnp">2</span><span class="dnh">false</span></li>
+      <li><span class="dnp">3</span><span class="dnh">false</span></li>
+      <li><span class="dnp">4</span><span class="dnh">false</span></li>
+      <li><span class="dnp">F5</span><span class="dnh">false</span></li>
+    </ul>
+  </body>
+</html>
