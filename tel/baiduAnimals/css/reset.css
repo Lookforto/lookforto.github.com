@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
+var,strong,em,i,s,b{list-style:none;font-style:normal;}
+
+body{font-size:12px;font-family:'\5B8B\4F53',SimSun,'\5FAE\8F6F\96C5\9ED1',Microsoft Yahei,Verdana,Calibri,Helvetica,Arial,sans-serif;color:#000;min-height: 100%;_height:100%;}
+a{color:#007ebf;}
+
+/*清浮动*/
+.fix{zoom:1;}
+.fix:before,.fix:after{content:'';display:block;overflow:hidden;visibility:hidden;font-size:0;line-height:0;width:0;height:0;}
+.fix:after{clear:both;}
+
+/*浮动*/
+.fl{float:left;}
+.fr{float:right;}
+.fn{float:none;}
+/*间距*/
+.mt10{margin-top:10px;}
+.mr10{margin-right:10px;}
+.mb10{margin-bottom:10px;}
+.ml10{margin-left:10px;}
+
+.mt15{margin-top:15px;}
+.mr15{margin-right:15px;}
+.mb15{margin-bottom:15px;}
+.ml15{margin-left:15px;}
+
+.mt20{margin-top:20px;}
+.mr20{margin-right:20px;}
+.mb20{margin-bottom:20px;}
+.ml20{margin-left:20px;}
+
+.mt50{margin-top:50px;}
+.ml50{margin-left:50px;}
+/* 隐藏 */
+.c_hide{display:none;}
+/* 显示 */
+.c_show{display:block;}
+/*word-break*/
+.wbn{word-break:keep-all;white-space:nowrap;}
+.wby{word-break:break-all;word-wrap:break-word;white-space:normal;}
+
+/*2014-09-09 新增*/
+input,select,textarea{
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-webkit-appearance:button;
+	-moz-appearance:button;
+	-o-appearance:button;
+	-ms-appearance:button;
+	width:100%;
+	background:#fff;
+	color:#999;
+	font-family:'微软雅黑',Microsoft YaHei;
+	border:1px solid #cecdce;
+}

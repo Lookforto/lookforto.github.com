@@ -5,16 +5,71 @@
 <title>无标题文档</title>
 <style>
  *{padding:0; margin:0; font-family:"微软雅黑"}
- body{padding:5% 30%; background:#333; background-position:54% 0;}
- p{color:#fff; font-size:30px; margin-bottom:2%;}
- div a{ color:#000; font-size:20px; text-decoration:none; font-weight:bold; display:block;  line-height:35px;
+ body{padding:5% 30%; background:#000; background-position:54% 0;}
+ div ul{
+ 	width: 300px;
+ 	margin: 0 auto;
  }
+
+ div ul li{
+ 	list-style: none;	
+ 	border: 1px solid #CCCCFF;
+ 	border-radius: 5px;	
+ 	padding: 10px;
+ }
+ div ul li p{
+ 	color: #CC9900;
+ 	padding:10px;
+ 	transition: 0.5s all ease;
+ }
+ div ul li p:hover{
+ 	padding-left: 20px;
+ 	font-size: 20px;
+ 	color: #CC0000;
+ }
+ div ul li a{
+ 	text-decoration: none;
+ 	color: #CCCC99;
+ }
+ div ul li ul{
+ 	width: 240px;
+ 	margin: 20px auto;
+ 	display: none;
+ }
+ div ul li ul li{
+ 	margin-top:10px;
+ 	transition: 0.5s all ease;
+ }
+  div ul li ul li:hover{
+  	background: #990033;
+  }
+  
 </style>
+<script>
+	window.onload=function(){
+		var oUl = document.getElementById('ul');
+		var aLi = oUl.children;
+		var n=0;
+		for(var i=0; i<aLi.length; i++){
+			(function(index){
+				aLi[i].onclick = function(){
+					for(var j=0; j<aLi.length; j++){
+						aLi[j].children[1].style.display='none';
+					}
+					this.children[1].style.display='block';
+					
+				};
+				aLi[i].children[1].children.onclick=function(){
+					this.parentNode.style.display='none';
+				};
+			})(i)	
+		}
+	};
+</script>
 </head>
 
 <body>
-<p>目录</p>
-<div>
+<!--<div>
    <a href="bio/index.html">个人作品</a>
    <a href="Lx/toumingqie/wufeng/wufeng.html">1>无缝滚动</a>
    <a href="cat1.html">2> 简化版h5绘画小猫</a>
@@ -35,6 +90,56 @@
    <a href="Lx/fangdajing/yuan.html">17>球</a>
    <a href="Lx/fangdajing/fangdajing.html">18>放大镜</a>
    <a href="Lx/fanpai/calc.html">19>翻牌</a>
+</div>-->
+<div>
+	<ul id="ul">
+		<li>
+			<p>个人小集</p>
+		    <ul>
+		    	<li><a href="bio/index.html">个人作品</a></li>
+		    	<li><a href="zxxy/html/index_a.html">智享学院</a></li>
+		    	<li><a href="Lx/taobao/index.html">淘宝</a></li>
+		    </ul>
+		</li>
+		<li>
+			<p>移动端</p>
+		    <ul>
+		    	<li><a href="Lx/pubuliu/pubuliu.html">移动端布局的瀑布流-需服务器</a></li>
+		    	<li><a href="tel/index.html">(单)移动端1</a></li>
+		    	<li><a href="tel/index1.html">(单)移动端2</a></li>
+		    	<li><a href="tel/index3.html">(单)移动端3</a></li>
+		    	<li><a href="tel/baiduAnimals/index.html">baiduAnimals</a></li>
+		    </ul>
+		</li>
+		<li>
+			<p>Html5</p>
+			<ul>
+				<li><a href="Lx/fangdajing/yuan.html">球</a></li>
+		        <li><a href="h5/cat1.html">简化版h5绘画小猫</a></li>
+			</ul>   
+		</li>
+		<li>
+			<p>常用效果</p>
+		    <ul>
+		    	<li><a href="Lx/toumingqie/wufeng/wufeng.html">无缝滚动</a></li>
+		    	<li><a href="Lx/tan_nav/nav.html">弹性导航</a></li>
+		    	<li><a href="Lx/paowuxian/pao.html">抛物线效果</a></li>
+		    	<li><a href="Lx/fangdajing/fangdajing.html">放大镜</a></li>
+		    	<li><a href="Lx/fanpai/calc.html">翻牌</a></li>
+		    	<li><a href="Lx/lianxi/Untitled-1.html">练习本</a></li>
+		    	<li><a href="Lx/toumingqie/touming.html">透明切换</a></li>
+		    	<li><a href="Lx/3d/3dhuan.html">3d图片环</a></li>
+		    	<li><a href="Lx/tanceng/tanceng.html">弹层效果</a></li>
+		    </ul>
+		</li>
+		<li>
+			<p>angular</p>
+			<ul>
+				<li><a href="Lx/baogu/refund/html/mypurchase1.html">包谷网angular应用</a></li>
+			</ul>
+		</li>
+		
+	</ul>
 </div>
 </body>
 </html>

@@ -1,0 +1,21 @@
+@charset "utf-8";
+/*清除默认样式*/
+*{ margin:0; padding:0; }
+body{ font-size:12px; }
+li{ list-style:none; }
+a{ text-decoration:none; color:#3c3c3c; }
+.clearFix:after{ content:''; clear:both; display:block; }
+.clearFix{ zoom:1; }
+img{ display:block; border:none; }
+.fl{ float:left; display:inline; }
+.fr{ float:right; display:inline; }
+/*通用样式*/
+a:hover{ color:#ff4400; }
+.cf40 { color:#ff4400; }
+.c6c { color:#6c6c6c; }
+.fw { font-weight:bold; }
+.fs16 { font-size:16px; }
+.ml10px { margin-left:10px; }
+.mr20px { margin-right:20px; }
+.hot { position:absolute; right:-8px; top:0; width:9px; height:14px; background:url(../images/xiazai1.gif) no-repeat; }
+.new { position:absolute; right:-8px; top:0; width:9px; height:14px; background:url(../images/xiazai2.gif) no-repeat; }

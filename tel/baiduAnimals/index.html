@@ -1,0 +1,189 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<title>95%的人都不知道的它们的另一面</title>
+</head>
+<body>
+<div class="content">
+	<ul class="m_app_list fix">
+		<li class="item"><img src="img/img0.jpg" alt=""></li>
+		<li class="item"><img src="img/img1.jpg" alt=""></li>
+		<li class="item"><img src="img/img2.jpg" alt=""></li>
+		<li class="item"><img src="img/img3.jpg" alt=""></li>
+		<li class="item"><img src="img/img4.jpg" alt=""></li>
+		<li class="item"><img src="img/img5.jpg" alt=""></li>
+		<li class="item"><img src="img/img6.jpg" alt=""></li>
+		<li class="item"><img src="img/img7.jpg" alt=""></li>
+		<li class="item"><img src="img/img8.jpg" alt=""><a href="http://dev.benbun.com/web/zoo2/m/?from=singlemessage&isappinstalled=0" class="last_link">&nbsp;</a></li>
+	</ul>
+	<audio id="app_bgm">
+		<source src="img/music.mp3"></source>
+	</audio>
+	<div class="m_arr"></div>
+	<div id="loading"></div>
+</div>
+<div class="music c3_rotate_360"></div>
+<script>
+
+// 图片数据
+var imgData = [
+	{'url':'img/img0.jpg'},
+	{'url':'img/img1.jpg'},
+	{'url':'img/img2.jpg'},
+	{'url':'img/img3.jpg'},
+	{'url':'img/img4.jpg'},
+	{'url':'img/img5.jpg'},
+	{'url':'img/img6.jpg'},
+	{'url':'img/img7.jpg'},
+	{'url':'img/img8.jpg'}
+];
+loadImg(imgData);
+
+var shareTitle = [
+	'95%的人都不知道的它们的另一面',
+	'妹子！放开那些禽兽，让我来！',
+	'萌萌哒大熊猫竟然是孤独症患者？'
+];
+
+var shareImage = [
+	'http://baiduzoo.caijing.mingzhi.xyz/img/share1.jpg',
+	'http://baiduzoo.caijing.mingzhi.xyz/img/share2.jpg',
+	'http://baiduzoo.caijing.mingzhi.xyz/img/share3.jpg'
+];
+
+function rNum(){
+	return Math.floor(Math.random()*(parseInt(3)));
+}
+
+// 微信分享设置
+window.shareData = {
+    "imgUrl": "",
+    "timeLineLink": "http://baiduzoo.caijing.mingzhi.xyz",
+    "tTitle": '',
+    "tContent": ''
+};
+var ranConText = rNum();
+
+window.shareData.tTitle = shareTitle[ranConText];
+window.shareData.imgUrl = shareImage[ranConText];
+
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+        WeixinJSBridge.invoke('sendAppMessage', {
+            "img_url": window.shareData.imgUrl,
+            "link": window.shareData.timeLineLink,
+            "desc": window.shareData.tContent,
+            "title": window.shareData.tTitle
+        }, function(res) {
+        })
+    });
+
+    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+        WeixinJSBridge.invoke('shareTimeline', {
+            "img_url": window.shareData.imgUrl,
+            "img_width": "120",
+            "img_height": "120",
+            "link": window.shareData.timeLineLink,
+            "desc": window.shareData.tContent,
+            "title": window.shareData.tTitle
+        }, function(res) {
+        });
+    });
+}, false);
+
+
+function loadImg(imgData){
+	var l=imgData.length;
+	var jd=0;
+	$.each(imgData,function(i){
+		var newImg=new Image();
+		newImg.onload = newImg.onerror =function(){
+			jd+=100/l
+			if(jd>99){
+				$('#loadingNum').html(100);
+				setTimeout(function(){
+					$('#loading').hide();
+					setMusic();
+				},300)
+			};
+		}
+		newImg.src=imgData[i].url;
+	})
+}
+function setMusic(){
+	// 背景音乐设置
+	var _musicSwith = true,
+		_musciIcon  = $('.music'),
+		_music      = 'c3_rotate_360'
+		_appBgm     = $('#app_bgm').get(0);
+		_musciIcon.hide();
+	_musciIcon.on('click',function(e){
+		e.preventDefault();
+		if(_musicSwith){
+			_appBgm.pause();
+			$(this).removeClass(_music).addClass('stop');
+			_musicSwith = false;
+		}else{
+			_appBgm.play();
+			$(this).addClass(_music).removeClass('stop');
+			_musicSwith = true;
+		}
+		});
+		// 设置自动播放
+		_appBgm.addEventListener('ended', function () {
+		setTimeout(function () { _appBgm.play(); }, 300);
+		}, false);
+
+		$(window).on('touchstart',function(){
+		if(_musicOn){
+			_musicOn = false;
+			_appBgm.play();
+			_musciIcon.fadeIn();
+		}
+	})
+}
+// 滑动效果部分
+var _con   = $('.content'),
+	_list  = $('.m_app_list'),
+	_size  = $('.m_app_list>li').size(),
+	_w 	   = $('body').width(),
+	_h 	   = $('body').height(),
+	i  	   = 0,
+	_musicOn = true;
+_list.css('width',_size*_w+'px');
+_list.find('.item').css('width',_w+'px')
+_con.on('swipeLeft',function(){
+	i++;
+	if(i>=_size-1){
+		i = _size-1;
+		$('.m_arr').css('display','none');
+	}
+	goAnimate(i);
+}).on('swipeRight',function(){
+	i--;
+	if(i<0){
+		i = 0;
+	}
+	$('.m_arr').css('display','block');
+	goAnimate(i);
+});
+function goAnimate(i){
+	_list.find('.item').eq(i).addClass('active');
+	var oy = -(i*_h),
+		ox = -(i*_w);
+	$(_list).get(0).style.webkitTransform = 'translate3d('+ox+'px,0,0)';
+}
+
+// 取消默认事件
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+</script>
+</body>
+</html>
