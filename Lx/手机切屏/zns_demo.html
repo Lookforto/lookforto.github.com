@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script src="../move.js"></script>
+<script>
+window.onload=function(){
+	var oUl=document.getElementsByTagName('ul')[0];
+	var aLi=oUl.children;
+	var inow=0;
+	oUl.onmousedown=function(ev){
+		clearInterval(oUl.timer);
+		var start=ev.clientX;
+		var disX=ev.clientX-oUl.offsetLeft;
+		document.onmousemove=function(ev){
+			var left=ev.clientX-disX;
+			oUl.style.left=left+'px';
+		};
+		document.onmouseup=function(ev){
+			var end=ev.clientX;
+			if(end-start>40){
+				inow--;
+				if(inow==-1){
+					inow=0;
+				}
+				move(oUl,{left:-aLi[0].offsetWidth*inow});
+			}else if(end-start<-40){
+				inow++;
+				if(inow==aLi.length){
+					inow=aLi.length-1;
+				}
+				move(oUl,{left:-aLi[0].offsetWidth*inow});
+			}else{
+				move(oUl,{left:-aLi[0].offsetWidth*inow});
+			}
+			document.onmouseup=null;
+			document.onmousemove=null;
+		};
+		return false;
+	};
+};
+</script>
+</head>
+
+<body>
+<div id="iphone">
+	<div id="wrap">
+		<ul>
+			<li style="background:url(images/pic1.png);" title="智能课堂"></li>
+			<li style="background:url(images/pic2.png);" title="智能课堂"></li>
+			<li style="background:url(images/pic3.png);" title="智能课堂"></li>
+			<li style="background:url(images/pic4.png);" title="智能课堂"></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>

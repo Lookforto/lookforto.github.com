@@ -17,6 +17,7 @@
  	border-radius: 5px;	
  	padding: 10px;
  }
+ 
  div ul li p{
  	color: #CC9900;
  	padding:10px;
@@ -55,9 +56,10 @@
 				aLi[i].onclick = function(){
 					for(var j=0; j<aLi.length; j++){
 						aLi[j].children[1].style.display='none';
+						aLi[j].style.opacity='0.3';
 					}
 					this.children[1].style.display='block';
-					
+					this.style.opacity=1;
 				};
 				aLi[i].children[1].children.onclick=function(){
 					this.parentNode.style.display='none';
@@ -69,46 +71,24 @@
 </head>
 
 <body>
-<!--<div>
-   <a href="bio/index.html">个人作品</a>
-   <a href="Lx/toumingqie/wufeng/wufeng.html">1>无缝滚动</a>
-   <a href="cat1.html">2> 简化版h5绘画小猫</a>
-   <a href="cat2.html">3> 完整版h5绘画小猫</a>
-   <a href="tel/index.html">4> 移动端1</a>
-   <a href="tel/index1.html">5> 移动端2</a>
-   <a href="tel/index3.html">6> 移动端3</a>
-   <a href="zxxy/html/index_a.html">7> 智享学院</a>
-   <a href="Lx/baogu/refund/html/mypurchase1.html">8>包谷网angular练习-需要服务器</a>
-   <a href="Lx/lianxi/Untitled-1.html">9>练习本</a>
-   <a href="Lx/paowuxian/pao.html">10>抛物线效果</a>
-   <a href="Lx/pubuliu/pubuliu.html">11>移动端布局的瀑布流-需要服务器</a>
-   <a href="Lx/tan_nav/nav.html">12>弹性导航</a>
-   <a href="Lx/tanceng/tanceng.html">13>弹层效果</a>
-   <a href="Lx/toumingqie/touming.html">14>透明切换</a>
-   <a href="Lx/weibo/weibo.html">15>自适应留言板-需要服务器</a>
-   <a href="Lx/3d/3dhuan.html">16>3d图片环</a>
-   <a href="Lx/fangdajing/yuan.html">17>球</a>
-   <a href="Lx/fangdajing/fangdajing.html">18>放大镜</a>
-   <a href="Lx/fanpai/calc.html">19>翻牌</a>
-</div>-->
 <div>
 	<ul id="ul">
 		<li>
 			<p>个人小集</p>
 		    <ul>
-		    	<li><a href="bio/index.html">个人作品</a></li>
-		    	<li><a href="zxxy/html/index_a.html">智享学院</a></li>
-		    	<li><a href="Lx/taobao/index.html">淘宝</a></li>
+		    	<li><a href="bio/index.html">个人作品</a></li>	    	
 		    </ul>
 		</li>
 		<li>
 			<p>移动端</p>
 		    <ul>
-		    	<li><a href="Lx/pubuliu/pubuliu.html">移动端布局的瀑布流-需服务器</a></li>
-		    	<li><a href="tel/index.html">(单)移动端1</a></li>
-		    	<li><a href="tel/index1.html">(单)移动端2</a></li>
-		    	<li><a href="tel/index3.html">(单)移动端3</a></li>
+		    	<li><a href="bio/简约风手机登录/demo.html">简约风手机登录</a></li>
+		    	<li><a href="tel/index.html">页面1</a></li>
+		    	<li><a href="tel/index1.html">页面2</a></li>
+		    	<li><a href="tel/index3.html">页面3</a></li>
+		    	<li><a href="bio/easeApp/index.html">easeApp</a></li>
 		    	<li><a href="tel/baiduAnimals/index.html">baiduAnimals</a></li>
+		    	<li><a href="Lx/pubuliu/pubuliu.html">移动端布局的瀑布流-需服务器</a></li>
 		    </ul>
 		</li>
 		<li>
@@ -126,19 +106,46 @@
 		    	<li><a href="Lx/paowuxian/pao.html">抛物线效果</a></li>
 		    	<li><a href="Lx/fangdajing/fangdajing.html">放大镜</a></li>
 		    	<li><a href="Lx/fanpai/calc.html">翻牌</a></li>
-		    	<li><a href="Lx/lianxi/Untitled-1.html">练习本</a></li>
+		    	<li><a href="Lx/fanye/index.html">翻页效果</a></li>
+		    	<li><a href="Lx/穿墙/index.html">穿墙效果</a></li>
+		    	<li><a href="Lx/幻灯片/zns_demo.html">幻灯片</a></li>
+		    	<li><a href="Lx/手机切屏/zns_demo.html">手机切屏</a></li>
+		    	<li><a href="Lx/爆炸.html">爆炸效果</a></li>
+		    	<li><a href="Lx/单选按钮美化.html">单选按钮美化</a></li>
+		    	<li><a href="Lx/爆炸.html">爆炸效果</a></li>
+		    	<li><a href="Lx/漂浮广告.html">漂浮广告</a></li>
+		    	<li><a href="Lx/苹果菜单.html">苹果菜单</a></li>
+		    	<li><a href="Lx/延迟菜单.html">延迟菜单</a></li>
 		    	<li><a href="Lx/toumingqie/touming.html">透明切换</a></li>
 		    	<li><a href="Lx/3d/3dhuan.html">3d图片环</a></li>
 		    	<li><a href="Lx/tanceng/tanceng.html">弹层效果</a></li>
+		    	<li><a href="Lx/圆形遮罩效果/index.html">圆形遮罩效果</a></li>
 		    </ul>
 		</li>
 		<li>
-			<p>angular</p>
+			<p>项目</p>
 			<ul>
-				<li><a href="Lx/baogu/refund/html/mypurchase1.html">包谷网angular应用</a></li>
+				<li><a href="bio/web_a/index.html">Epsilon</a></li>
+				<li><a href="zxxy/html/index_a.html">智享学院</a></li>
+		    	<li><a href="Lx/taobao/index.html">淘宝</a></li>
+		    	<li><a href="bio/京东/index.html">京东</a></li>
+		    	<li><a href="bio/楼梯式导航/index.html">千凡</a></li>
+		    	<li><a href="bio/hello/index.html">百特</a></li>
 			</ul>
 		</li>
-		
+		<li>
+			<p>其他</p>
+			<ul>
+				<li><a href="Lx/lianxi/Untitled-1.html">练习本</a></li>
+				<li><a href="Lx/list/demo.html">优雅菜单</a></li>
+				<li><a href="Lx/日历/完美版日历/日历.html">pc日历</a></li>
+				<li><a href="Lx/日历/index.html">手机滚动日历</a></li>
+				<li><a href="bio/new/demo.html">swiper</a></li>
+				<li><a href="bio/jQueryStarability/index.html">星星评分</a></li>
+				<li><a href="bio/Loading/index.html">Loading组件</a></li>
+				<li><a href="Lx/baogu/refund/html/mypurchase1.html">angular应用</a></li>
+			</ul>
+		</li>
 	</ul>
 </div>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	form{
+		margin: 50px auto;
+		text-align: center;
+	}
+	input{
+		width: 25px;
+		height: 25px;
+		display: none;
+	}
+	label{
+		width: 25px;
+		height: 25px;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		position: relative;
+	}
+	input:checked + label:after{
+		content: '\2714';
+        font-size: 22px;
+        position: absolute;
+        top: 0px;
+        left: 4px;
+        color: red;
+	}
+</style>
+</head>
+<body>
+	<form action="">
+		<input type="checkbox" name="a" id="a" value="" />
+		<label for="a"></label>
+		<input type="checkbox" name="a" id="b" value="" />
+		<label for="b"></label>
+	</form>
+</body>
+</html>

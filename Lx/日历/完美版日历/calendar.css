@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+*{ margin:0; padding:0; list-style:none;}
+.calendar{ position:absolute; border:1px solid #ccc; width:210px; display:none; background:#fff;}
+.calendar h3{ position:relative; left:0; top:0; width:100%; height:30px; line-height:30px; text-align:center;}
+.calendar ol{ overflow:hidden; border-bottom:1px solid #ccc;}
+.calendar ol li{ width:30px; height:30px; float:left; text-align:center; line-height:30px;}
+.calendar ul{ overflow:hidden;}
+.calendar ul li{ width:30px; height:30px; float:left; text-align:center; line-height:30px;}
+.week{ color:red;}
+.pass{ color:gray;}
+.today{ background:#f60;}
+
+.prev{ position:absolute; left:0; top:0; z-index:2;}
+.next{ position:absolute; right:0; top:0; z-index:2;}
+

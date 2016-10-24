@@ -1,0 +1,279 @@
+.header{
+	-webkit-transform: translateZ(0) translateX(0) rotateY(0deg); /* reset transforms (Chrome bug) */
+	transform: translateZ(0) translateX(0) rotateY(0deg);
+	transition:all 300ms ease;
+	overflow:scroll;
+	overflow-x:hidden;
+	opacity:1;
+}
+.header-clear{height:60px; opacity:0; transition:all 400ms ease;	}
+.header-clear .fa-times{
+	font-size:18px;
+	width:60px;
+	height:60px;
+	text-align:center;
+	line-height:60px;	
+}
+.animate .header{
+	-webkit-transform: translateZ(0) translateX(0) translateY(-60px); /* reset transforms (Chrome bug) */
+	transform: translateZ(0) translateX(0) translateY(-60px);
+	opacity:0.5;
+	transition:all 300ms ease;
+}
+.animate .header-clear{
+	opacity:1;
+	transition:all 400ms ease;	
+}
+@media (min-width:768px){
+	.all-elements{
+		background-color:#000000;
+	}
+	
+	#perspective{
+		width:99%;
+		overflow:visible;
+		margin-left:0.5%;
+	}
+		
+	.effect-airbnb {
+		width:110%;
+	}
+	
+	
+	.perspective_container{
+		background-color:#FFFFFF;
+	}
+	
+	body{
+		background-color:#000000;	
+	}
+	
+}
+.nav-item a{
+	color:#CCC;
+	font-family:'Roboto', sans-serif;
+	font-size:14px;	
+	padding-bottom:13px;
+	padding-top:13px;
+	font-weight:400!important;
+	transition:all 400ms ease!important;
+}
+.nav-item a:hover{
+	color:#FFFFFF;	
+	transition:all 400ms ease!important;
+}
+.nav-sub-item{
+	padding-left:55px;	
+	display:none;
+}
+.nav-sub-item a{
+	font-size:12px;
+	padding-bottom:10px;
+	padding-top:10px;
+	opacity:0.5!important;
+}
+.nav-icon{
+	margin-right:20px;	
+	font-size:17px;
+	margin-top:2px;
+	width:20px;
+	text-align:center;
+}
+.nav-icon-selected{
+	position:absolute;
+	left:0px;
+	top:20px;	
+	font-size:10px;
+	color:#FFFFFF;
+}
+@media (min-width:768px){
+	.nav-item a{
+		font-size:16px;
+		padding-top:20px;
+		padding-bottom:20px;
+	}
+	
+	.nav-sub-item a{
+		padding-bottom:15px;
+		padding-top:15px;
+		font-size:14px;	
+	}
+	
+	.outer-nav{
+		top:48%!important;	
+	}
+}
+html, body, .perspective {
+	width: 100%;
+	height: 100%;
+}
+.perspective{
+	overflow:visible;	
+	background: #aaa;
+}
+.perspective_container {
+	background: #fff;
+	min-height: 100%;
+	position: relative;
+	outline: 1px solid rgba(0,0,0,0);
+	z-index: 10;
+	-webkit-transform: translateZ(0) translateX(0) rotateY(0deg); /* reset transforms (Chrome bug) */
+	transform: translateZ(0) translateX(0) rotateY(0deg);
+}
+.perspective_container::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0px;
+	opacity: 0;
+	background: rgba(0,0,0,0.2);
+	/* the transition delay of the height needs to be synced with the perspective_container transition time */
+	-webkit-transition: opacity 0.4s, height 0s 0.4s;
+	transition: opacity 0.4s, height 0s 0.4s;
+}
+.wrapper {
+	position: relative;
+	overflow:scroll;
+	overflow-x:hidden;
+}
+.component {
+	margin: 0 auto;
+	width: 60%;
+	text-align: justify;
+	font-size: 1.5em;
+}
+/* Modal view */
+.perspective.modalview {
+	position: fixed;
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+}
+.modalview .perspective_container {
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.modalview .wrapper {
+	-webkit-transform: translateZ(-1px); /* solves a rendering bug in Chrome on Windows */
+}
+.animate .perspective_container::after {
+	opacity: 1;
+	height: 101%;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+/* Outer Nav */
+.outer-nav {
+	position: absolute;
+	height: auto;
+	top: 51%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	overflow:scroll;
+	overflow-x:hidden;
+	width:250px;
+	height:71%;
+	transition:all 500ms ease;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.outer-nav::-webkit-scrollbar { 
+    display: none; 
+}
+.inner-nav{
+	width:280px;
+	overflow:hidden;
+}
+.inner-nav a{
+	margin-bottom:0px;
+	margin-top:0px;
+	padding-left:23%;
+	display:block;
+	width:100%;
+	text-decoration:none;
+}
+.outer-nav a {
+	display: inline-block;
+	white-space: nowrap;
+	font-weight: 300;
+	color: #cacaca;
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.outer-nav a:hover {
+	color: #FFFFFF;
+}
+.outer-nav a::before {
+	display: inline-block;
+	font-family: 'typicons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	margin-right: 10px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+/* Effect airbnb */
+.effect-airbnb {
+	background-image:url(../ky_img/bgp.png);
+	background-size:cover;
+}
+@media (max-width:760px){
+	.effect-airbnb .perspective_container {
+		-webkit-transition: -webkit-transform 0.4s;
+		transition: transform 0.4s;
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+	}
+	
+	.effect-airbnb.animate .perspective_container {
+		-webkit-transform: translateZ(-100px) translateX(65%) rotateY(-45deg);
+		transform: translateZ(-100px) translateX(65%) rotateY(-45deg);
+	}
+}
+@media (min-width:761px){
+	.effect-airbnb .perspective_container {
+		-webkit-transition: -webkit-transform 0.4s;
+		transition: transform 0.4s;
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+	}
+	
+	.effect-airbnb.animate .perspective_container {
+		-webkit-transform: translateZ(-100px) translateX(17%) translateY(0%) rotateY(-45deg);
+		transform: translateZ(-100px) translateX(17%) translateY(0%) rotateY(-45deg);
+	}
+	
+}
+.no-csstransforms3d .effect-airbnb.animate .perspective_container {
+	left: 75%;
+}
+.effect-airbnb .outer-nav a {
+	opacity: 0;
+	-webkit-transform: translateX(-150px);
+	transform: translateX(-150px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+	transition: transform 0.4s, opacity 0.4s;
+}
+.effect-airbnb.animate .outer-nav a {
+	opacity: 1;
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}

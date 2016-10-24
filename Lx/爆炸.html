@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		padding:0;
+		margin:0;
+	}
+	html,body{
+		height:100%;
+	}
+	body{
+		overflow: hidden;
+	}
+	#box{
+		width: 700px;
+		height:400px;
+		margin:50px auto;
+		background: url(img/0.jpg) no-repeat;
+		background-size:700px 400px;
+		position: relative;
+	}
+	#box span{
+		width:100px;
+		height:100px;
+		position: absolute;
+		top:0;
+		left:0;
+		background: url(img/0.jpg) no-repeat;
+		background-size:700px 400px;
+
+		transition:1s all ease;
+	}
+	
+	/* #box:hover span{
+		transform:translate(-300px,-150px);
+	} */
+	</style>
+	<script>
+	function rnd(m,n){
+		return parseInt(Math.random()*(n-m))+m;
+	}
+	window.onload=function(){
+		var oBox=document.getElementById('box');
+		var R=7;
+		var C=4;
+		for (var c = 0; c < C; c++) {
+			for (var r = 0; r < R; r++) {
+				var oSpan=document.createElement('span');
+				oSpan.style.left=r*100+'px';
+				oSpan.style.top=c*100+'px';
+				oSpan.style.backgroundPosition=-r*100+'px -'+c*100+'px'
+
+				oBox.appendChild(oSpan);
+			}
+		}
+
+		var aSpan=oBox.children;
+		var inow=0;
+		var ready=true;
+		document.onclick=function(){
+			if(!ready)return;
+			ready=false;
+			inow++;
+			oBox.style.backgroundImage='url(img/'+inow%26+'.jpg)';
+			for (var i = 0; i < aSpan.length; i++) {
+				aSpan[i].style.transition='1s all ease';
+				var x=aSpan[i].offsetLeft-oBox.offsetWidth/2+aSpan[i].offsetWidth/2;
+				var y=aSpan[i].offsetTop-oBox.offsetHeight/2+aSpan[i].offsetHeight/2;
+
+				aSpan[i].style.transform='perspective(800px) translate('+x+'px,'+y+'px) rotateX('+rnd(-180,180)+'deg) rotateY('+rnd(-180,180)+'deg) scale(1.5)';
+				aSpan[i].style.opacity=0;
+			}
+		};
+
+		aSpan[0].addEventListener('transitionend',function(){
+			ready=true;
+			for (var i = 0; i < aSpan.length; i++) {
+				aSpan[i].style.transition='none';
+				aSpan[i].style.transform='perspective(800px) translate(0px,0px) rotateX(0deg) rotateY(0deg) scale(1)';
+				aSpan[i].style.opacity=1;
+				aSpan[i].style.backgroundImage='url(img/'+inow%26+'.jpg)';
+			}
+		},false);
+	};
+	</script>
+</head>
+<body>
+	<div id="box">
+	</div>
+</body>
+</html>

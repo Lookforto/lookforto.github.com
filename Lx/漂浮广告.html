@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html,body{
+		}
+		div{
+			width:200px;
+			height:200px;
+			background: rgba(0,0,0,.5);
+			position: absolute;
+			top:0;
+			left:0;
+		}
+	</style>
+	<script>
+	var timer=null;
+	window.onload=window.onscroll=function(){
+		clearInterval(timer);
+		var scrollTop=document.documentElement.scrollTop || document.body.scrollTop;
+		var scrollLeft=document.documentElement.scrollLeft || document.body.scrollLeft;
+		var oDiv=document.getElementsByTagName('div')[0];
+		var clientX=document.documentElement.clientWidth;
+		var clientY=document.documentElement.clientHeight;
+		var speedX=3;
+		var speedY=4;
+		timer=setInterval(function(){
+
+			if(oDiv.offsetTop+oDiv.offsetHeight>clientY+scrollTop){
+				oDiv.style.top=scrollTop+clientY-oDiv.offsetHeight+'px';
+				speedY*=-1;
+			}
+			if(oDiv.offsetTop<scrollTop){
+				oDiv.style.top=scrollTop+'px';
+				speedY*=-1;
+			}
+			
+			if(oDiv.offsetLeft+oDiv.offsetWidth>clientX || oDiv.offsetLeft<scrollLeft){
+				
+				speedX*=-1;
+			}
+
+			oDiv.style.left=oDiv.offsetLeft+speedX+'px';
+			oDiv.style.top=oDiv.offsetTop+speedY+'px';;
+		},10)
+	};
+	</script>
+</head>
+<body style="height:2000px;">
+	<div>我是广告</div>
+</body>
+</html>

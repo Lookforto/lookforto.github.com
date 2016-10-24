@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>carousel首页</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="Shortcut Icon" href="images/favicon3.ico">
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <![endif]-->
+  <script src="js/jquery-2.11.js"></script>
+  <script src="js/swiper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jQUERY-marquee.js"></script>
+  <!--[if lt IE 9]>
+	  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+	  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  
+</head>
+<body>
+	<div class="w-s">
+		<div class="container">
+			<nav class="navbar navbar-inverse navbar-static-top bor-no" role="navigation">
+			   <div class="navbar-header p-t10">
+				  <button type="button" class="navbar-toggle" data-toggle="collapse" 
+					 data-target="#example-navbar-collapse">
+					 <span class="sr-only">切换导航</span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+					 <span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand p-l-r15" href="#"><img src="images/baixinte.png" class="img-responsive"></a>
+			   </div>
+			   <div class="collapse navbar-collapse" id="example-navbar-collapse">
+				  <ul class="nav navbar-nav w-s-nav-ul">
+					 <li class=""><a href="carousel.html"><i class="glyphicon glyphicon-home"></i>首页</a></li>
+					 <li><a href="#"><i class="glyphicon glyphicon-cog"></i>我要理财</a></li>
+					 <li><a href="#"><i class="glyphicon glyphicon-eject"></i>融新一百</a></li>
+					 <li><a href="#"><i class="glyphicon glyphicon-leaf"></i>投资新手</a></li>
+					 <li><a href="#"><i class="glyphicon glyphicon-dashboard"></i>p2p理财</a></li>
+					 <li><a href="about.html"><i class="glyphicon glyphicon-book"></i>关于我们</a></li>
+					 <li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						   <i class="glyphicon glyphicon-user"></i>加入我们<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+						   <li><a href="#">jmeter</a></li>
+						   <li><a href="#">EJB</a></li>
+						   <li><a href="#">Jasper Report</a></li>
+						   <li class="divider"></li>
+						   <li><a href="#">分离的链接</a></li>
+						   <li class="divider"></li>
+						   <li><a href="#">另一个分离的链接</a></li>
+						</ul>
+					 </li>
+				  </ul>
+			   </div>
+			</nav>
+		</div>
+	</div>
+	<div id="myCarousel" class="carousel slide" style="display:none;">
+	   <!-- 轮播（Carousel）指标 -->
+	   <ol class="carousel-indicators">
+		  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		  <li data-target="#myCarousel" data-slide-to="1"></li>
+		  <li data-target="#myCarousel" data-slide-to="2"></li>
+	   </ol>   
+	   <!-- 轮播（Carousel）项目 -->
+	   <div class="carousel-inner">
+		  <div class="item active">
+			 <img src="images/banner11.jpg" alt="First slide">
+		  </div>
+		  <div class="item">
+			 <img src="images/banner12.jpg" alt="Second slide">
+		  </div>
+		  <div class="item">
+			 <img src="images/banner13.jpg" alt="Third slide">
+		  </div>
+	   </div>
+	   <!-- 轮播（Carousel）导航 -->
+	   <!--
+	   <a class="carousel-control left" href="#myCarousel" 
+		  data-slide="prev">&lsaquo;</a>
+	   <a class="carousel-control right" href="#myCarousel" 
+		  data-slide="next">&rsaquo;</a>
+		-->
+	</div>
+	<script type="text/javascript">
+		$('#myCarousel').carousel({
+		  interval: 2000
+		})
+	</script>
+	<div class="swiper-container swiper-container-horizontal">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide"><img src="images/banner11.jpg" width="100%"></div>
+			<div class="swiper-slide"><img src="images/banner12.jpg" width="100%"></div>
+			<div class="swiper-slide"><img src="images/banner13.jpg" width="100%"></div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript">
+		var mySwiper = new Swiper ('.swiper-container', {
+		autoplay: 2000,
+		loop: true,
+		grabCursor : true,
+		speed:1000,
+		/*淡入淡出效果*/
+		//effect : 'fade',
+		/*flip"（3d翻转）*/
+		//effect : 'flip',
+		/*coverflow"（3d流）*/
+		//effect : 'coverflow',
+		/*显示的数量*/
+		/*slidesPerView : 3,
+		spaceBetween : 20,
+		*/
+		// 如果需要分页器
+		pagination: '.swiper-pagination',
+		//分页器类型
+		//paginationType : 'bullets',
+       //paginationType : 'fraction',//分式 
+	   //paginationType : 'progress',//分式 
+	   /*指示点分页器会控制Swiper切换*/
+	   paginationClickable :true,//此参数设置为true时，点击分页器的指示点分页器会控制Swiper切换
+		/*设置类名*/
+		//wrapperClass : 'swiper-wrapper',//给wraper设置类名
+		//slideClass : 'swiper-slide',//设置slide的类名
+		//slideActiveClass : 'swiper-slide-active',//设置活动块的类名
+		/*设置可视快的类名*/
+		/*watchSlidesProgress : true,
+		watchSlidesVisibility : true,
+		slideVisibleClass : 'my-slide-visible',
+		*/
+		/*pagination分页器内元素的类名*/
+		/*
+		pagination : '.pagination',
+		bulletClass : 'my-bullet',
+		*/
+		/*pagination分页器内活动(active)元素的类名
+		pagination : '.pagination',*/
+		//bulletActiveClass : 'my-bullet-active',
+		})     
+	</script>
+	<div class="container no-p-lr pinzhi">
+	  <div class="row visible-on">
+	    <div class="col-sm-6 col-md-3 p-t-b15">
+		  <div class="media">
+		    <a href="javascript:;" class="pull-left">
+			  <img src="images/ji_1.png" alt="安全">
+			</a>
+			<div class="media-body">
+			  <h4 class="media-heading">安全</h4>
+			  成熟的风控体系，确保客户信息和资金安全
+			</div>
+		  </div>
+		</div>
+		<div class="col-sm-6 col-md-3 p-t-b15">
+		  <div class="media">
+		    <a href="javascript:;" class="pull-left">
+			  <img src="images/ji_2.png" alt="高效">
+			</a>
+			<div class="media-body">
+			  <h4 class="media-heading">高效</h4>
+			  全天24小时，随时随地为您提供服务
+			</div>
+		  </div>
+		</div>
+		<div class="clearfix visible-sm-block"></div>
+		<div class="col-sm-6 col-md-3 p-t-b15">
+		  <div class="media">
+		    <a href="javascript:;" class="pull-left">
+			  <img src="images/ji_3.png" alt="诚信">
+			</a>
+			<div class="media-body">
+			  <h4 class="media-heading">诚信</h4>
+			  金融为器，诚信为本，对每一位客户负责，是我们的承诺
+			</div>
+		  </div>
+		</div>
+		<div class="col-sm-6 col-md-3 p-t-b15">
+		  <div class="media">
+		    <a href="javascript:;" class="pull-left">
+			  <img src="images/ji_4.png" alt="互利">
+			</a>
+			<div class="media-body">
+			  <h4 class="media-heading">互利</h4>
+			  互惠互利，合作共赢，是我们的目标
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  
+	  <!--
+	  <div class="row w-s-mes">
+	    <marquee onMouseOut="this.start()" onMouseOver="this.stop()" direction="up" behavior="scroll" scrollamount="30" scrolldelay="1000" height="30" bgcolor="#f00">
+		  <p>123242342354</p>
+		  <p>70987987979</p>
+		  <p>hhhhhhhhhhhhh</p>
+		  <p>llllllllllll</p>
+		</marquee>
+	  </div>
+	  -->
+	</div>
+	<div class="container w-s-xs">
+		<div class="row sound p-t-b10 clearfix">
+			<div class="media">
+			  <a href="javascript:;" class="pull-left glyphicon glyphicon-volume-up">
+				<!--<img src="images/sound.png" alt="">-->
+			  </a>
+			  <div class="media-body">
+				  <div class="xiaoxi_r marq-table">
+					<div class="inner">
+						<div class="marquee vertical" direction="up" speed="7" step="1" pause="3000">
+							<ul>
+								<li>
+								  <a href="javascript:;">最新消息：热力祝贺郑州百信特企业管理咨询有限公司成为中国金融理财协会（CFPA）会员单位</a>
+								</li>
+								<li>
+								  <a href="javascript:;">融信壹佰五一劳动放假通知公告</a>
+								</li>
+								<li>
+								  <a href="javascript:;">相约不如偶遇：这个时代一起理财吧！</a>
+								</li>
+								<li>
+								  <a href="javascript:;">明星叫你来助振一起嗨动全场</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				  </div>
+			  </div>
+			</div>
+		</div>
+		<div class="row hxt">
+		  <table class="table table-bordered">
+		    <caption>活信投</caption>
+			<tr>
+			  <td><img src="images/hxt.png"></td>
+			  <td>
+			    <p><button class="btn btn-lg btn-danger btn-block"><strong>7</strong>%年化收益</button></p>
+				<ul class="list-group">
+				  <li class="list-group-item">项目期限<span class="badge">一个月</span></li>
+				  <li class="list-group-item">项目金额<span class="badge">50万</span></li>
+				  <li class="list-group-item">项目进度<span class="badge">10%</span></li>
+				</ul>
+				<p><a href="javascript:;" class="btn btn-lg btn-info btn-block">立即投资</a></p>
+			  </td>
+			  <td>
+			    <p><button class="btn btn-lg btn-danger btn-block"><strong>7</strong>%年化收益</button></p>
+				<ul class="list-group">
+				  <li class="list-group-item">项目期限<span class="badge">一个月</span></li>
+				  <li class="list-group-item">项目金额<span class="badge">50万</span></li>
+				  <li class="list-group-item">项目进度<span class="badge">10%</span></li>
+				</ul>
+				<p><a href="javascript:;" class="btn btn-lg btn-info btn-block">立即投资</a></p>
+			  </td>
+			  <td>
+			    <p><button class="btn btn-lg btn-danger btn-block"><strong>7</strong>%年化收益</button></p>
+				<ul class="list-group">
+				  <li class="list-group-item">项目期限<span class="badge">一个月</span></li>
+				  <li class="list-group-item">项目金额<span class="badge">50万</span></li>
+				  <li class="list-group-item">项目进度<span class="badge">10%</span></li>
+				</ul>
+				<p><a href="javascript:;" class="btn btn-lg btn-info btn-block">立即投资</a></p>
+			  </td>
+			</tr>
+		  </table>
+		  <table class="table table-bordered">
+		    <caption>月信投</caption>
+			<tr>
+			  <td><img src="images/yxt.png"></td>
+			  <td>
+			    <p><button class="btn btn-lg btn-danger btn-block"><strong>7</strong>%年化收益</button></p>
+				<ul class="list-group">
+				  <li class="list-group-item">项目期限<span class="badge">一个月</span></li>
+				  <li class="list-group-item">项目金额<span class="badge">50万</span></li>
+				  <li class="list-group-item">项目进度<span class="badge">10%</span></li>
+				</ul>
+				<p><a href="javascript:;" class="btn btn-lg btn-info btn-block">立即投资</a></p>
+			  </td>
+			  <td>
+			    <p><button class="btn btn-lg btn-danger btn-block"><strong>7</strong>%年化收益</button></p>
+				<ul class="list-group">
+				  <li class="list-group-item">项目期限<span class="badge">一个月</span></li>
+				  <li class="list-group-item">项目金额<span class="badge">50万</span></li>
+				  <li class="list-group-item">项目进度<span class="badge">10%</span></li>
+				</ul>
+				<p><a href="javascript:;" class="btn btn-lg btn-info btn-block">立即投资</a></p>
+			  </td>
+			  <td>
+			    <p><button class="btn btn-lg btn-danger btn-block"><strong>7</strong>%年化收益</button></p>
+				<ul class="list-group">
+				  <li class="list-group-item">项目期限<span class="badge">一个月</span></li>
+				  <li class="list-group-item">项目金额<span class="badge">50万</span></li>
+				  <li class="list-group-item">项目进度<span class="badge">10%</span></li>
+				</ul>
+				<p><a href="javascript:;" class="btn btn-lg btn-info btn-block">立即投资</a></p>
+			  </td>
+			</tr>
+		  </table>
+		</div>
+		<!--媒体报道和网页公告-->
+		<div class="row gonggao">
+		  <div class="col-sm-12 col-md-8">
+			<div class="gonggao-l clearfix">
+			  <span class="h4">媒体报道</span>
+			  <a class="h6 pull-right">更多&gt;&gt;</a>
+			</div>
+			<div class="row gonggao-one p-b10">
+			  <div class="col-sm-12 col-md-4 no-p-lr gonggao-one-l">
+			    <img src="images/jie_1.jpg" class="center-block">
+				<a href="javascript:;" class="blo padd">
+				  <h4>明星叫你来助阵一起嗨动全场</h4>
+				  <p>产品即将上线敬请期待</p>
+				</a>
+			  </div>
+			  <ul class="col-sm-12 col-md-8 gonggao-ul">
+			    <li>
+				  <div class="li-header clearfix">
+				    <a class="f-z14">相约不如偶遇：这个时代一起理财吧！</a>
+					<span class="f-z12 pull-right">2016-01-16</span>
+				  </div>
+				  <div class="row li-img">
+				    <div class="hidden-xs col-sm-3"><img src="images/jie_2.jpg"></div>
+					<div class="col-xs-12 col-sm-9">
+					  <a href="javascript:;" class="blo">
+					    <h5>产品即将上线</h5>
+						<p>我们有专业的团队，一流的理财师为你控才···</p>
+					  </a>
+					</div>
+				  </div>
+				</li>
+				<li>
+				  <div class="li-header clearfix">
+				    <a class="f-z14">践行在理财的两端</a>
+					<span class="f-z12 pull-right">2016-02-16</span>
+				  </div>
+				  <div class="row li-img">
+				    <div class="col-sm-3"><img src="images/jie_3.jpg"></div>
+					<div class="col-xs-12 col-sm-9">
+					  <a href="javascript:;" class="blo">
+					    <h5>产品即将上线</h5>
+						<p>我们坚信，只要以诚为本，以创新为动力，以互利为目标，通过不懈努力，我们一定会赢得更好的明天！</p>
+					  </a>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			</div>
+		  </div>
+		  <div class="col-sm-12 col-md-4">
+		    <div class="gonggao-l clearfix">
+			  <span class="h4">网站公告</span>
+			  <a class="h6 pull-right">更多&gt;&gt;</a>
+			</div>
+			<ul class="gonggao-ul-two">
+			  <li class="clearfix">
+			    <span class="fl m-r"><img src="images/jie_4.jpg"></span>
+				<a href="javascript:;" class="">
+				  <h5>邀请好友延期公告<span class="pull-right">2016-03-25</span></h5>
+				  <p>尊敬的好友:邀请好友延期公告</p>
+				</a>
+			  </li>
+			  <li class="clearfix">
+			    <a href="" class="blo fl">平台维护升级公告</a>
+				<span class="blo fr">2016-02-14</span>
+			  </li>
+			  <li class="clearfix">
+			    <a href="" class="blo fl">代金券使用规则公告</a>
+				<span class="blo fr">2016-03-14</span>
+			  </li>
+			  <li class="clearfix">
+			    <a href="" class="blo fl">平台新功能体验</a>
+				<span class="blo fr">2016-04-14</span>
+			  </li>
+			  <li class="clearfix">
+			    <a href="" class="blo fl">百信特五一劳动节放假通知</a>
+				<span class="blo fr">2016-05-14</span>
+			  </li>
+			  <li class="clearfix">
+			    <a href="" class="blo fl">新产品发部公告</a>
+				<span class="blo fr">2016-05-20</span>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	</div>
+	<!--footer-->
+	<div class="footer">
+	  <div class="container">
+	    <div class="row footer-one">
+		  <div class="col-sm-12 col-md-8">
+		    <ul class="foot-ul-one">
+			  <li><a href="javascript:;">公司介绍</a></li>
+			  <li><a href="javascript:;">安全保障</a></li>
+			  <li><a href="javascript:;">媒体报道</a></li>
+			  <li><a href="javascript:;">公司地图</a></li>
+			  <li><a href="javascript:;">帮助中心</a></li>
+			  <li><a href="javascript:;">联系我们</a></li>
+			  <li class="justity-fix"></li>
+			</ul>
+			<ul class="foot-ul-three">
+			  <li><a href="javascript:;" class="icons-bg-kf">客户服务</a></li>
+			  <li><a href="javascript:;" class="icons-bg-wb">新浪微博</a></li>
+			  <li><a href="javascript:;" class="icons-bg-wx">微信</a></li>
+			  <li><a href="javascript:;" class="icons-bg-qq">QQ咨询</a></li>
+			  <li class="justity-fix"></li>
+			</ul>
+		  </div>
+		  <div class="col-sm-12 col-md-4">
+		    <ul class="foot-ul-two">
+			  <li>客服热线：400-822-3676</li>
+			  <li>借款热线：400-696-0561</li>
+			  <li>公司邮箱：rxyb100@vip.126.com</li>
+			  <li>工作时间：9:00-18:00</li>
+			</ul>
+		  </div>
+		  <div class="clearfix visible-md-block"></div>
+		</div>
+		<div class="row footer-two p-b10">
+		  <div class="col-sm-12 col-md-8 col-md-offset-2">
+		    <ul class="footer-two-ul">
+		      <li>&copy;&ensp;2016百信特 ALL right reserved</li><li>百信特企业管理(郑州)有限公司</li><li>豫ICP备16015788号</li>
+			</ul>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</body>
+
+</style>
+</html>

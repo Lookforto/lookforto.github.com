@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			position:absolute;
+			bottom:0;
+			left:0;
+			width:100%;
+			text-align: center;
+		}
+		div img{
+			width:64px;
+		}
+	</style>
+	<script>
+	window.onload=function(){
+		var aImg=document.getElementsByTagName('img');
+		var oBox=document.getElementById('box');
+		
+		document.onmousemove=function(ev){
+			var oEvent=ev || event;
+			for(var i=0; i<aImg.length; i++){
+
+				var a=oEvent.clientX-aImg[i].offsetLeft-aImg[i].offsetWidth/2-oBox.offsetLeft;
+
+				var b=oEvent.clientY-aImg[i].offsetTop-aImg[i].offsetHeight/2-oBox.offsetTop;
+
+				var c=Math.sqrt((a*a+b*b));
+				//c 范围  0---
+				//console.log(c);
+				var scale=1-c/500;
+				if(scale<0.5){
+					scale=0.5;
+				}
+				aImg[i].style.width=scale*128+'px';
+			}
+		};
+	};
+	</script>
+</head>
+<body>
+<div id="box">
+<img src="img2/1.png" alt="">
+<img src="img2/2.png" alt="">
+<img src="img2/3.png" alt="">
+<img src="img2/4.png" alt="">
+<img src="img2/5.png" alt="">
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <!-- Demo styles -->
+    <style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+        /*background: #000;*/
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .swiper-slide {
+        background-size: cover;
+        background-position: center;
+    }
+    .gallery-top {
+        height: 80%;
+        width: 100%;
+    }
+    .gallery-thumbs {
+        height: 20%;
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+    .gallery-thumbs .swiper-slide {
+        width: 30%;
+        height: 100%;
+        opacity: 0.4;
+    }
+    .gallery-thumbs .swiper-slide-active {
+        opacity: 1;
+    }
+    .swiper-pagination-bullet {
+        width: 40px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+        color:#ccc;
+        opacity: 1;
+        background: rgba(0,0,0,0.2);
+		position:absolute;
+		bottom:0px;
+		right:10px;
+    }
+    .swiper-pagination-bullet-active {
+        color:#fff;
+        background: #ccc;
+		z-index:1000;
+    }
+	
+    </style>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container gallery-top">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(images/01.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/02.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/03.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/04.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/05.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/06.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/07.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/08.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/09.jpg)"></div>
+            <!--<div class="swiper-slide" style="background-image:url(images/10.jpg)"></div>-->
+        </div>
+        <!-- Add Pagination -->
+       <div class="swiper-pagination" style="width:10%;right:0;"></div>	
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+    <div class="swiper-container gallery-thumbs">
+        <div class="swiper-wrapper" style="margin-left:-35%;">
+            <div class="swiper-slide" style="background-image:url(images/01.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/02.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/03.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/04.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/05.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/06.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/07.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(images/08.jpg)"></div>
+           	<div class="swiper-slide" style="background-image:url(images/09.jpg)"></div>
+            <!--  <div class="swiper-slide" style="background-image:url(images/10.jpg)"></div>-->
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var galleryTop = new Swiper('.gallery-top', {//大轮播图
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',//左右箭头
+        spaceBetween: 9,//图片个数
+		touchRatio: 0.5,//滑动速度
+		/*pagination: '.swiper-pagination',
+        paginationClickable: true,
+        paginationBulletRender: function (index, className) {
+            return '<span class="' + className + '" >' + (index + 1)+'/9' + '</span>';
+        }*/
+    });
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 9,
+        centeredSlides: true,//默认状态下活动块居左，设定为true时，活动块会居中
+        slidesPerView: 'auto',
+        touchRatio: 0.5,
+        slideToClickedSlide: true,//设置为true则swiping时点击slide会过渡到这个slide
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+        paginationBulletRender: function (index, className) {
+            return '<span class="' + className + '" >' + (index + 1)+'/9' + '</span>';
+        }
+    });
+   galleryTop.params.control = galleryThumbs;
+     /*galleryThumbs.params.control = galleryTop;*/
+    
+    </script>
+</body>
+</html>

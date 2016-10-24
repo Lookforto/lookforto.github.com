@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #ul1{
+            width: 880px;
+            margin: 100px auto;
+        }
+        #ul1 li{
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+        #ul1 li img{
+            width: 100%;
+            height: 100%;
+        }
+        #ul1 li span{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: -200px;
+            top: 0;
+            background: red;
+            opacity: 0.3;
+            font-size: 50px;
+            line-height: 200px;
+            text-align: center;
+            color: #fff;
+        }
+    </style>
+    <script src="../move.js"></script>
+    <script>
+        function hoverDir(ev,obj){
+            var enterX=ev.clientX;
+            var enterY=ev.clientY;
+
+            var l=enterX-obj.offsetLeft;
+            var r=obj.offsetLeft+obj.offsetWidth-enterX;
+
+            var t=enterY-obj.offsetTop;
+            var b=obj.offsetTop+obj.offsetHeight-enterY;
+            switch(Math.min(l,r,t,b)){
+                case l:
+                    return 'l';
+                    break;
+                case r:
+                    return 'r';
+                    break;
+                case t:
+                    return 't';
+                    break;
+                case b:
+                   return 'b';
+                    break;
+            }
+        }
+        window.onload = function () {
+            var aLi=document.getElementsByTagName('li');
+
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].onmouseenter=function(ev){
+                    var dir=hoverDir(ev,this);
+
+                    switch(dir){
+                        case "l":
+                        this.children[0].style.left=-200+'px';
+                        this.children[0].style.top=0;
+                        move(this.children[0],{left:0,top:0});
+                        break;
+                        case "r":
+                        this.children[0].style.left=200+'px';
+                        this.children[0].style.top=0;
+                        move(this.children[0],{left:0,top:0});
+                        break;
+                        case "t":
+                        this.children[0].style.left=0+'px';
+                        this.children[0].style.top=-200+'px';
+                        move(this.children[0],{left:0,top:0});
+                        break;
+                        case "b":
+                        this.children[0].style.left=0+'px';
+                        this.children[0].style.top=200+'px';
+                        move(this.children[0],{left:0,top:0});
+                        break;
+                    }
+                }
+                aLi[i].onmouseleave=function(ev){
+                    var dir=hoverDir(ev,this);
+
+                    switch(dir){
+                        case "l":
+                        move(this.children[0],{left:-200,top:0});
+                        break;
+                        case "r":
+                        move(this.children[0],{left:200,top:0});
+                        break;
+                        case "t":
+                        move(this.children[0],{left:0,top:-200});
+                        break;
+                        case "b":
+                        move(this.children[0],{left:0,top:200});
+                        break;
+                    }
+                }
+            }  
+        };
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li><span>猫一</span><img src="cat/1.jpg"></li>
+    <li><span>猫二</span><img src="cat/2.jpg"></li>
+    <li><span>猫三</span><img src="cat/3.jpg"></li>
+    <li><span>猫四</span><img src="cat/4.jpg"></li>
+    <li><span>猫五</span><img src="cat/5.jpg"></li>
+    <li><span>猫六</span><img src="cat/6.jpg"></li>
+    <li><span>猫七</span><img src="cat/7.jpg"></li>
+    <li><span>猫八</span><img src="cat/8.jpg"></li>
+</ul>
+</body>
+</html>

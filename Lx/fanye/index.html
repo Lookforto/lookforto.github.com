@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#box{
+		width:700px;
+		height:400px;
+		background: url(1.jpg) no-repeat;
+		margin:20px auto;
+		position: relative;
+	}
+	#box>div{
+		position: absolute;
+		top:0;
+		right:0;
+		width:350px;
+		height:400px;
+	}
+	#box>div:nth-child(1){
+		transform-origin: left center;
+		transform-style: preserve-3d;
+		transform: perspective(800px) rotateY(0deg);
+		z-index: 2;
+
+		transition:1s all ease;
+	}
+	#box .face,#box .back{
+		position: absolute;
+		top:0;
+		left:0;
+	}
+	#box .face{
+		width:100%;
+		height:100%;
+		background:url(1.jpg) no-repeat right top;
+		transform: translateZ(1px);
+	}
+	#box .back{
+		width:100%;
+		height:100%;
+		background:url(2.jpg) no-repeat;
+		transform: translateZ(-1px) scale(-1,1);
+	}
+/* 	#box:hover #div1{
+	transform:perspective(800px) rotateY(-180deg);
+} */
+
+	#box>div:nth-child(2){
+		width:50%;
+		height:100%;
+		background:url(2.jpg) no-repeat right top;
+	}
+	</style>
+	<script>
+	window.onload=function(){
+		var oDiv=document.getElementById('div1');
+		var oBox=document.getElementById('box');
+		var oFace=document.querySelector('.face');
+		var oBack=document.querySelector('.back');
+		var oHalf=document.querySelector('#box>div:nth-child(2)');
+
+		var inow=0;
+		document.onclick=function(){
+			//添加 transition
+			oDiv.style.transition='1s all ease';
+			oDiv.style.transform='perspective(800px) rotateY(-180deg)';
+		};
+
+		oDiv.addEventListener('transitionend',function(){
+			inow++;//1,2,3
+
+			//换背景图
+			oBox.style.backgroundImage='url('+(inow%3+1)+'.jpg)';
+			oFace.style.backgroundImage='url('+(inow%3+1)+'.jpg)';
+
+			oHalf.style.backgroundImage='url('+((inow%3+1)%3+1)+'.jpg)';
+			oBack.style.backgroundImage='url('+((inow%3+1)%3+1)+'.jpg)';
+			//瞬间拉回odiv
+			//清掉 transition
+			oDiv.style.transition='none';
+			oDiv.style.transform='perspective(800px) rotateY(0deg)';
+		},false);
+	};
+	</script>
+</head>
+<body>
+	<div id="box">
+		<div id="div1">
+			<div class="face"></div>
+			<div class="back"></div>
+		</div>
+		<div></div>
+	</div>
+</body>
+</html>
