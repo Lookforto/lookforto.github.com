@@ -62,6 +62,7 @@ nav h1{
 	border-radius: 5px;
 	z-index: 100;
 }
+.ti_c{font-size:20px; margin-top:20px; }
 .pages a{
 	display: block;
 	width: 10px;
