@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>我的仓库</title>
+<title>无标题文档</title>
 <style>
  *{padding:0; margin:0; font-family:"微软雅黑"}
- body{padding:5% 30%; background:#000; background-position:54% 0;}
+ body{ background:#000; background-position:54% 0;}
  div ul{
  	width: 300px;
- 	margin: 0 auto;
+ 	margin: 100px auto;
  }
 
  div ul li{
@@ -17,7 +17,7 @@
  	border-radius: 5px;	
  	padding: 10px;
  }
- 
+ div ul li b{color: #fff; }
  div ul li p{
  	color: #CC9900;
  	padding:10px;
@@ -44,19 +44,35 @@
   div ul li ul li:hover{
   	background: #990033;
   }
-  
-</style>
+  .user{
+  	width: 400px;
+  	color: #fff;
+  	position: absolute;
+  	left: 100px;
+  	top: 100px;
+  }
+  .user p{
+  	margin-top: 20px;
+  	line-height: 30px;
+  }
+  .user dt{margin-bottom:20px;}
+  .wox{width: 270px; color: #9966FF; font-size: 25px; position: absolute; 
+  	right: 100px; top: 100px; overflow: hidden;}
+  .wox p{float: left; width: 20px; margin-left: 20px; opacity: 0; transition:2s all ease;}
+
+</style>　
 <script>
 	window.onload=function(){
 		var oUl = document.getElementById('ul');
 		var aLi = oUl.children;
+		var wox = document.getElementById('wox');
 		var n=0;
 		for(var i=0; i<aLi.length; i++){
 			(function(index){
 				aLi[i].onclick = function(){
 					for(var j=0; j<aLi.length; j++){
 						aLi[j].children[1].style.display='none';
-						aLi[j].style.opacity='0.3';
+						aLi[j].style.opacity='0.5';
 					}
 					this.children[1].style.display='block';
 					this.style.opacity=1;
@@ -64,7 +80,24 @@
 				aLi[i].children[1].children.onclick=function(){
 					this.parentNode.style.display='none';
 				};
+				oUl.onmouseleave=function(){
+					for(var i=0;i<aLi.length; i++){
+						aLi[i].children[1].style.display='none';
+						aLi[i].style.opacity='0.5';
+						
+					}
+				}
+				oUl.onmouseenter=function(){
+					for(var i=0;i<aLi.length; i++){
+						aLi[i].style.opacity=1;
+						
+					}
+				};
 			})(i)	
+		}
+		var oP = wox.children;
+		for(var i=0; i<oP.length; i++){
+			oP[i].style.opacity=1;
 		}
 	};
 </script>
@@ -72,9 +105,27 @@
 
 <body>
 <div>
+    <audio src="bk.mp3"  loop="loop" autoplay></audio>
+    <div class="user">
+      <dl>
+         <dt>姓名:　王杰</dt>
+         <dd>邮箱:　13293027658@163.com</dd>
+         <dd>博客:　<a href="http://www.cnblogs.com/wangjie-001">http://www.cnblogs.com/wangjie-001</a></dd>
+         <dd>gitHub:　<a href="https://lookforto.github.io">https://lookforto.github.io</a></dd>
+         <dd>qq:　772333544</dd>
+      </dl>
+      <p>本网站是个人闲暇时间写的一些网络前端常用的例子，包括简单的css+html布局，原生js, jquery，angular，交互，手机端，HTML5等等，网页布局不那么美观，但效果还是很完整的，请多多包涵！
+点击可以看到一些个人总结和收集的文档，有不足之处请联系我一起探讨，谢谢！</p>
+    </div>
+    <div class="wox" id="wox">
+       <p>记住该记住的</p>
+       <p>忘记该忘记的</p>
+       <p>改变能改变的</p>
+       <p>接受不能改变的</p>
+     </div>
 	<ul id="ul">
 		<li>
-			<p>个人小集</p>
+			<p>个人小集--><b>点我</b></p>
 		    <ul>
 		    	<li><a href="bio/index.html">个人作品</a></li>	    	
 		    </ul>
@@ -92,7 +143,7 @@
 		    </ul>
 		</li>
 		<li>
-			<p>Html5</p>
+			<p>H5</p>
 			<ul>
 				<li><a href="Lx/fangdajing/yuan.html">球</a></li>
 		        <li><a href="h5/cat1.html">简化版h5绘画小猫</a></li>
@@ -126,7 +177,9 @@
 			<p>项目</p>
 			<ul>
 				<li><a href="bio/web_a/index.html">Epsilon</a></li>
+				<li><a href="http://www.emibj.com/">一米</a></li>
 				<li><a href="zxxy/html/index_a.html">智享学院</a></li>
+				<li><a href="http://www.baoogu.com/">包谷</a></li>
 		    	<li><a href="Lx/taobao/index.html">淘宝</a></li>
 		    	<li><a href="bio/京东/index.html">京东</a></li>
 		    	<li><a href="bio/楼梯式导航/index.html">千凡</a></li>
@@ -143,7 +196,7 @@
 				<li><a href="bio/new/demo.html">swiper</a></li>
 				<li><a href="bio/jQueryStarability/index.html">星星评分</a></li>
 				<li><a href="bio/Loading/index.html">Loading组件</a></li>
-				<li><a href="Lx/baogu/refund/html/mypurchase1.html">angular应用</a></li>
+				<li><a href="Lx/baogu/refund/html/mypurchase1.html">包谷退款部分angular应用</a></li>
 			</ul>
 		</li>
 	</ul>
